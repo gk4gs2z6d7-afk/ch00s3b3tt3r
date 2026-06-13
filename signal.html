@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SIGNAL — Newsroom · Structural Humanism</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #0b0a08;
+  --bg1:      #0f0d09;
+  --bg2:      #131009;
+  --bg3:      #16130d;
+  --bg4:      #1d1810;
+  --border:   #2c2618;
+  --border2:  #3a3320;
+  --text:     #e9e2d0;
+  --text2:    #a89e86;
+  --text3:    #6f6750;
+  --accent:   #caa04a;
+  --accent2:  #7c5e2a;
+  --red:      #a8423a;
+  --green:    #5d6240;
+  --blue:     #2980b9;
+  --orange:   #e67e22;
+  --purple:   #8e44ad;
+  --mono: 'Courier Prime', 'Courier New', monospace;
+  --sans: 'Spectral', Georgia, serif;
+  --xs: clamp(0.65rem, 0.6rem + 0.2vw, 0.75rem);
+  --sm: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --base: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --lg: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  --xl: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  --trans: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:var(--base);min-height:100dvh;line-height:1.6}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(200,169,110,0.2)}
+:focus-visible{outline:1px solid var(--accent);outline-offset:2px}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+
+
+/* SITE BAR */
+.sitebar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px 1.5rem;background:#070605;border-bottom:1px solid var(--border);
+  font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+.sitebar a{color:var(--text2);text-decoration:none;padding:4px 8px;border-radius:2px;transition:.18s}
+.sitebar a:hover{color:var(--text);background:var(--bg3)}
+.sitebar .home{color:var(--accent);font-weight:700;letter-spacing:2px}
+.sitebar .links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+
+/* LAYOUT */
+.shell{display:grid;grid-template-rows:auto 1fr;min-height:100dvh}
+.topbar{
+  background:var(--bg1);border-bottom:1px solid var(--border);
+  padding:0 1.5rem;height:48px;
+  display:flex;align-items:center;gap:1.5rem;
+  position:sticky;top:0;z-index:100;
+}
+.logo{
+  font-family:var(--mono);font-size:var(--lg);font-weight:600;
+  letter-spacing:0.15em;color:var(--accent);white-space:nowrap;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.logo-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+.topbar-date{font-family:var(--mono);font-size:var(--xs);color:var(--text3);letter-spacing:0.05em}
+.topbar-status{
+  margin-left:auto;display:flex;align-items:center;gap:0.75rem;
+  font-family:var(--mono);font-size:var(--xs);color:var(--text3);
+}
+.status-live{color:var(--green);display:flex;align-items:center;gap:0.35rem}
+.status-live::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block;animation:pulse 1.5s ease-in-out infinite}
+.topbar-btn{
+  padding:0.25rem 0.75rem;border:1px solid var(--border2);border-radius:2px;
+  font-family:var(--mono);font-size:var(--xs);color:var(--text2);
+  letter-spacing:0.05em;transition:all var(--trans);
+}
+.topbar-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+.body{display:grid;grid-template-columns:220px 1fr;min-height:0}
+@media(max-width:900px){.body{grid-template-columns:1fr}}
+
+/* SIDEBAR */
+.sidebar{
+  background:var(--bg1);border-right:1px solid var(--border);
+  position:sticky;top:48px;height:calc(100vh - 48px);
+  overflow-y:auto;padding:1.25rem 0;
+  display:flex;flex-direction:column;gap:0.25rem;
+}
+@media(max-width:900px){.sidebar{display:none}}
+.sidebar-label{
+  font-family:var(--mono);font-size:var(--xs);color:var(--text3);
+  letter-spacing:0.12em;text-transform:uppercase;
+  padding:0.75rem 1rem 0.35rem;
+}
+.nav-btn{
+  display:flex;align-items:center;gap:0.65rem;
+  padding:0.5rem 1rem;font-size:var(--sm);
+  color:var(--text2);transition:all var(--trans);
+  border-left:2px solid transparent;width:100%;text-align:left;
+}
+.nav-btn:hover{color:var(--text);background:var(--bg2)}
+.nav-btn.active{color:var(--accent);border-left-color:var(--accent);background:var(--bg2)}
+.nav-btn .beat-icon{font-size:0.9rem;opacity:0.7;width:16px;text-align:center}
+.sidebar-divider{height:1px;background:var(--border);margin:0.75rem 1rem}
+
+/* MOBILE BEATS */
+.mobile-beats{
+  display:none;background:var(--bg1);border-bottom:1px solid var(--border);
+  overflow-x:auto;scrollbar-width:none;padding:0.5rem 1rem;gap:0.5rem;
+}
+.mobile-beats::-webkit-scrollbar{display:none}
+@media(max-width:900px){.mobile-beats{display:flex}}
+.beat-chip{
+  padding:0.3rem 0.75rem;border:1px solid var(--border2);border-radius:2px;
+  font-family:var(--mono);font-size:var(--xs);color:var(--text2);
+  white-space:nowrap;transition:all var(--trans);flex-shrink:0;
+}
+.beat-chip:hover{border-color:var(--accent);color:var(--accent)}
+.beat-chip.active{border-color:var(--accent);color:var(--accent);background:rgba(200,169,110,0.08)}
+
+/* MAIN */
+.main{overflow-y:auto;padding:1.5rem 2rem}
+@media(max-width:768px){.main{padding:1rem}}
+
+.section-header{
+  display:flex;align-items:center;gap:1rem;
+  margin-bottom:1.25rem;padding-bottom:0.75rem;
+  border-bottom:1px solid var(--border);
+}
+.section-title{
+  font-family:var(--mono);font-size:var(--xl);font-weight:600;
+  color:var(--accent);letter-spacing:0.08em;
+}
+.section-sub{font-family:var(--mono);font-size:var(--xs);color:var(--text3)}
+.refresh-btn{
+  margin-left:auto;padding:0.25rem 0.75rem;
+  border:1px solid var(--border2);border-radius:2px;
+  font-family:var(--mono);font-size:var(--xs);color:var(--text2);
+  transition:all var(--trans);
+}
+.refresh-btn:hover{border-color:var(--accent);color:var(--accent)}
+.loading-spin{animation:spin 1s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* DAILY BRIEFING BANNER */
+.briefing-banner{
+  background:var(--bg2);border:1px solid var(--border2);
+  border-left:3px solid var(--accent);
+  padding:1rem 1.25rem;margin-bottom:1.5rem;
+  display:flex;align-items:flex-start;gap:1rem;
+}
+.briefing-label{
+  font-family:var(--mono);font-size:var(--xs);color:var(--accent);
+  letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;margin-top:0.1rem;
+}
+.briefing-text{font-size:var(--sm);color:var(--text2);line-height:1.7}
+
+/* STORY CARD */
+.story-card{
+  background:var(--bg1);border:1px solid var(--border);
+  margin-bottom:0.75rem;transition:border-color var(--trans);
+}
+.story-card:hover{border-color:var(--border2)}
+.story-main{padding:1rem 1.25rem}
+.story-meta{
+  display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;
+  margin-bottom:0.5rem;
+}
+.beat-tag{
+  font-family:var(--mono);font-size:var(--xs);letter-spacing:0.08em;
+  text-transform:uppercase;padding:0.15rem 0.4rem;border:1px solid;
+  border-radius:1px;
+}
+.story-time{font-family:var(--mono);font-size:var(--xs);color:var(--text3)}
+.verified-badge{
+  font-family:var(--mono);font-size:var(--xs);color:var(--green);
+  border:1px solid var(--green);padding:0.1rem 0.4rem;border-radius:1px;
+  opacity:0.8;
+}
+.story-headline{
+  font-size:var(--lg);font-weight:500;line-height:1.35;
+  color:var(--text);margin-bottom:0.5rem;
+}
+.story-headline a:hover{color:var(--accent)}
+.story-summary{font-size:var(--sm);color:var(--text2);line-height:1.7;margin-bottom:0.75rem}
+
+/* SOURCE TRACKER */
+.source-tracker{
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:0.75rem 1.25rem;
+}
+.source-tracker-label{
+  font-family:var(--mono);font-size:var(--xs);color:var(--text3);
+  letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem;
+}
+.source-list{display:flex;flex-direction:column;gap:0.3rem}
+.source-row{
+  display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;
+}
+.source-name{font-family:var(--mono);font-size:var(--sm);color:var(--text);font-weight:500}
+.source-owner{font-size:var(--xs);color:var(--text3)}
+.owner-tag{
+  font-family:var(--mono);font-size:var(--xs);padding:0.1rem 0.4rem;
+  border-radius:1px;border:1px solid;
+}
+.owner-corp{color:var(--red);border-color:rgba(192,57,43,0.4);background:rgba(192,57,43,0.06)}
+.owner-indie{color:var(--green);border-color:rgba(39,174,96,0.4);background:rgba(39,174,96,0.06)}
+.owner-nonprofit{color:var(--blue);border-color:rgba(41,128,185,0.4);background:rgba(41,128,185,0.06)}
+.source-link{
+  font-family:var(--mono);font-size:var(--xs);color:var(--accent);margin-left:auto;
+  opacity:0.7;transition:opacity var(--trans);
+}
+.source-link:hover{opacity:1}
+
+/* CONTESTED FACTS */
+.contested{
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:0.75rem 1.25rem;
+}
+.contested-label{
+  font-family:var(--mono);font-size:var(--xs);color:var(--orange);
+  letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem;
+  display:flex;align-items:center;gap:0.4rem;
+}
+.contested-label::before{content:'⚠';font-size:0.7rem}
+.contested-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
+@media(max-width:500px){.contested-grid{grid-template-columns:1fr}}
+.contested-side{background:var(--bg3);border:1px solid var(--border2);padding:0.6rem 0.75rem}
+.contested-source{font-family:var(--mono);font-size:var(--xs);color:var(--text3);margin-bottom:0.2rem;text-transform:uppercase;letter-spacing:0.06em}
+.contested-claim{font-size:var(--sm);color:var(--text);font-weight:500}
+.contested-note{font-size:var(--xs);color:var(--text2);margin-top:0.2rem}
+
+/* STORY ACTIONS */
+.story-actions{
+  display:flex;align-items:center;gap:0.5rem;
+  padding:0.5rem 1.25rem;border-top:1px solid var(--border);
+  background:var(--bg2);
+}
+.action-btn{
+  font-family:var(--mono);font-size:var(--xs);color:var(--text3);
+  padding:0.25rem 0.6rem;border:1px solid transparent;border-radius:1px;
+  transition:all var(--trans);letter-spacing:0.04em;display:flex;align-items:center;gap:0.3rem;
+}
+.action-btn:hover{border-color:var(--border2);color:var(--text2)}
+.action-btn.flagged{color:var(--accent);border-color:var(--accent2)}
+
+/* POWER MOVES */
+.power-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:0.75rem;margin-bottom:1.5rem}
+.power-card{
+  background:var(--bg1);border:1px solid var(--border);
+  padding:1rem 1.25rem;
+  transition:border-color var(--trans);
+}
+.power-card:hover{border-color:var(--border2)}
+.power-header{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.5rem}
+.power-icon{
+  width:32px;height:32px;border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.9rem;flex-shrink:0;background:var(--bg2);
+}
+.power-name{font-family:var(--mono);font-size:var(--sm);color:var(--accent);font-weight:600}
+.power-entity{font-size:var(--xs);color:var(--text3)}
+.power-move{font-size:var(--sm);color:var(--text);line-height:1.55}
+.power-delta{
+  margin-top:0.5rem;font-family:var(--mono);font-size:var(--xs);
+  display:flex;align-items:center;gap:0.4rem;
+}
+.delta-up{color:var(--green)}
+.delta-down{color:var(--red)}
+.delta-neutral{color:var(--text3)}
+
+/* MARKET TICKER */
+.ticker-bar{
+  background:var(--bg1);border:1px solid var(--border);
+  padding:0.75rem 1.25rem;margin-bottom:1.5rem;
+  overflow-x:auto;scrollbar-width:none;
+}
+.ticker-bar::-webkit-scrollbar{display:none}
+.ticker-inner{display:flex;gap:1.5rem;min-width:max-content}
+.ticker-item{display:flex;flex-direction:column;align-items:flex-start;gap:0.1rem}
+.ticker-sym{font-family:var(--mono);font-size:var(--xs);color:var(--text3);letter-spacing:0.08em}
+.ticker-val{font-family:var(--mono);font-size:var(--sm);font-weight:500}
+.ticker-chg{font-family:var(--mono);font-size:var(--xs)}
+
+/* SAVED PANEL */
+.saved-panel{
+  position:fixed;right:0;top:0;bottom:0;width:360px;z-index:200;
+  background:var(--bg1);border-left:1px solid var(--border);
+  transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+.saved-panel.open{transform:translateX(0)}
+.saved-header{
+  padding:1rem 1.25rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:1rem;
+  font-family:var(--mono);font-size:var(--sm);color:var(--accent);
+  letter-spacing:0.08em;text-transform:uppercase;
+}
+.saved-close{margin-left:auto;color:var(--text2);font-size:1.1rem;padding:0.25rem}
+.saved-body{flex:1;overflow-y:auto;padding:1rem}
+.saved-empty{
+  color:var(--text3);font-size:var(--sm);
+  text-align:center;padding:2rem 1rem;
+  font-family:var(--mono);
+}
+.saved-item{
+  background:var(--bg2);border:1px solid var(--border);
+  padding:0.75rem;margin-bottom:0.5rem;
+  display:flex;flex-direction:column;gap:0.4rem;
+}
+.saved-item-title{font-size:var(--sm);color:var(--text);line-height:1.4}
+.saved-item-note{
+  font-size:var(--xs);color:var(--text2);font-style:italic;
+  border-left:2px solid var(--accent2);padding-left:0.4rem;
+}
+.saved-item-meta{font-family:var(--mono);font-size:var(--xs);color:var(--text3)}
+.saved-item-actions{display:flex;gap:0.4rem;margin-top:0.25rem}
+.saved-del{font-family:var(--mono);font-size:var(--xs);color:var(--text3);transition:color var(--trans)}
+.saved-del:hover{color:var(--red)}
+
+/* NOTE MODAL */
+.note-modal{
+  display:none;position:fixed;inset:0;z-index:300;
+  background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);
+  align-items:center;justify-content:center;
+}
+.note-modal.open{display:flex}
+.note-box{
+  background:var(--bg2);border:1px solid var(--border2);
+  width:min(440px,90vw);padding:1.5rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.note-box h3{font-family:var(--mono);font-size:var(--sm);color:var(--accent);letter-spacing:0.08em}
+.note-headline{font-size:var(--sm);color:var(--text2);line-height:1.5;
+  border-left:2px solid var(--border2);padding-left:0.75rem}
+.note-textarea{
+  background:var(--bg1);border:1px solid var(--border2);
+  color:var(--text);font-family:var(--sans);font-size:var(--sm);
+  padding:0.75rem;resize:vertical;min-height:80px;outline:none;
+  transition:border-color var(--trans);
+}
+.note-textarea:focus{border-color:var(--accent)}
+.note-actions{display:flex;gap:0.5rem;justify-content:flex-end}
+.btn-cancel{
+  padding:0.4rem 1rem;border:1px solid var(--border2);
+  font-family:var(--mono);font-size:var(--xs);color:var(--text2);
+  transition:all var(--trans);
+}
+.btn-cancel:hover{border-color:var(--text2)}
+.btn-save{
+  padding:0.4rem 1rem;background:var(--accent);color:var(--bg);
+  font-family:var(--mono);font-size:var(--xs);font-weight:600;
+  transition:opacity var(--trans);
+}
+.btn-save:hover{opacity:0.85}
+
+/* SKELETON */
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.skeleton{
+  background:linear-gradient(90deg,var(--bg2) 25%,var(--bg3) 50%,var(--bg2) 75%);
+  background-size:200% 100%;animation:shimmer 1.8s ease-in-out infinite;
+}
+.skel-card{background:var(--bg1);border:1px solid var(--border);padding:1rem 1.25rem;margin-bottom:0.75rem}
+.skel-line{height:13px;border-radius:1px;margin-bottom:0.5rem}
+.skel-block{height:60px;border-radius:1px;margin-bottom:0.5rem}
+
+/* ERROR */
+.err-bar{
+  background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.3);
+  padding:0.6rem 1rem;font-family:var(--mono);font-size:var(--xs);
+  color:var(--red);margin-bottom:1rem;display:none;
+}
+
+/* BEAT COLORS */
+.beat-politics{color:#5dade2;border-color:rgba(93,173,226,0.35);background:rgba(93,173,226,0.06)}
+.beat-war{color:#e74c3c;border-color:rgba(231,76,60,0.35);background:rgba(231,76,60,0.06)}
+.beat-trade{color:#f39c12;border-color:rgba(243,156,18,0.35);background:rgba(243,156,18,0.06)}
+.beat-economy{color:#2ecc71;border-color:rgba(46,204,113,0.35);background:rgba(46,204,113,0.06)}
+.beat-stocks{color:#1abc9c;border-color:rgba(26,188,156,0.35);background:rgba(26,188,156,0.06)}
+.beat-business{color:#e67e22;border-color:rgba(230,126,34,0.35);background:rgba(230,126,34,0.06)}
+.beat-religion{color:#9b59b6;border-color:rgba(155,89,182,0.35);background:rgba(155,89,182,0.06)}
+.beat-science{color:#3498db;border-color:rgba(52,152,219,0.35);background:rgba(52,152,219,0.06)}
+.beat-china{color:#e74c3c;border-color:rgba(231,76,60,0.35);background:rgba(231,76,60,0.06)}
+.beat-russia{color:#c0392b;border-color:rgba(192,57,43,0.35);background:rgba(192,57,43,0.06)}
+.beat-corruption{color:#e74c3c;border-color:rgba(231,76,60,0.35);background:rgba(231,76,60,0.06)}
+</style>
+</head>
+<body>
+<div class="sitebar">
+  <a class="home" href="index.html">&larr; Structural Humanism</a>
+  <div class="links">
+    <a href="index.html#files">Case Files</a>
+    <a href="index.html#act">Act</a>
+    <a href="index.html#book">The Book</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</div>
+
+<div class="shell">
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo">
+    <span class="logo-dot"></span>
+    SIGNAL
+  </div>
+  <span class="topbar-date" id="topDate"></span>
+  <div class="topbar-status">
+    <span class="status-live">LIVE</span>
+    <button class="topbar-btn" id="openSaved">📌 SAVED (<span id="savedCount">0</span>)</button>
+  </div>
+</header>
+
+<!-- MOBILE BEATS -->
+<div class="mobile-beats" id="mobileBeats"></div>
+
+<div class="body">
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-label">Briefing</div>
+  <button class="nav-btn active" data-beat="briefing"><span class="beat-icon">📋</span>Daily Briefing</button>
+  <button class="nav-btn" data-beat="powerMoves"><span class="beat-icon">⚡</span>Power Moves</button>
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-label">Beats</div>
+  <button class="nav-btn" data-beat="politics"><span class="beat-icon">🏛</span>Politics</button>
+  <button class="nav-btn" data-beat="war"><span class="beat-icon">⚔</span>War & Conflict</button>
+  <button class="nav-btn" data-beat="trade"><span class="beat-icon">🌐</span>Trade</button>
+  <button class="nav-btn" data-beat="economy"><span class="beat-icon">📊</span>Economy</button>
+  <button class="nav-btn" data-beat="stocks"><span class="beat-icon">📈</span>Stocks</button>
+  <button class="nav-btn" data-beat="business"><span class="beat-icon">🏢</span>Business</button>
+  <button class="nav-btn" data-beat="corruption"><span class="beat-icon">🔎</span>Corruption</button>
+  <button class="nav-btn" data-beat="china"><span class="beat-icon">🇨🇳</span>China</button>
+  <button class="nav-btn" data-beat="russia"><span class="beat-icon">🇷🇺</span>Russia</button>
+  <button class="nav-btn" data-beat="religion"><span class="beat-icon">✝</span>Religion</button>
+  <button class="nav-btn" data-beat="science"><span class="beat-icon">🔬</span>Science & Tech</button>
+</aside>
+
+<!-- MAIN -->
+<main class="main" id="mainArea">
+  <!-- injected by JS -->
+</main>
+</div>
+</div>
+
+<!-- SAVED PANEL -->
+<div class="saved-panel" id="savedPanel">
+  <div class="saved-header">
+    📌 SAVED FOR SIGNAL
+    <button class="saved-close" id="closeSaved" aria-label="Close">✕</button>
+  </div>
+  <div class="saved-body" id="savedBody"></div>
+</div>
+
+<!-- NOTE MODAL -->
+<div class="note-modal" id="noteModal">
+  <div class="note-box">
+    <h3>FLAG FOR STRUCTURALHUMANISM.COM</h3>
+    <div class="note-headline" id="noteHeadline"></div>
+    <textarea class="note-textarea" id="noteText" placeholder="Your note — angle, context, what this means for your work…" rows="4"></textarea>
+    <div class="note-actions">
+      <button class="btn-cancel" id="cancelNote">CANCEL</button>
+      <button class="btn-save" id="confirmNote">SAVE FLAG</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+// ── MEDIA OWNERSHIP DATABASE ──────────────────────────────────────
+const OWNERS = {
+  'Reuters':           {owner:'Thomson Reuters Corp',    type:'corp',    note:'Publicly traded, largest wire service'},
+  'AP':                {owner:'Non-profit cooperative',  type:'nonprofit',note:'Member-owned, no corporate parent'},
+  'Associated Press':  {owner:'Non-profit cooperative',  type:'nonprofit',note:'Member-owned wire service since 1846'},
+  'CNN':               {owner:'Warner Bros. Discovery',  type:'corp',    note:'Owned by David Zaslav / WBD conglomerate'},
+  'Fox News':          {owner:'Fox Corporation / Murdoch',type:'corp',    note:'Murdoch family ~40% voting power; Fox Corp split from News Corp'},
+  'MSNBC':             {owner:'Comcast / NBCUniversal',  type:'corp',    note:'Comcast is majority owner'},
+  'NBC News':          {owner:'Comcast / NBCUniversal',  type:'corp',    note:'Comcast owns NBCUniversal'},
+  'ABC News':          {owner:'Walt Disney Company',     type:'corp',    note:'Disney owns ABC outright'},
+  'CBS News':          {owner:'Paramount Global',        type:'corp',    note:'Shari Redstone / National Amusements'},
+  'Washington Post':   {owner:'Jeff Bezos (personal)',   type:'corp',    note:'Bezos bought it 2013, $250M'},
+  'New York Times':    {owner:'Ochs-Sulzberger family',  type:'corp',    note:'Family-controlled public company'},
+  'Wall Street Journal':{owner:'News Corp / Murdoch',   type:'corp',    note:'Murdoch acquired 2007 for $5B'},
+  'Bloomberg':         {owner:'Michael Bloomberg',       type:'corp',    note:'Privately owned by Bloomberg LP'},
+  'The Guardian':      {owner:'Scott Trust (nonprofit)', type:'nonprofit',note:'Non-profit — no shareholder profit'},
+  'ProPublica':        {owner:'Independent nonprofit',   type:'nonprofit',note:'Donations-funded, no corporate owner'},
+  'The Intercept':     {owner:'First Look Media',        type:'indie',   note:'Pierre Omidyar-funded, editorial independence'},
+  'Democracy Now':     {owner:'Independent nonprofit',   type:'nonprofit',note:'Listener/viewer supported'},
+  'Al Jazeera':        {owner:'Qatar government',        type:'corp',    note:'State-funded by Qatari government'},
+  'BBC':               {owner:'UK public / BBC Trust',   type:'nonprofit',note:'Public service broadcaster, UK gov funded'},
+  'NPR':               {owner:'Public / member stations',type:'nonprofit',note:'Non-profit, public radio network'},
+  'Axios':             {owner:'Cox Enterprises',         type:'corp',    note:'Cox acquired Axios in 2022 for $525M'},
+  'Politico':          {owner:'Axel Springer (German)',  type:'corp',    note:'German media giant acquired 2021'},
+  'The Hill':          {owner:'Nexstar Media Group',     type:'corp',    note:'Largest local TV owner in US'},
+  'BuzzFeed News':     {owner:'Defunct (closed 2023)',   type:'corp',    note:'Shut down April 2023'},
+  'Vice':              {owner:'Fortress Investment Grp', type:'corp',    note:'Private equity owned after bankruptcy'},
+};
+
+function ownerInfo(sourceName){
+  for(const k of Object.keys(OWNERS)){
+    if(sourceName.toLowerCase().includes(k.toLowerCase())) return OWNERS[k];
+  }
+  return null;
+}
+
+function ownerTag(info){
+  if(!info) return '<span class="owner-tag" style="color:var(--text3);border-color:var(--border)">UNKNOWN OWNER</span>';
+  const cls = info.type==='corp'?'owner-corp':info.type==='nonprofit'?'owner-nonprofit':'owner-indie';
+  const label = info.type==='corp'?'CORP':info.type==='nonprofit'?'NONPROFIT':'INDIE';
+  return `<span class="owner-tag ${cls}" title="${info.note}">${label}: ${info.owner}</span>`;
+}
+
+// ── BEATS CONFIG ─────────────────────────────────────────────────
+const BEATS = {
+  briefing:   {label:'Daily Briefing',    icon:'📋', query:'world news today',          beatClass:''},
+  powerMoves: {label:'Power Moves',       icon:'⚡', query:'billionaire CEO company move',beatClass:''},
+  politics:   {label:'Politics',          icon:'🏛', query:'US politics government policy',beatClass:'beat-politics'},
+  war:        {label:'War & Conflict',    icon:'⚔', query:'war conflict military',       beatClass:'beat-war'},
+  trade:      {label:'Trade',             icon:'🌐', query:'trade tariffs global economy',beatClass:'beat-trade'},
+  economy:    {label:'Economy',           icon:'📊', query:'economy inflation GDP',       beatClass:'beat-economy'},
+  stocks:     {label:'Stocks',            icon:'📈', query:'stock market S&P Wall Street',beatClass:'beat-stocks'},
+  business:   {label:'Business',          icon:'🏢', query:'business corporations mergers',beatClass:'beat-business'},
+  corruption: {label:'Corruption',        icon:'🔎', query:'corruption scandal government accountability',beatClass:'beat-corruption'},
+  china:      {label:'China',             icon:'🇨🇳',query:'China policy economy military Xi',beatClass:'beat-china'},
+  russia:     {label:'Russia',            icon:'🇷🇺',query:'Russia Ukraine war Putin',    beatClass:'beat-russia'},
+  religion:   {label:'Religion',          icon:'✝', query:'religion faith global policy church',beatClass:'beat-religion'},
+  science:    {label:'Science & Tech',    icon:'🔬', query:'science discovery technology AI space energy',beatClass:'beat-science'},
+};
+
+// Power figures
+const POWER_FIGURES = [
+  {name:'Elon Musk',    icon:'🚀', entities:'Tesla · SpaceX · X · DOGE', color:'#3498db'},
+  {name:'Bill Gates',   icon:'💉', entities:'Gates Foundation · Vaccines · Land', color:'#27ae60'},
+  {name:'Jeff Bezos',   icon:'📦', entities:'Amazon · Blue Origin · Washington Post', color:'#f39c12'},
+  {name:'Mark Zuckerberg',icon:'👁',entities:'Meta · Facebook · Instagram · AI', color:'#5dade2'},
+  {name:'Warren Buffett',icon:'💰',entities:'Berkshire Hathaway · Stocks', color:'#2ecc71'},
+  {name:'Larry Fink',   icon:'🏦', entities:'BlackRock · Global Assets $10T+', color:'#e74c3c'},
+];
+
+// ── STATE ─────────────────────────────────────────────────────────
+const SAVED_KEY = 'signal_saved_flags_v1';
+function loadSaved(){
+  try{ return JSON.parse(localStorage.getItem(SAVED_KEY)) || []; }catch(e){ return []; }
+}
+function persistSaved(){
+  try{ localStorage.setItem(SAVED_KEY, JSON.stringify(state.saved)); }catch(e){}
+}
+
+let state = {
+  beat: 'briefing',
+  articles: [],
+  loading: false,
+  saved: loadSaved(),
+  flagPending: null,
+};
+
+// ── RSS FETCH ─────────────────────────────────────────────────────
+const RSS2JSON = 'https://api.rss2json.com/v1/api.json';
+
+function buildRSS(q){
+  return 'https://news.google.com/rss/search?q='+encodeURIComponent(q)+'&hl=en-US&gl=US&ceid=US:en';
+}
+
+async function fetchArticles(query){
+  const url = RSS2JSON+'?rss_url='+encodeURIComponent(buildRSS(query))+'&count=15';
+  try{
+    const res = await fetch(url);
+    const data = await res.json();
+    if(data.status!=='ok') throw new Error('Feed error');
+    return (data.items||[]).map(a=>{
+      const source = a.author || extractSource(a.title);
+      let title = a.title||'Untitled';
+      if(title.endsWith(' - '+source)) title = title.slice(0, -(' - '+source).length);
+      return {
+        id: btoa(unescape(encodeURIComponent(a.link||String(Math.random())))).slice(0,12),
+        title,
+        summary: (a.description||'').replace(/<[^>]+>/g,'').slice(0,220),
+        link: a.link||'#',
+        source,
+        time: a.pubDate,
+      };
+    });
+  }catch(e){
+    return null; // fail honestly — never fabricate articles
+  }
+}
+
+function extractSource(title){
+  // Google News titles end with " - Source Name"; take last segment so hyphens in headlines don't break it
+  const parts = (title||'').split(' - ');
+  return parts.length > 1 ? parts[parts.length-1].trim() : 'Unknown';
+}
+
+function esc(s){
+  return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function timeAgo(d){
+  if(!d) return '';
+  const diff=(Date.now()-new Date(d))/1000;
+  if(diff<60) return 'just now';
+  if(diff<3600) return Math.floor(diff/60)+'m ago';
+  if(diff<86400) return Math.floor(diff/3600)+'h ago';
+  return Math.floor(diff/86400)+'d ago';
+}
+
+// ── RENDER HELPERS ────────────────────────────────────────────────
+function renderOwnership(sourceName){
+  const info = ownerInfo(sourceName);
+  return `
+  <div class="source-tracker">
+    <div class="source-tracker-label">📡 Source Ownership</div>
+    <div class="source-list">
+      <div class="source-row">
+        <span class="source-name">${esc(sourceName)}</span>
+        ${ownerTag(info)}
+        ${info?`<span class="source-owner" title="${info.note}">ⓘ ${info.note.slice(0,50)}${info.note.length>50?'…':''}</span>`:''}
+      </div>
+    </div>
+  </div>`;
+}
+
+function beatClass(beat){
+  return BEATS[beat]?.beatClass || '';
+}
+
+function renderArticleCard(a, beat){
+  const bc = beatClass(beat);
+  const isFlagged = state.saved.some(s=>s.id===a.id);
+  return `
+  <div class="story-card" id="card-${a.id}">
+    <div class="story-main">
+      <div class="story-meta">
+        ${bc?`<span class="beat-tag ${bc}">${BEATS[beat]?.label||beat}</span>`:''}
+        <span class="story-time">${timeAgo(a.time)}</span>
+      </div>
+      <div class="story-headline">
+        <a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">${esc(a.title)}</a>
+      </div>
+      <div class="story-summary">${esc(a.summary)}</div>
+    </div>
+    ${renderOwnership(a.source)}
+    <div class="story-actions">
+      <button class="action-btn ${isFlagged?'flagged':''}" data-flag="${a.id}" data-title="${esc(a.title)}">
+        ${isFlagged?'📌 FLAGGED':'📌 FLAG FOR SITE'}
+      </button>
+      <a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer" class="action-btn">
+        ↗ READ SOURCE
+      </a>
+    </div>
+  </div>`;
+}
+
+function renderFeedError(beat){
+  return `
+  <div style="border:1px solid var(--red);background:rgba(192,57,43,0.08);padding:1rem 1.25rem;font-family:var(--mono);font-size:var(--sm);color:var(--text2)">
+    ⚠ LIVE FEED UNAVAILABLE — the RSS bridge (rss2json) did not respond or hit its rate limit.<br>
+    Nothing is shown rather than showing fabricated content.
+    <div style="margin-top:0.75rem"><button class="refresh-btn" data-retry="${beat}">↻ RETRY</button></div>
+  </div>`;
+}
+function attachRetry(){
+  document.querySelectorAll('[data-retry]').forEach(b=>b.addEventListener('click',()=>loadBeat(b.dataset.retry)));
+}
+
+function renderSkeleton(){
+  return Array(4).fill(`
+  <div class="skel-card">
+    <div class="skeleton skel-line" style="width:30%;margin-bottom:0.75rem"></div>
+    <div class="skeleton skel-line" style="width:80%;height:16px;margin-bottom:0.4rem"></div>
+    <div class="skeleton skel-line" style="width:65%;height:16px;margin-bottom:0.75rem"></div>
+    <div class="skeleton skel-block"></div>
+  </div>`).join('');
+}
+
+// ── POWER MOVES ───────────────────────────────────────────────────
+async function renderPowerMoves(){
+  const main = document.getElementById('mainArea');
+  main.innerHTML = `
+  <div class="section-header">
+    <div>
+      <div class="section-title">⚡ POWER MOVES</div>
+      <div class="section-sub">Billionaires · Corporate · Capital movement — live feed, watchlist below</div>
+    </div>
+    <button class="refresh-btn" id="refreshBtn">↻ REFRESH</button>
+  </div>
+  <div class="power-grid" style="margin-bottom:1.25rem">
+    ${POWER_FIGURES.map(f=>`
+    <div class="power-card">
+      <div class="power-header">
+        <div class="power-icon">${f.icon}</div>
+        <div>
+          <div class="power-name">${f.name}</div>
+          <div class="power-entity">${f.entities}</div>
+        </div>
+      </div>
+    </div>`).join('')}
+  </div>
+  <div id="articleFeed">${renderSkeleton()}</div>`;
+
+  document.getElementById('refreshBtn')?.addEventListener('click',()=>loadBeat('powerMoves'));
+
+  const articles = await fetchArticles(BEATS.powerMoves.query);
+  const feed = document.getElementById('articleFeed');
+  if(!feed) return;
+  if(!articles){ feed.innerHTML = renderFeedError('powerMoves'); attachRetry(); return; }
+  state.articles = articles;
+  feed.innerHTML = articles.map(a=>renderArticleCard(a,'powerMoves')).join('');
+  attachCardActions();
+}
+
+// ── DAILY BRIEFING ────────────────────────────────────────────────
+async function renderBriefing(){
+  const main = document.getElementById('mainArea');
+  main.innerHTML = `
+  <div class="section-header">
+    <div>
+      <div class="section-title">📋 DAILY BRIEFING</div>
+      <div class="section-sub">Live headlines — read the source before you cite anything</div>
+    </div>
+    <button class="refresh-btn" id="refreshBtn">↻ REFRESH</button>
+  </div>
+  <div id="articleFeed">${renderSkeleton()}</div>`;
+
+  document.getElementById('refreshBtn')?.addEventListener('click',()=>loadBeat('briefing'));
+
+  const articles = await fetchArticles('world news breaking today');
+  const feed = document.getElementById('articleFeed');
+  if(!feed) return;
+  if(!articles){ feed.innerHTML = renderFeedError('briefing'); attachRetry(); return; }
+  state.articles = articles;
+  feed.innerHTML = articles.map(a=>renderArticleCard(a,'briefing')).join('');
+  attachCardActions();
+}
+
+// ── LOAD BEAT ─────────────────────────────────────────────────────
+async function loadBeat(beat){
+  state.beat = beat;
+  const main = document.getElementById('mainArea');
+
+  if(beat==='powerMoves'){renderPowerMoves();attachCardActions();return;}
+
+  const cfg = BEATS[beat];
+  main.innerHTML = `
+  <div class="section-header">
+    <div>
+      <div class="section-title">${cfg.icon} ${cfg.label.toUpperCase()}</div>
+      <div class="section-sub">Live Google News RSS · Ownership disclosed where known</div>
+    </div>
+    <button class="refresh-btn" id="refreshBtn">↻ REFRESH</button>
+  </div>
+  <div class="err-bar" id="errBar"></div>
+  <div id="articleFeed">${renderSkeleton()}</div>`;
+
+  document.getElementById('refreshBtn')?.addEventListener('click',()=>loadBeat(beat));
+
+  const articles = await fetchArticles(cfg.query);
+  const feed = document.getElementById('articleFeed');
+  if(!feed) return;
+  if(!articles){ feed.innerHTML = renderFeedError(beat); attachRetry(); return; }
+  state.articles = articles;
+  feed.innerHTML = articles.map(a=>renderArticleCard(a,beat)).join('');
+  attachCardActions();
+}
+
+// ── CARD ACTIONS ──────────────────────────────────────────────────
+function attachCardActions(){
+  document.querySelectorAll('[data-flag]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const id = btn.dataset.flag;
+      const title = btn.dataset.title;
+      const already = state.saved.some(s=>s.id===id);
+      if(already){
+        state.saved = state.saved.filter(s=>s.id!==id);
+        persistSaved();
+        btn.textContent='📌 FLAG FOR SITE';
+        btn.classList.remove('flagged');
+        updateSavedCount();
+        renderSavedPanel();
+      } else {
+        openNoteModal(id, title, btn);
+      }
+    });
+  });
+}
+
+// ── NOTE MODAL ────────────────────────────────────────────────────
+let pendingFlag = null;
+function openNoteModal(id, title, btn){
+  pendingFlag={id,title,btn};
+  document.getElementById('noteHeadline').textContent=title;
+  document.getElementById('noteText').value='';
+  document.getElementById('noteModal').classList.add('open');
+  setTimeout(()=>document.getElementById('noteText').focus(),100);
+}
+document.getElementById('cancelNote').addEventListener('click',()=>{
+  document.getElementById('noteModal').classList.remove('open');
+  pendingFlag=null;
+});
+document.getElementById('confirmNote').addEventListener('click',()=>{
+  if(!pendingFlag) return;
+  const note = document.getElementById('noteText').value.trim();
+  state.saved.push({
+    id:pendingFlag.id,
+    title:pendingFlag.title,
+    note,
+    time:new Date().toISOString(),
+    beat:state.beat,
+  });
+  if(pendingFlag.btn){
+    pendingFlag.btn.textContent='📌 FLAGGED';
+    pendingFlag.btn.classList.add('flagged');
+  }
+  persistSaved();
+  document.getElementById('noteModal').classList.remove('open');
+  pendingFlag=null;
+  updateSavedCount();
+  renderSavedPanel();
+});
+document.getElementById('noteModal').addEventListener('click',e=>{
+  if(e.target===e.currentTarget){
+    document.getElementById('noteModal').classList.remove('open');
+    pendingFlag=null;
+  }
+});
+document.getElementById('noteText').addEventListener('keydown',e=>{
+  if(e.key==='Escape'){document.getElementById('noteModal').classList.remove('open');pendingFlag=null;}
+});
+
+// ── SAVED PANEL ───────────────────────────────────────────────────
+function updateSavedCount(){
+  document.getElementById('savedCount').textContent=state.saved.length;
+}
+function renderSavedPanel(){
+  const body=document.getElementById('savedBody');
+  if(!state.saved.length){
+    body.innerHTML='<div class="saved-empty">No flags yet.<br>Flag articles to build your story queue for structuralhumanism.com</div>';
+    return;
+  }
+  body.innerHTML=state.saved.map(s=>`
+  <div class="saved-item">
+    <div class="saved-item-title">${esc(s.title)}</div>
+    ${s.note?`<div class="saved-item-note">${esc(s.note)}</div>`:''}
+    <div class="saved-item-meta">${BEATS[s.beat]?.label||s.beat} · ${timeAgo(s.time)}</div>
+    <div class="saved-item-actions">
+      <button class="saved-del" data-del="${s.id}">✕ Remove</button>
+    </div>
+  </div>`).join('');
+  body.querySelectorAll('[data-del]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      state.saved=state.saved.filter(s=>s.id!==btn.dataset.del);
+      persistSaved();
+      updateSavedCount();renderSavedPanel();
+    });
+  });
+}
+document.getElementById('openSaved').addEventListener('click',()=>{
+  document.getElementById('savedPanel').classList.add('open');
+  renderSavedPanel();
+});
+document.getElementById('closeSaved').addEventListener('click',()=>{
+  document.getElementById('savedPanel').classList.remove('open');
+});
+
+// ── NAV ───────────────────────────────────────────────────────────
+function setActiveBeat(beat){
+  document.querySelectorAll('.nav-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.beat===beat);
+  });
+  document.querySelectorAll('.beat-chip').forEach(b=>{
+    b.classList.toggle('active', b.dataset.beat===beat);
+  });
+}
+
+document.querySelectorAll('.nav-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    setActiveBeat(btn.dataset.beat);
+    loadBeat(btn.dataset.beat);
+  });
+});
+
+// Mobile beats bar
+const mobileBeats = document.getElementById('mobileBeats');
+const mobileBeatList = [
+  {beat:'briefing',label:'📋 Brief'},
+  {beat:'powerMoves',label:'⚡ Power'},
+  {beat:'politics',label:'🏛 Politics'},
+  {beat:'war',label:'⚔ War'},
+  {beat:'trade',label:'🌐 Trade'},
+  {beat:'economy',label:'📊 Economy'},
+  {beat:'stocks',label:'📈 Stocks'},
+  {beat:'corruption',label:'🔎 Corruption'},
+  {beat:'china',label:'🇨🇳 China'},
+  {beat:'russia',label:'🇷🇺 Russia'},
+  {beat:'science',label:'🔬 Science'},
+];
+mobileBeats.innerHTML = mobileBeatList.map(b=>
+  `<button class="beat-chip${b.beat==='briefing'?' active':''}" data-beat="${b.beat}">${b.label}</button>`
+).join('');
+mobileBeats.querySelectorAll('.beat-chip').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    setActiveBeat(btn.dataset.beat);
+    loadBeat(btn.dataset.beat);
+  });
+});
+
+// ── DATE ──────────────────────────────────────────────────────────
+function updateDate(){
+  const d = new Date();
+  document.getElementById('topDate').textContent =
+    d.toLocaleDateString('en-US',{weekday:'short',year:'numeric',month:'short',day:'numeric'}).toUpperCase();
+}
+updateDate();
+
+// ── INIT ──────────────────────────────────────────────────────────
+updateSavedCount();
+renderBriefing();
+})();
+</script>
+</body>
+</html>
