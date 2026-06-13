@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nav link fixes for Structural Humanism</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+    h1, h2 { line-height: 1.2; }
+    code, pre { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
+    pre { padding: 16px; overflow-x: auto; }
+    .good { color: #0a7a2f; }
+    .warn { color: #b45309; }
+  </style>
+</head>
+<body>
+  <h1>Structural Humanism nav fixes</h1>
+  <p>This file gives you copy-paste nav examples to fix broken links for <code>/case-files</code> and <code>/signal-news</code>.</p>
+
+  <h2>What is likely wrong</h2>
+  <ul>
+    <li>If your file is named <code>case-files.html</code> but the nav links to <code>/case-files</code>, the link can 404 on a static site.</li>
+    <li>If your file is named <code>signal-news.html</code> but the nav links to <code>/signal-news</code>, same problem.</li>
+    <li>Static HTML sites should usually link directly to the actual filename unless you created folder routes like <code>case-files/index.html</code>.</li>
+  </ul>
+
+  <h2>Use this if your files are named .html</h2>
+  <pre>&lt;nav class="site-nav" aria-label="Primary"&gt;
+  &lt;a href="/"&gt;Home&lt;/a&gt;
+  &lt;a href="/case-files.html"&gt;Case Files&lt;/a&gt;
+  &lt;a href="/signal-news.html"&gt;Signal News&lt;/a&gt;
+  &lt;a href="/works/"&gt;Works&lt;/a&gt;
+  &lt;a href="/#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</pre>
+
+  <h2>Use this if you made folder routes</h2>
+  <pre>case-files/index.html
+signal-news/index.html</pre>
+  <p>Then your nav can be:</p>
+  <pre>&lt;nav class="site-nav" aria-label="Primary"&gt;
+  &lt;a href="/"&gt;Home&lt;/a&gt;
+  &lt;a href="/case-files"&gt;Case Files&lt;/a&gt;
+  &lt;a href="/signal-news"&gt;Signal News&lt;/a&gt;
+  &lt;a href="/works/"&gt;Works&lt;/a&gt;
+  &lt;a href="/#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</pre>
+
+  <h2>Recommendation</h2>
+  <p class="good"><strong>Fastest fix:</strong> if you already have <code>case-files.html</code> and <code>signal-news.html</code>, change the nav to point to those exact filenames.</p>
+
+  <h2>Checklist</h2>
+  <ul>
+    <li>Confirm the repo contains <code>case-files.html</code> and/or <code>signal-news.html</code>.</li>
+    <li>Update every nav link, button, and footer link to the same exact path.</li>
+    <li>Push to GitHub and wait for Vercel to redeploy.</li>
+    <li>Test both <code>/case-files.html</code> and <code>/signal-news.html</code> directly.</li>
+  </ul>
+
+  <h2>Also likely needed for Signal News</h2>
+  <p class="warn">If the page loads but shows no news, fixing the nav will only get you to the page. You may still need to add actual news items to the page content.</p>
+</body>
+</html>
