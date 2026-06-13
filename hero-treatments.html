@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Treatments — Structural Humanism Homepage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-fell: 'IM Fell English', Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body { background: #0a0908; font-family: var(--font-body); color: #e8e4da; }
+
+/* NAV between treatments */
+.picker-bar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: #0a0908;
+  border-bottom: 1px solid #2a2620;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.picker-bar::-webkit-scrollbar { display: none; }
+.picker-btn {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 1.75rem;
+  color: #6a6560;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 180ms ease;
+  flex-shrink: 0;
+}
+.picker-btn:hover { color: #c8943a; }
+.picker-btn.active { color: #c8943a; border-bottom-color: #c8943a; }
+
+/* SECTION LABELS */
+.treatment-label {
+  text-align: center;
+  padding: 1.5rem 1rem 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #3a3630;
+}
+
+/* ═══════════════════════════════════════
+   TREATMENT A — THE PAMPHLET
+   Thomas Paine × Common Sense × Declaration
+═══════════════════════════════════════ */
+#treatment-a {
+  min-height: 100vh;
+  background: #0c0b09;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8rem 0;
+}
+
+/* Grain overlay */
+#treatment-a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Vertical rule lines — pamphlet column guides */
+#treatment-a::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 960px;
+  border-left: 1px solid rgba(200, 148, 58, 0.06);
+  border-right: 1px solid rgba(200, 148, 58, 0.06);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pamphlet-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+  text-align: center;
+}
+
+.pamphlet-rule {
+  width: 40px;
+  height: 2px;
+  background: #c8943a;
+  margin: 0 auto 2rem;
+}
+
+.pamphlet-masthead {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c8943a;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.pamphlet-masthead span { opacity: 0.4; }
+
+.pamphlet-headline {
+  font-family: var(--font-fell);
+  font-size: clamp(2.8rem, 1rem + 5vw, 6rem);
+  font-weight: 400;
+  line-height: 1.08;
+  color: #f0ebe0;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.pamphlet-headline .accent-word {
+  font-style: italic;
+  color: #c8943a;
+}
+
+.pamphlet-rule-thin {
+  width: 120px;
+  height: 1px;
+  background: rgba(200, 148, 58, 0.3);
+  margin: 2rem auto;
+}
+
+.pamphlet-sub {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+  color: #8a8478;
+  line-height: 1.75;
+  max-width: 56ch;
+  margin: 0 auto 3rem;
+  font-style: italic;
+}
+
+.pamphlet-stamp {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  border: 1.5px solid rgba(139, 58, 58, 0.6);
+  color: #9e4444;
+  transform: rotate(-1deg);
+  margin-bottom: 3rem;
+}
+
+.pamphlet-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-a-primary {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.2rem;
+  background: #c8943a;
+  color: #0c0b09;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 180ms ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-a-primary:hover { background: #daa84e; }
+
+.btn-a-ghost {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.2rem;
+  border: 1px solid rgba(200, 148, 58, 0.35);
+  color: #8a8478;
+  cursor: pointer;
+  transition: all 180ms ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-a-ghost:hover { border-color: #c8943a; color: #c8943a; }
+
+.pamphlet-footer-rule {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #1e1c18;
+}
+.pamphlet-footer-item {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #3a3630;
+}
+.pamphlet-footer-sep { color: #2a2620; }
+
+
+/* ═══════════════════════════════════════
+   TREATMENT B — THE MIDNIGHT BRIEF
+   Desk lamp · Late night · Legal pad energy
+═══════════════════════════════════════ */
+#treatment-b {
+  min-height: 100vh;
+  background: #080706;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Warm lamp glow from upper-left */
+#treatment-b::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(200, 148, 58, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.brief-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 6rem 3rem;
+  gap: 6rem;
+  align-items: center;
+}
+
+.brief-left {}
+
+.brief-case-num {
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #c8943a;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.brief-case-num::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: #c8943a;
+}
+
+.brief-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 1rem + 4vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.06;
+  color: #f0ebe0;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.brief-headline em {
+  font-style: italic;
+  color: #c8943a;
+  display: block;
+}
+
+.brief-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, #c8943a, transparent);
+  margin-bottom: 1.75rem;
+}
+
+.brief-sub {
+  font-size: 1.05rem;
+  color: #7a7468;
+  line-height: 1.8;
+  max-width: 50ch;
+  margin-bottom: 2.5rem;
+}
+
+.brief-evidence-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #1a1816;
+  flex-wrap: wrap;
+}
+.brief-evidence-item {}
+.brief-evidence-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #c8943a;
+  line-height: 1;
+}
+.brief-evidence-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #3a3630;
+  margin-top: 0.25rem;
+}
+
+.brief-cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-b-primary {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  background: #c8943a;
+  color: #080706;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 180ms ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 2px;
+}
+.btn-b-primary:hover { background: #daa84e; }
+
+.btn-b-ghost {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  border: 1px solid #2a2620;
+  color: #5a5450;
+  cursor: pointer;
+  transition: all 180ms ease;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+}
+.btn-b-ghost:hover { border-color: #4a4440; color: #8a8478; }
+
+/* RIGHT SIDE — Document/brief card */
+.brief-right {}
+
+.brief-doc {
+  background: #0e0c09;
+  border: 1px solid #2a2620;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(200,148,58,0.04);
+}
+.brief-doc::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(to right, #c8943a, rgba(200,148,58,0.2));
+}
+
+.brief-doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #1e1c18;
+}
+.brief-doc-type {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c8943a;
+  font-family: monospace;
+}
+.brief-doc-date {
+  font-size: 0.65rem;
+  color: #3a3630;
+  font-family: monospace;
+}
+
+.brief-doc-field {
+  margin-bottom: 1.25rem;
+}
+.brief-doc-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #3a3630;
+  margin-bottom: 0.35rem;
+  font-family: monospace;
+}
+.brief-doc-val {
+  font-size: 0.85rem;
+  color: #8a8478;
+  line-height: 1.5;
+}
+.brief-doc-val strong { color: #c8c4ba; }
+
+.brief-doc-seal {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #1e1c18;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.seal-circle {
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(200,148,58,0.3);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.seal-circle svg { color: rgba(200,148,58,0.5); }
+.seal-text {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3a3630;
+  line-height: 1.6;
+  font-family: monospace;
+}
+
+
+/* ═══════════════════════════════════════
+   TREATMENT C — THE WAR ROOM
+   Operational · Evidence board · Tactical
+═══════════════════════════════════════ */
+#treatment-c {
+  min-height: 100vh;
+  background: #080807;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Subtle grid / map texture */
+#treatment-c::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,148,58,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,148,58,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Red "classified" diagonal watermark */
+#treatment-c::after {
+  content: 'STRUCTURAL HUMANISM';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  font-family: var(--font-body);
+  font-size: clamp(3rem, 6vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(139,58,58,0.04);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.warroom-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 7rem 3rem;
+}
+
+.warroom-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.warroom-classification {
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 0.35rem 0.85rem;
+  border: 1.5px solid rgba(139,58,58,0.5);
+  color: #9e4444;
+  text-transform: uppercase;
+}
+.warroom-project {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #3a3830;
+  font-family: monospace;
+}
+
+.warroom-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 1rem + 4.5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.04;
+  color: #f0ebe0;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+  max-width: 18ch;
+}
+.warroom-headline .op-word {
+  color: #c8943a;
+  font-style: italic;
+}
+
+.warroom-sub {
+  font-size: 1.05rem;
+  color: #7a7468;
+  line-height: 1.75;
+  max-width: 52ch;
+  margin-bottom: 3rem;
+}
+
+/* Evidence board — 3 op-cards */
+.warroom-ops {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #1a1916;
+  border: 1px solid #1a1916;
+  margin-bottom: 3rem;
+}
+.op-card {
+  background: #0c0b09;
+  padding: 1.5rem;
+  transition: background 180ms ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.op-card:hover { background: #101008; }
+.op-num {
+  font-family: monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: #3a3830;
+  margin-bottom: 0.75rem;
+}
+.op-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #c8c4ba;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.op-domain {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3a3830;
+}
+.op-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c8943a;
+}
+.op-status::before {
+  content: '';
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: #c8943a;
+  flex-shrink: 0;
+}
+
+.warroom-action-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.btn-c-primary {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: #c8943a;
+  border: 1.5px solid #c8943a;
+  cursor: pointer;
+  transition: all 180ms ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-c-primary:hover { background: #c8943a; color: #080807; }
+
+.btn-c-ghost {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.75rem;
+  border: 1px solid #1e1c18;
+  color: #4a4840;
+  cursor: pointer;
+  transition: all 180ms ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-c-ghost:hover { border-color: #3a3830; color: #7a7468; }
+
+.warroom-coords {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #141210;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.coord-item {
+  font-family: monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: #2a2820;
+}
+
+/* COMPARISON FOOTER */
+.comparison-footer {
+  background: #060504;
+  border-top: 1px solid #1a1816;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.comparison-footer h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e8e4da;
+  margin-bottom: 0.75rem;
+}
+.comparison-footer p {
+  font-size: 0.85rem;
+  color: #5a5450;
+  max-width: 50ch;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .brief-layout { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+  .brief-right { display: none; }
+  .warroom-ops { grid-template-columns: 1fr; }
+  .pamphlet-inner, .warroom-inner { padding-inline: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- PICKER NAV -->
+<nav class="picker-bar" role="navigation" aria-label="Hero treatment selector">
+  <button class="picker-btn active" onclick="scrollTo('treatment-a', this)">A — The Pamphlet</button>
+  <button class="picker-btn" onclick="scrollTo('treatment-b', this)">B — Midnight Brief</button>
+  <button class="picker-btn" onclick="scrollTo('treatment-c', this)">C — War Room</button>
+</nav>
+
+<!-- ══════════════════════════════════
+     TREATMENT A: THE PAMPHLET
+══════════════════════════════════ -->
+<div class="treatment-label">— Treatment A: The Pamphlet —</div>
+<section id="treatment-a" aria-label="Homepage hero treatment A: The Pamphlet">
+  <div class="pamphlet-inner">
+    <div class="pamphlet-rule"></div>
+    <div class="pamphlet-masthead">
+      Independent Investigative Project
+      <span>·</span>
+      Structural Humanism
+      <span>·</span>
+      Est. 2025
+    </div>
+    <h1 class="pamphlet-headline">
+      A Public Case Against<br>
+      the <span class="accent-word">Systems</span> That Keep<br>
+      People Confused,<br>
+      Divided, Indebted,<br>
+      and Afraid.
+    </h1>
+    <div class="pamphlet-rule-thin"></div>
+    <p class="pamphlet-sub">
+      This project exists to make structure visible. It follows the record where institutions turn public confusion into consent, dependence into obedience, and fear into political permission — then asks what a democratic public can still repair.
+    </p>
+    <div class="pamphlet-stamp" aria-label="Public record — filed for review">Public Record · Filed for Review</div>
+    <div class="pamphlet-cta-row">
+      <a href="https://structuralhumanism.com" target="_blank" rel="noopener noreferrer" class="btn-a-primary">Read the Case Files</a>
+      <a href="https://structuralhumanism.com" target="_blank" rel="noopener noreferrer" class="btn-a-ghost">The Full Argument</a>
+    </div>
+    <div class="pamphlet-footer-rule" role="list" aria-label="Project stats">
+      <span class="pamphlet-footer-item" role="listitem">3 Flagship Cases</span>
+      <span class="pamphlet-footer-sep">·</span>
+      <span class="pamphlet-footer-item" role="listitem">26 Public Works</span>
+      <span class="pamphlet-footer-sep">·</span>
+      <span class="pamphlet-footer-item" role="listitem">Kai Jashon Price</span>
+      <span class="pamphlet-footer-sep">·</span>
+      <span class="pamphlet-footer-item" role="listitem">Active 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     TREATMENT B: THE MIDNIGHT BRIEF
+══════════════════════════════════ -->
+<div class="treatment-label">— Treatment B: The Midnight Brief —</div>
+<section id="treatment-b" aria-label="Homepage hero treatment B: The Midnight Brief">
+  <div class="brief-layout">
+    <div class="brief-left">
+      <div class="brief-case-num">Case Record · Structural Humanism · Public Docket</div>
+      <h1 class="brief-headline">
+        A Public Case<br>
+        Against the Systems.<br>
+        <em>The Record is Here.</em>
+      </h1>
+      <div class="brief-divider"></div>
+      <p class="brief-sub">
+        This project exists to make structure visible. It follows the record where institutions turn public confusion into consent, dependence into obedience, and fear into political permission — then asks what a democratic public can still repair.
+      </p>
+      <div class="brief-evidence-row" role="list" aria-label="Project summary statistics">
+        <div class="brief-evidence-item" role="listitem">
+          <div class="brief-evidence-num">3</div>
+          <div class="brief-evidence-label">Flagship Cases</div>
+        </div>
+        <div class="brief-evidence-item" role="listitem">
+          <div class="brief-evidence-num">26</div>
+          <div class="brief-evidence-label">Public Works</div>
+        </div>
+        <div class="brief-evidence-item" role="listitem">
+          <div class="brief-evidence-num">2026</div>
+          <div class="brief-evidence-label">Active Record</div>
+        </div>
+      </div>
+      <div class="brief-cta-row">
+        <a href="https://structuralhumanism.com" target="_blank" rel="noopener noreferrer" class="btn-b-primary">
+          Open the Case Files →
+        </a>
+        <a href="https://structuralhumanism.com" target="_blank" rel="noopener noreferrer" class="btn-b-ghost">Full Argument</a>
+      </div>
+    </div>
+
+    <div class="brief-right" aria-label="Case summary document">
+      <div class="brief-doc">
+        <div class="brief-doc-header">
+          <span class="brief-doc-type">SH · Public Record</span>
+          <span class="brief-doc-date">June 2026</span>
+        </div>
+        <div class="brief-doc-field">
+          <div class="brief-doc-label">Investigator</div>
+          <div class="brief-doc-val"><strong>Kai Jashon Price</strong><br>Independent · Philosophical Humanist</div>
+        </div>
+        <div class="brief-doc-field">
+          <div class="brief-doc-label">Active Investigations</div>
+          <div class="brief-doc-val"><strong>SH–001</strong> The Body Kept Sick<br><strong>SH–002</strong> The Great Consolidation<br><strong>SH–003</strong> Blowback and Immunity</div>
+        </div>
+        <div class="brief-doc-field">
+          <div class="brief-doc-label">Central Charge</div>
+          <div class="brief-doc-val" style="font-style:italic; color: #a09888;">"People are not foolish. They are managed by systems that profit from their confusion."</div>
+        </div>
+        <div class="brief-doc-field">
+          <div class="brief-doc-label">Docket Status</div>
+          <div class="brief-doc-val"><strong style="color: #c8943a;">Active · Open Record</strong></div>
+        </div>
+        <div class="brief-doc-seal">
+          <div class="seal-circle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 3"/>
+            </svg>
+          </div>
+          <div class="seal-text">
+            Independent Public Project<br>
+            Structural Humanism · All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     TREATMENT C: THE WAR ROOM
+══════════════════════════════════ -->
+<div class="treatment-label">— Treatment C: The War Room —</div>
+<section id="treatment-c" aria-label="Homepage hero treatment C: The War Room">
+  <div class="warroom-inner">
+    <div class="warroom-top">
+      <div class="warroom-classification" aria-label="Unclassified public record">UNCLASSIFIED</div>
+      <div class="warroom-project">Project: Structural Humanism · Investigator: K.J. Price</div>
+    </div>
+    <h1 class="warroom-headline">
+      A Public <span class="op-word">Case</span><br>
+      Against the Systems.
+    </h1>
+    <p class="warroom-sub">
+      This project documents how institutions turn public confusion into consent, dependence into obedience, and fear into political permission — and builds the case for a democratic public that can still repair the record.
+    </p>
+
+    <!-- Evidence board -->
+    <div class="warroom-ops" role="list" aria-label="Active case operations">
+      <a href="https://structuralhumanism.com/works/the-captive-market-perfected.html" target="_blank" rel="noopener noreferrer" class="op-card" role="listitem">
+        <div class="op-num">SH–001 · PUBLIC HEALTH</div>
+        <div class="op-title">The Body Kept Sick</div>
+        <div class="op-domain">Regulatory Capture · FDA · CMS</div>
+        <div class="op-status">Documented</div>
+      </a>
+      <a href="https://structuralhumanism.com" target="_blank" rel="noopener noreferrer" class="op-card" role="listitem">
+        <div class="op-num">SH–002 · MEDIA</div>
+        <div class="op-title">The Great Consolidation</div>
+        <div class="op-domain">Information Power · Ownership</div>
+        <div class="op-status">Documented</div>
+      </a>
+      <a href="https://structuralhumanism.com" target="_blank" rel="noopener noreferrer" class="op-card" role="listitem">
+        <div class="op-num">SH–003 · FOREIGN POLICY</div>
+        <div class="op-title">Blowback and Immunity</div>
+        <div class="op-domain">Covert Power · Accountability</div>
+        <div class="op-status">Documented</div>
+      </a>
+    </div>
+
+    <div class="warroom-action-row">
+      <a href="https://structuralhumanism.com" target="_blank" rel="noopener noreferrer" class="btn-c-primary">
+        Enter the Docket →
+      </a>
+      <a href="https://structuralhumanism.com" target="_blank" rel="noopener noreferrer" class="btn-c-ghost">Full Framework</a>
+    </div>
+
+    <div class="warroom-coords" role="list" aria-label="Project metadata">
+      <span class="coord-item" role="listitem">INVESTIGATOR: KAI JASHON PRICE</span>
+      <span class="coord-item" role="listitem">PROJECT: STRUCTURAL HUMANISM</span>
+      <span class="coord-item" role="listitem">DOCKET: ACTIVE · 2026</span>
+      <span class="coord-item" role="listitem">RECORD: PUBLIC · OPEN</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER NOTE -->
+<div class="comparison-footer">
+  <h3>Choose your hero treatment</h3>
+  <p>Each section above is a full hero layout. Tell me which one — or what to combine — and the full homepage gets built to match the case-files page.</p>
+</div>
+
+<script>
+function scrollTo(id, btn) {
+  document.querySelectorAll('.picker-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+</body>
+</html>
