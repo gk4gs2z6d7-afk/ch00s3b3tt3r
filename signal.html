@@ -84,6 +84,10 @@ a{color:inherit;text-decoration:none}
   letter-spacing:0.05em;transition:all var(--trans);
 }
 .topbar-btn:hover{border-color:var(--accent);color:var(--accent)}
+.topbar-updated{font-family:var(--mono);font-size:var(--xs);color:var(--text3);white-space:nowrap}
+.topbar-updated .next{color:var(--text3);opacity:0.6}
+@keyframes refreshFlash{0%,100%{opacity:1}50%{opacity:0.2}}
+.refreshing .logo-dot{animation:refreshFlash 0.6s ease-in-out 3}
 
 .body{display:grid;grid-template-columns:220px 1fr;min-height:0}
 @media(max-width:900px){.body{grid-template-columns:1fr}}
@@ -413,6 +417,7 @@ a{color:inherit;text-decoration:none}
   <span class="topbar-date" id="topDate"></span>
   <div class="topbar-status">
     <span class="status-live">LIVE</span>
+    <span class="topbar-updated" id="topUpdated"></span>
     <button class="topbar-btn" id="openSaved">📌 SAVED (<span id="savedCount">0</span>)</button>
   </div>
 </header>
@@ -922,6 +927,49 @@ function updateDate(){
     d.toLocaleDateString('en-US',{weekday:'short',year:'numeric',month:'short',day:'numeric'}).toUpperCase();
 }
 updateDate();
+
+// ── AUTO-REFRESH ──────────────────────────────────────────────────
+const REFRESH_MS = 30 * 60 * 1000; // 30 minutes
+let lastFetchTime = null;
+let nextRefreshAt = null;
+let countdownTimer = null;
+
+function markFetched(){
+  lastFetchTime = Date.now();
+  nextRefreshAt = lastFetchTime + REFRESH_MS;
+  updateUpdatedLabel();
+}
+
+function updateUpdatedLabel(){
+  const el = document.getElementById('topUpdated');
+  if(!el || !lastFetchTime) return;
+  const ago = Math.round((Date.now()-lastFetchTime)/60000);
+  const mins = Math.max(0, Math.round((nextRefreshAt-Date.now())/60000));
+  const agoTxt = ago<1?'just now':`${ago}m ago`;
+  el.innerHTML = `Updated ${agoTxt} <span class="next">· refresh in ${mins}m</span>`;
+}
+
+function startCountdown(){
+  clearInterval(countdownTimer);
+  countdownTimer = setInterval(updateUpdatedLabel, 60000);
+}
+
+async function autoRefresh(){
+  const logo = document.querySelector('.logo');
+  if(logo) logo.classList.add('refreshing');
+  await loadBeat(state.beat);
+  if(logo) setTimeout(()=>logo.classList.remove('refreshing'), 2000);
+}
+
+// Wrap the original loadBeat to mark fetch time on every manual load too
+const _origLoadBeat = loadBeat;
+loadBeat = async function(beat){
+  await _origLoadBeat(beat);
+  markFetched();
+  startCountdown();
+};
+
+setInterval(autoRefresh, REFRESH_MS);
 
 // ── INIT ──────────────────────────────────────────────────────────
 updateSavedCount();
