@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Discipline of Justice — Structural Humanism</title>
+<meta name="description" content="Rage must become disciplined legal accountability, not revenge.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a08;--bg2:#131009;--panel:#16130d;--panel2:#1d1810;--ink:#e9e2d0;--ink-dim:#a89e86;--ink-faint:#6f6750;--gold:#caa04a;--gold-b:#e0b85e;--oxblood:#7c2c25;--oxblood-b:#a8423a;--line:#2c2618;--line2:#3a3320;--mono:'Courier Prime','Courier New',monospace;--serif:'Playfair Display',Georgia,serif;--body:'Spectral',Georgia,serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{min-height:100dvh;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(1rem,.95rem + .25vw,1.125rem);line-height:1.7;overflow-x:hidden}
+img,svg{display:block;max-width:100%}button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}a{color:var(--gold-b)}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.12}p,li{text-wrap:pretty}::selection{background:rgba(202,160,74,.25)}:focus-visible{outline:1px solid var(--gold);outline-offset:2px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:linear-gradient(180deg,rgba(8,7,5,.97),rgba(8,7,5,.88));border-bottom:1px solid var(--line2);backdrop-filter:blur(8px)}
+.nav-brand{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none;color:var(--ink)}
+.nav-seal{width:34px;height:34px;color:var(--gold);flex:none}
+.nav-title{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.1}
+.nav-sub{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--ink-faint);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.nav-btn{background:none;border:1px solid transparent;color:var(--ink-dim);text-decoration:none;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;border-radius:2px;transition:.18s;white-space:nowrap;display:inline-block}
+.nav-btn:hover{color:var(--ink);background:var(--panel)}.nav-btn.active{color:var(--gold-b);border-color:var(--line2);background:var(--panel)}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:15px 26px;cursor:pointer;border:none;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:.2s;text-decoration:none}
+.btn-gold{background:var(--gold);color:#1a1407}.btn-gold:hover{background:var(--gold-b);transform:translateY(-2px);box-shadow:0 10px 28px rgba(202,160,74,.18)}
+.btn-ghost{background:rgba(20,17,11,.6);color:var(--ink-dim);border:1px solid var(--line2)}.btn-ghost:hover{color:var(--ink);border-color:var(--gold)}
+.btn-sm{padding:10px 16px;font-size:10px}
+.stamp{display:inline-block;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:3px;color:var(--oxblood-b);border:2.5px solid var(--oxblood-b);padding:5px 12px;text-transform:uppercase;transform:rotate(-3deg);opacity:.9;border-radius:3px}
+footer.site{background:#070605;border-top:1px solid var(--line2);padding:46px 20px;text-align:center;margin-top:80px}
+footer.site .nav-seal{margin:0 auto 18px;opacity:.7;width:46px;height:46px}
+footer.site p{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--ink-faint);margin:4px 0;text-transform:uppercase}
+footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font-size:11px;letter-spacing:.5px;text-transform:none;line-height:1.7}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:200;width:0;transition:width .1s linear}
+.dossier{max-width:760px;margin:0 auto;padding:64px 20px 0}
+.dossier-meta{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:26px}
+.dossier-meta .fid{color:var(--gold)}
+.dossier h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.4rem,1.4rem + 4.5vw,4.4rem);margin:0 0 16px;color:var(--ink)}
+.dossier .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1rem + 1vw,1.5rem);color:var(--gold-b);line-height:1.4;margin-bottom:26px}
+.dossier .byline{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-dim);margin-bottom:30px}
+.doc-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:20px 0 26px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin-bottom:48px}
+.doc-actions .stamp{margin-left:auto}
+article.reader{max-width:760px;margin:0 auto;padding:0 20px 90px}
+article.reader h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,1.2rem + 1.6vw,2.1rem);margin:60px 0 22px;color:var(--ink)}
+article.reader h2::before{content:"";display:block;width:42px;height:1px;background:var(--gold);margin-bottom:18px}
+article.reader p{margin:0 0 1.35em}
+article.reader p strong{color:var(--ink)}
+article.reader p:has(> strong:only-child){border-left:2px solid var(--gold);padding:6px 0 6px 20px;font-family:var(--serif);font-size:1.08em;line-height:1.55;color:var(--gold-b)}
+article.reader blockquote{border-left:2px solid var(--oxblood-b);padding:8px 0 8px 22px;margin:0 0 1.5em;color:var(--ink-dim);font-style:italic}
+article.reader ul,article.reader ol{margin:0 0 1.4em;padding-left:1.4em}
+article.reader li{margin-bottom:.45em}
+article.reader hr{border:none;border-top:1px solid var(--line2);margin:46px auto;width:120px}
+.abstract-box{background:var(--panel);border:1px solid var(--line2);border-left:2px solid var(--gold);border-radius:2px;padding:22px 26px;margin:0 0 2em}
+.abstract-box .abstract-label{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.abstract-box p{font-size:.93em;color:var(--ink-dim);line-height:1.7;margin:0 0 .8em}
+.abstract-box p:last-child{margin:0}
+.abstract-box .kw{font-family:var(--mono);font-size:.78em;color:var(--ink-faint);margin-top:12px}
+.docnav{max-width:760px;margin:0 auto;padding:0 20px 60px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.docnav a{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;border:1px solid var(--line2);padding:14px 18px;border-radius:2px;max-width:46%;transition:.18s}
+.docnav a:hover{color:var(--gold-b);border-color:var(--gold)}.docnav .lbl{display:block;color:var(--ink-faint);font-size:9px;margin-bottom:6px}
+.totop{position:fixed;right:18px;bottom:18px;z-index:90;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--ink-dim);border:1px solid var(--line2);background:rgba(11,10,8,.85);padding:10px 12px;border-radius:2px;opacity:0;pointer-events:none;transition:.25s}
+.totop.show{opacity:1;pointer-events:auto}.totop:hover{color:var(--gold-b);border-color:var(--gold)}
+@media print{body::before,.nav,.doc-actions .btn,.docnav,.totop,.progress,footer.site{display:none!important}body{background:#fff;color:#111;font-size:11.5pt}.dossier h1{color:#111}.dossier .sub{color:#333}.abstract-box{background:#f4f4f4;border-color:#ccc}}
+</style></head><body>
+<div class="progress" id="prog"></div>
+<nav class="nav"><a class="nav-brand" href="../index.html"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><div><div class="nav-title">Structural Humanism</div><div class="nav-sub">Independent Investigative Project</div></div></a><div class="nav-links"><a class="nav-btn" href="../index.html">Home</a><a class="nav-btn active" href="../index.html#files">Case Files</a><a class="nav-btn" href="../signal.html">Signal</a><a class="nav-btn" href="../index.html#act">Act</a><a class="nav-btn" href="../index.html#book">The Book</a><a class="nav-btn" href="../index.html#contact">Contact</a></div></nav>
+<header class="dossier">
+  <div class="dossier-meta"><span class="fid">File SH-010</span><span>Scholarly Paper &mdash; Democratic Ethics</span><span>Civic Strategy</span><span>2025</span><span>2,444 words &middot; ~11 min read</span></div>
+  <h1>The Discipline of Justice</h1>
+  <div class="sub">Why Accountability Must Be Stronger Than Rage</div>
+  <div class="byline">Kai Jashon Price &middot; Journal of Democratic Ethics and Civic Responsibility &middot; 2025</div>
+  <div class="doc-actions">
+    <a class="btn btn-gold btn-sm" href="../files/the-discipline-of-justice.md" download>&#8595; Markdown</a>
+    <button class="btn btn-ghost btn-sm" onclick="window.print()">Print / PDF</button>
+    <span class="stamp">Public Record &middot; Distribute Freely</span>
+  </div>
+</header>
+<article class="reader">
+<div class="abstract-box">
+  <div class="abstract-label">Abstract</div>
+  <p>This paper argues that the most morally defensible and politically effective response to documented systemic wrongdoing is organized, legal, nonviolent accountability. It does not argue for passivity, forgetfulness, or the suspension of consequences. It argues instead that democratic law, public documentation, institutional pressure, and disciplined civic action are the instruments most capable of producing durable reform without reproducing the logic of atrocity. Drawing on the historical record of civil resistance, Christian and Catholic moral thought with parallel reference to Jewish and Islamic traditions, constitutional principles, and documented failures of American democratic accountability, the paper contends that justice collapses when anger is allowed to choose its own targets. Its central claim is simple: the standard of response matters as much as the legitimacy of the grievance.</p>
+  <p class="kw"><strong>Keywords:</strong> nonviolent resistance, civic accountability, democratic ethics, constitutional duty, Christian political thought, natural law, democratic reform, institutional accountability</p>
+</div>
+
+<h2 id="i-what-anger-is-for">I. The First Question: What Anger Is For</h2>
+<p>Any serious argument about civic responsibility must begin with an admission too many calls for civility avoid: the anger people feel toward corruption, deception, and institutional impunity is often justified. Harm has been real. Evasion of accountability has often been deliberate. The moral and political problem is therefore not whether anger is permissible. The problem is what anger is for, what it is allowed to touch, and what kind of person or movement it produces when left undisciplined.</p>
+<p>That question matters because history offers a devastating lesson. Some of the worst atrocities ever committed were carried out by people who believed they were answering a genuine wrong. They understood themselves not as villains but as injured parties finally acting with moral permission. Once legitimate grievance is fused with collective blame and violence, the original injustice ceases to guide the response; identity takes over, and moral collapse follows. A movement can be correct about the injury it has suffered and catastrophic in the form of its answer.</p>
+<p>The argument of this paper is therefore neither sentimental nor evasive. It does not ask injured people to stop caring about justice. It asks them to care enough about justice to refuse methods that destroy the moral difference between accountability and revenge. The target must remain specific: documented institutions, documented decisions, documented actors, and documented harms. The moment the target expands to a people, a religion, or a nationality, the work of justice has been abandoned for the machinery of atrocity.</p>
+
+<h2 id="ii-nonviolence-is-not-weakness">II. Why Nonviolence Is Not Weakness</h2>
+<p>One of the most durable myths in political life is that nonviolent action is morally admirable but strategically naive. The historical record does not support that view. Erica Chenoweth and Maria Stephan&rsquo;s study of 323 resistance campaigns from 1900 to 2006 found that nonviolent campaigns succeeded at roughly twice the rate of violent ones. They also found that broad participation and international support were significantly associated with success. The reason is not mysterious. Nonviolent movements attract wider coalitions, increase the political cost of repression, and deny entrenched power the justification it most wants: the claim that force is necessary to restore order.</p>
+<p>The same strategic logic appears in the lives of figures often remembered for moral grandeur but insufficiently recognized for political discipline. Frederick Douglass chose to use the constitutional language of a country that had enslaved him as an instrument against the institutions that defended slavery. Martin Luther King Jr. confronted white moderation, unjust law, and official hypocrisy without surrendering his movement to retaliatory violence. Gandhi&rsquo;s concept of satyagraha was not passive endurance but the strategic use of disciplined truth-telling and public sacrifice to make domination harder to sustain. These figures did not succeed because they were gentler than power. They succeeded because they were harder for power to discredit.</p>
+<p>This point deserves emphasis because it is frequently misunderstood. Nonviolent accountability is not the refusal to impose consequence. It is the refusal to privatize consequence. It insists that punishment, exposure, removal from office, restitution, prosecution, and structural reform be pursued through institutions that can distinguish evidence from frenzy and judgment from bloodlust. In that sense, disciplined civic action is not softer than rage. It is stricter.</p>
+
+<h2 id="iii-the-moral-limit">III. The Moral Limit</h2>
+<p>The moral case for disciplined response is older than any contemporary policy dispute. Within Christian political thought, the distinction between justice and vengeance is fundamental. Romans 12:19 forbids personal vengeance, not because wrongdoing should be ignored, but because human beings are corrupted when retaliation becomes self-authorizing. Matthew 5 extends the standard further by demanding love of enemies, not as emotional indulgence but as a refusal to let hatred dictate the terms of moral action. The point is not that enemies are innocent. The point is that the person seeking justice must not become governed by the methods of those being opposed.</p>
+<p>Catholic political thought systematized this insight with particular rigor. Augustine grounded political legitimacy in justice rather than mere power. Aquinas argued that an unjust law is no true law and that conscience can impose obligations higher than those of civil authority. Yet neither thinker licensed chaos. Resistance had to remain answerable to moral order, proportionality, and the common good. The mature tradition therefore does not deny resistance; it disciplines it. It permits force only under tightly constrained conditions and treats vengeance as a corruption of justice rather than its completion.</p>
+<p>That same limit appears outside Christianity. The Talmudic teaching that to destroy one life is to destroy a world, and the parallel Qur&rsquo;anic formulation in Surah 5:32, both place a radical moral weight on individual human life. Those teachings do not erase the existence of evil, nor do they eliminate the duty to confront it. They do, however, deny moral seriousness to movements that answer institutional wrongdoing by selecting human categories for collective punishment. Across traditions, the line is consistent: justice may demand action, but it may not demand dehumanization.</p>
+
+<h2 id="iv-law-as-instrument">IV. Law as an Instrument of Serious Consequence</h2>
+<p>A common rhetorical trap suggests that the choice is between violence and impotence. That binary is false. Democratic systems contain instruments of consequence that are often more durable, more visible, and more politically transformative than private force. Prosecution, impeachment, recall mechanisms, civil litigation, whistleblower protection, declassification demands, independent oversight, and sustained electoral pressure are not symbolic gestures. They are the means by which a public converts moral judgment into enforceable consequence.</p>
+<p>It is important to speak plainly here. A commitment to nonviolent accountability does not imply indifference to punishment. If specific officials, corporate actors, or public servants have committed prosecutable crimes, then prosecution is not extremism. It is law. If officeholders have violated their public trust, then impeachment, removal, or recall is not revenge. It is constitutional maintenance. The paper&rsquo;s argument is not that consequences should be mild. It is that they should be lawful, documentable, proportionate, and directed at the actors responsible rather than at populations associated with them.</p>
+<p>This is also why transparency is so important. Freedom of Information Act requests, oversight hearings, public-record litigation, investigative reporting, and protection for whistleblowers matter because institutional wrongdoing thrives in informational asymmetry. A democratic public cannot impose consequence on what it cannot see. The demand for disclosure is therefore not procedural housekeeping. It is among the strongest available forms of civic power.</p>
+
+<h2 id="v-what-demands-response">V. What Demands Response</h2>
+<p>The case for urgent action becomes abstract unless tied to specific failures. The larger body of work surrounding this paper points to recurring examples: wars advanced on false or distorted premises, regulatory systems that tolerated preventable harm, unaccountable military expenditures, covert programs concealed from the public, and the uneven application of laws governing foreign influence and public transparency. Whatever one&rsquo;s view of any individual case, the broader pattern is clear enough to state cautiously but firmly: democratic institutions cannot remain legitimate if grave errors and grave deceptions accumulate without equivalent accountability.</p>
+<p>That pattern should not be personalized into mythic villainy. The more accurate frame is institutional. Concentrated power tends to protect itself by dispersing blame, narrowing public memory, and redirecting justified grievance toward safer targets. This is why systems of accountability must be both moral and procedural. Outrage alone is easy to manipulate. Disciplined, documented, specific civic action is harder to absorb, harder to caricature, and harder to defeat.</p>
+<p>The distinction between systems and peoples matters here. The relevant enemy is not an ethnicity, religion, or nation. It is a recurring class of institutional behavior: concentrated power insulated from accountability and sustained through division, opacity, and selective enforcement. That formulation is not rhetorical caution for its own sake. It is the condition for keeping justice from mutating into collective blame.</p>
+
+<h2 id="vi-a-word-to-those-who-serve">VI. A Word to Those Who Serve</h2>
+<p>Any discussion of constitutional accountability must address the people whose compliance gives institutions their coercive force. Members of the military, law enforcement, and intelligence services are not outside the moral argument; they are inside it in uniquely consequential ways. The military oath is to the Constitution, not to any individual officeholder. The Nuremberg Principles and the broader legal tradition surrounding unlawful orders make clear that obedience is not a moral solvent. An order does not become legitimate merely because it descends through a chain of command.</p>
+<p>That fact is not anti-institutional. It is what makes lawful institutions possible. A constitutional order survives only if the people empowered to enforce it distinguish loyalty from servility. The deepest question for anyone in uniform is therefore not whether they support authority in the abstract, but whether they are prepared to distinguish between legitimate authority and its abuse. That distinction is where conscience enters public life not as sentiment, but as a constitutional necessity.</p>
+<p>It should also be said without melodrama that the character of a nation is often decided in these moments of internal hesitation. Security institutions do not become instruments of justice merely because they claim to be. They become such only when the individuals inside them remain governed by standards higher than expedience. The uniform does not erase moral agency. It intensifies it.</p>
+
+<h2 id="vii-the-civic-standard">VII. The Civic Standard</h2>
+<p>If the argument so far is correct, then the practical standard follows. Document everything. Source every major claim. Keep accusations tied to verifiable acts, decisions, and consequences. Apply the same standards across identities. Reject the satisfactions of rumor, innuendo, and collective blame, even when anger makes them feel emotionally efficient. A movement serious about justice has to be stricter with itself than the institutions it condemns.</p>
+<p>That discipline extends to political method. Start with what is nearest: local office, public records, a single vote, a single hearing, a single public contradiction between what an official says and what that official has done. Scale matters, but sequence matters more. Most people remain politically inactive not because they are incapable of judgment but because the problem appears too large to touch. Specific action solves that paralysis. One phone call, one records request, one meeting attended, one documented local campaign, one carefully sourced conversation across political lines: these are not trivial gestures. They are the ordinary units from which democratic pressure is built.</p>
+<p>The central discipline is this: hold the line between accountability and hatred. That line is easy to describe and hard to keep. Yet it is the whole argument in practice. The people who should fear organized civic scrutiny are the actors responsible for specific harms, not the wider populations onto whom anger can be more easily projected. Once that line breaks, the movement may still feel powerful, but it has ceased to be just.</p>
+
+<h2 id="viii-the-harder-road">VIII. The Harder Road</h2>
+<p>The title of this argument matters because the harder road is not simply the nicer road. It is harder because it demands more of the people walking it. Violence offers speed, theater, emotional release, and the illusion of clarity. Disciplined civic action offers paperwork, delay, coalition-building, argument, procedural frustration, and the constant burden of self-limitation. Yet those burdens are precisely what keep the response human. They are not signs of weakness. They are the marks of a politics still attempting to deserve victory.</p>
+<p>There is also a deeper reason this harder road matters. A movement that responds to wrongdoing by becoming indifferent to human dignity may still seize power, but it cannot produce justice in any stable sense. It has already adopted the core principle of the thing it opposed: that some people are expendable once the cause is righteous enough. The argument of this paper rejects that principle at the root. It insists that the means of accountability are part of the truth of accountability, not a secondary question to be settled after the anger has spoken.</p>
+<p>The demand, then, is exacting but not obscure. Pursue legal consequence relentlessly. Seek exposure, removal, prosecution, restitution, audit, reform, and public reckoning. Refuse passivity. Refuse despair. But refuse also the intoxicating relief of choosing human targets where institutional ones are harder to reach. Justice requires more than outrage. It requires discipline.</p>
+
+<h2 id="ix-conclusion">IX. Conclusion</h2>
+<p>The strongest case for nonviolent civic accountability is both strategic and moral. Strategically, disciplined public action has repeatedly outperformed violence because it expands coalitions, preserves legitimacy, and denies entrenched power the pretext it seeks. Morally, it preserves the distinction between punishing wrongdoing and imitating it. These are not two separate arguments. They reinforce one another. The most effective movements are often the ones that refuse to win by becoming spiritually indistinguishable from what they fight.</p>
+<p>The conditions for such action already exist wherever people can document, organize, communicate, and insist on lawful consequence. What is usually missing is not information but discipline: the willingness to remain specific under pressure, humane under provocation, and relentless without becoming indiscriminate. That is the harder road. It is also the only road this paper argues can lead to justice without reproducing the logic of atrocity.</p>
+
+<h2 id="references">References</h2>
+<ol>
+<li>Zimbardo, P. (2007). <em>The Lucifer Effect: Understanding How Good People Turn Evil.</em> Random House; Arendt, H. (1963). <em>Eichmann in Jerusalem.</em> Viking Press.</li>
+<li>Blight, D.W. (2018). <em>Frederick Douglass: Prophet of Freedom.</em> Simon &amp; Schuster.</li>
+<li>King, M.L. Jr. (1963/1964). <em>Letter from Birmingham Jail</em> in <em>Why We Can&rsquo;t Wait.</em> Harper &amp; Row.</li>
+<li>Fischer, L. (1950). <em>The Life of Mahatma Gandhi.</em> Harper &amp; Brothers; Sharp, G. (1973). <em>The Politics of Nonviolent Action.</em> Porter Sargent.</li>
+<li>Romans 12:19; Matthew 5:9, 5:44; Luke 6:27&ndash;36.</li>
+<li>Aquinas, T. <em>Summa Theologica;</em> Augustine of Hippo, <em>The City of God.</em></li>
+<li>United States Conference of Catholic Bishops. (1986). <em>Economic Justice for All.</em></li>
+<li>Talmud Bavli, Sanhedrin 37a; Quran 5:32.</li>
+<li>10 U.S.C. Section 502; Nuremberg Principles (1950); Uniform Code of Military Justice, Article 92.</li>
+<li>Chenoweth, E. &amp; Stephan, M. (2011). <em>Why Civil Resistance Works.</em> Columbia University Press.</li>
+</ol>
+</article>
+<nav class="docnav">
+  <a href="the-food-pyramid.html"><span class="lbl">&larr; Previous file</span>&ldquo;Food Pyramid&rdquo;</a>
+  <a href="the-field-manual-for-seeing.html" style="text-align:right;margin-left:auto"><span class="lbl">Next file &rarr;</span>The Field Manual for Seeing</a>
+</nav>
+<button class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr; Top</button>
+<footer class="site"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><p>Structural Humanism &middot; Kai Jashon Price &middot; structuralhumanism.com</p>
+<p>Documented &middot; Structural &middot; Verifiable &middot; Nonviolent</p>
+<p class="verify">Every claim across these files is intended to be verifiable through declassified government records, peer-reviewed scholarship, mainstream investigative journalism, or on-record admissions. Nothing here requires you to trust the author. It requires you to look things up.</p>
+</footer>
+<script>(function(){var p=document.getElementById('prog'),t=document.getElementById('totop');function u(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;p.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';t.classList.toggle('show',h.scrollTop>900);}addEventListener('scroll',u,{passive:true});u();})();</script>
+</body></html>

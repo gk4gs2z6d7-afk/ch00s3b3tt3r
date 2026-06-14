@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divided and Conquered — Structural Humanism</title>
+<meta name="description" content="Division is engineered, not natural.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0a08;--bg2:#131009;--panel:#16130d;--panel2:#1d1810;
+  --ink:#e9e2d0;--ink-dim:#a89e86;--ink-faint:#6f6750;
+  --gold:#caa04a;--gold-b:#e0b85e;--oxblood:#7c2c25;--oxblood-b:#a8423a;--olive:#5d6240;
+  --line:#2c2618;--line2:#3a3320;
+  --mono:'Courier Prime','Courier New',monospace;
+  --serif:'Playfair Display',Georgia,serif;
+  --body:'Spectral',Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{min-height:100dvh;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(1rem,.95rem + .25vw,1.125rem);line-height:1.7;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+a{color:var(--gold-b)}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.12}
+p,li{text-wrap:pretty}
+::selection{background:rgba(202,160,74,.25)}
+:focus-visible{outline:1px solid var(--gold);outline-offset:2px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 20px;background:linear-gradient(180deg,rgba(8,7,5,.97),rgba(8,7,5,.88));
+  border-bottom:1px solid var(--line2);backdrop-filter:blur(8px)}
+.nav-brand{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none;color:var(--ink)}
+.nav-seal{width:34px;height:34px;color:var(--gold);flex:none}
+.nav-title{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.1}
+.nav-sub{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--ink-faint);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.nav-btn{background:none;border:1px solid transparent;color:var(--ink-dim);text-decoration:none;
+  font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:8px 12px;border-radius:2px;transition:.18s;white-space:nowrap;display:inline-block}
+.nav-btn:hover{color:var(--ink);background:var(--panel)}
+.nav-btn.active{color:var(--gold-b);border-color:var(--line2);background:var(--panel)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.eyebrow::before{content:"";width:42px;height:1px;background:var(--gold);flex:none}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;
+  padding:15px 26px;cursor:pointer;border:none;border-radius:2px;display:inline-flex;align-items:center;gap:10px;
+  transition:.2s;text-decoration:none}
+.btn-gold{background:var(--gold);color:#1a1407}
+.btn-gold:hover{background:var(--gold-b);transform:translateY(-2px);box-shadow:0 10px 28px rgba(202,160,74,.18)}
+.btn-ghost{background:rgba(20,17,11,.6);color:var(--ink-dim);border:1px solid var(--line2)}
+.btn-ghost:hover{color:var(--ink);border-color:var(--gold)}
+.btn-sm{padding:10px 16px;font-size:10px}
+.stamp{display:inline-block;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:3px;
+  color:var(--oxblood-b);border:2.5px solid var(--oxblood-b);padding:5px 12px;text-transform:uppercase;
+  transform:rotate(-3deg);opacity:.9;border-radius:3px}
+footer.site{background:#070605;border-top:1px solid var(--line2);padding:46px 20px;text-align:center;margin-top:80px}
+footer.site .nav-seal{margin:0 auto 18px;opacity:.7;width:46px;height:46px}
+footer.site p{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--ink-faint);margin:4px 0;text-transform:uppercase}
+footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font-size:11px;letter-spacing:.5px;text-transform:none;line-height:1.7}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:200;width:0;transition:width .1s linear}
+.dossier{max-width:760px;margin:0 auto;padding:64px 20px 0}
+.dossier-meta{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:26px}
+.dossier-meta .fid{color:var(--gold)}
+.dossier h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.4rem,1.4rem + 4.5vw,4.4rem);margin:0 0 16px;color:var(--ink)}
+.dossier .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1rem + 1vw,1.5rem);color:var(--gold-b);line-height:1.4;margin-bottom:26px}
+.dossier .byline{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-dim);margin-bottom:30px}
+.doc-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:20px 0 26px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin-bottom:48px}
+.doc-actions .stamp{margin-left:auto}
+article.reader{max-width:760px;margin:0 auto;padding:0 20px 90px}
+article.reader h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,1.2rem + 1.6vw,2.1rem);margin:60px 0 22px;color:var(--ink)}
+article.reader h2::before{content:"";display:block;width:42px;height:1px;background:var(--gold);margin-bottom:18px}
+article.reader h3{font-family:var(--serif);font-weight:700;font-size:1.3em;margin:44px 0 16px}
+article.reader h4,article.reader h5{font-family:var(--mono);font-size:.85em;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:36px 0 14px}
+article.reader p{margin:0 0 1.35em}
+article.reader p strong{color:var(--ink)}
+article.reader p:has(> strong:only-child){border-left:2px solid var(--gold);padding:6px 0 6px 20px;font-family:var(--serif);font-size:1.08em;line-height:1.55;color:var(--gold-b)}
+article.reader blockquote{border-left:2px solid var(--oxblood-b);padding:8px 0 8px 22px;margin:0 0 1.5em;color:var(--ink-dim);font-style:italic}
+article.reader ul,article.reader ol{margin:0 0 1.4em;padding-left:1.4em}
+article.reader li{margin-bottom:.45em}
+article.reader hr{border:none;border-top:1px solid var(--line2);margin:46px auto;width:120px}
+article.reader table{width:100%;border-collapse:collapse;margin:0 0 1.6em;font-size:.92em}
+article.reader th,article.reader td{border:1px solid var(--line2);padding:8px 10px;text-align:left;vertical-align:top}
+article.reader th{font-family:var(--mono);font-size:.8em;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:var(--panel)}
+p.source-line{font-family:var(--mono)!important;font-size:.74em!important;letter-spacing:.4px;line-height:1.7!important;color:var(--ink-faint)!important;background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--gold);border-radius:2px;padding:12px 16px!important;margin:0 0 2.4em!important}
+p.source-line em{font-style:normal}
+.docnav{max-width:760px;margin:0 auto;padding:0 20px 60px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.docnav a{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;border:1px solid var(--line2);padding:14px 18px;border-radius:2px;max-width:46%;transition:.18s}
+.docnav a:hover{color:var(--gold-b);border-color:var(--gold)}
+.docnav .lbl{display:block;color:var(--ink-faint);font-size:9px;margin-bottom:6px}
+.totop{position:fixed;right:18px;bottom:18px;z-index:90;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--ink-dim);border:1px solid var(--line2);background:rgba(11,10,8,.85);padding:10px 12px;border-radius:2px;opacity:0;pointer-events:none;transition:.25s}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{color:var(--gold-b);border-color:var(--gold)}
+@media print{
+  body::before,.nav,.doc-actions .btn,.docnav,.totop,.progress,footer.site{display:none!important}
+  body{background:#fff;color:#111;font-size:11.5pt}
+  .dossier h1{color:#111}.dossier .sub{color:#333}
+  article.reader p:has(> strong:only-child){color:#333;border-color:#999}
+  p.source-line{background:#f4f4f4;color:#444!important;border-color:#bbb}
+  a{color:#111;text-decoration:none}
+}
+</style></head><body>
+<div class="progress" id="prog"></div>
+<nav class="nav"><a class="nav-brand" href="../index.html"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><div><div class="nav-title">Structural Humanism</div><div class="nav-sub">Independent Investigative Project</div></div></a><div class="nav-links"><a class="nav-btn" href="../index.html">Home</a><a class="nav-btn active" href="../index.html#files">Case Files</a><a class="nav-btn" href="../signal.html">Signal</a><a class="nav-btn" href="../index.html#act">Act</a><a class="nav-btn" href="../index.html#book">The Book</a><a class="nav-btn" href="../index.html#contact">Contact</a></div></nav>
+<header class="dossier">
+  <div class="dossier-meta"><span class="fid">File SH-001</span><span>Structural Humanism Series — Document I</span><span>Media &amp; Division</span><span>2025</span><span>1,729 words &middot; ~8 min read</span></div>
+  <h1>Divided and Conquered</h1>
+  <div class="sub">How the Oldest Weapon in History Is Still Being Used Against You</div>
+  <div class="byline">Kai Jashon Price &middot; Structural Humanism</div>
+  <div class="doc-actions">
+    <a class="btn btn-gold btn-sm" href="../files/divided-and-conquered.docx" download>&#8595; Word (.docx)</a>
+    <button class="btn btn-ghost btn-sm" onclick="window.print()">Print / PDF</button>
+    <span class="stamp">Public Record &middot; Distribute Freely</span>
+  </div>
+</header>
+<article class="reader">
+<h2 id="the-single-engineering-problem">The Single Engineering Problem</h2>
+<p>Before you can control a large number of people without constant violence, you have to solve one problem: what happens when they all get together and realize they have the same grievances?</p>
+<p>The answer, refined across every civilization in recorded history, is elegantly simple. You make sure they never do. You give them identities — tribe, nation, religion, race, political party — that feel more urgent than their shared humanity. You make those identities feel natural and eternal rather than constructed and contingent. Then you step back and let them exhaust themselves fighting each other while you consolidate power above the fray.</p>
+<p><strong>The capacity for tribalism is human nature — psychologists have shown that people will form loyal in-groups over distinctions as trivial as which painting they prefer. But which divisions become urgent, armed, and permanent is a managed condition. The same human beings who will kill a stranger over a flag will die trying to save that same stranger from a burning building.</strong></p>
+<p>September 11th proved the second half of that sentence. For seventy-two hours, Americans of every background stood in the same blood donation lines, carried each other down fifty flights of stairs, and grieved together in public. The tribalism that is the normal background noise of American life disappeared. The question this document asks is not why September 12th happened. The question is why we can only access that version of ourselves when catastrophe forces it — and what structural mechanisms prevent it the rest of the time.</p>
+<p class="source-line"><em>SOURCE: Tajfel, H. (1970). Experiments in Intergroup Discrimination. Scientific American, 223(5). | Gramsci, A. (1971). Prison Notebooks. International Publishers. | Zinn, H. (1980). A People’s History of the United States. Harper &amp; Row.</em></p>
+<h2 id="the-documented-history-of-manufactured-division">The Documented History of Manufactured Division</h2>
+<p>This is not a new observation. Machiavelli described divide and rule in the 1500s as the foundational art of maintaining power over populations that outnumber their rulers. The British Empire turned it into formal administrative doctrine — deploying it in India, Africa, and the Middle East to manage populations that vastly outnumbered colonial administrators. The result in each case: people with more in common with each other than with their rulers spent their energy fighting the group next door while rulers extracted labor, land, and resources unmolested.</p>
+<p>In the United States, the most thoroughly documented modern application of this mechanism was COINTELPRO — the FBI program running from 1956 to 1971. Its existence and methods were officially confirmed by the Church Committee Senate investigation in 1975. Its explicit goal, documented in internal FBI memoranda: prevent the rise of a “Black messiah” who could “unify and electrify” a broad movement. The tactic was not open suppression — it was manufactured division. Forged letters between organizations. Planted informants who created internal conflicts. Fabricated evidence designed to produce distrust between allied groups. The program succeeded not by defeating the movement ideologically but by ensuring solidarity remained structurally impossible.</p>
+<p><strong>Every time ordinary people across tribal lines have organized together — the interracial labor movements of the early 20th century, the Poor People’s Campaign of 1968 — the institutional response was infiltration, discrediting, and manufactured division. The pattern is documented. It is not a theory.</strong></p>
+<p>The modern version operates without requiring FBI programs. Political parties offer two flavors of the same economic arrangement while conducting culture war at the level of rhetoric. Media covers culture war stories rather than class interest stories. Algorithms designed to maximize engagement discovered that outrage, fear, and tribal identity outperform information in capturing attention — and built products accordingly. No central coordinator is required. The incentives do the work automatically.</p>
+<p class="source-line"><em>SOURCE: Church Committee Final Report (1976). US Senate Select Committee to Study Governmental Operations. | O’Reilly, K. (1989). Racial Matters: The FBI’s Secret File on Black America. Free Press.</em></p>
+<h2 id="who-controls-what-you-think-the-media-architecture">Who Controls What You Think: The Media Architecture</h2>
+<p>In 1983, roughly fifty companies controlled the majority of American media. By the 2010s the legacy core — film, television, and national news — had consolidated into a handful: Comcast, Disney, Warner Bros. Discovery, Paramount, News Corp, and Sony. That consolidation is documented market structure, not interpretation. But the modern architecture has a second layer the old ownership statistic misses: the discovery layer. Federal court findings in the Google antitrust litigation put the company’s share of general search at roughly ninety percent. Pew Research finds about half of American adults now get news through social platforms whose feeds are curated by a few engagement algorithms. And in local television — the news Americans report trusting most — two companies, Sinclair and Nexstar, own stations reaching most of the country. The consolidation happened gradually through mergers that each appeared isolated and each received regulatory approval — and the cumulative result is an information landscape in which what gets amplified is determined by a few boardrooms and a few algorithms.</p>
+<p>Edward Herman and Noam Chomsky’s propaganda model, published in Manufacturing Consent (1988), identified five filters through which this operates without requiring central coordination: ownership concentrated in profit-driven corporations; advertising revenue favoring content supportive of consumerism; sourcing reliance on official government and corporate voices; institutional “flak” punishing deviations from acceptable discourse; and ideological marginalization of perspectives that challenge the arrangement. No conspiracy is required. The filters are structural. The incentives are automatic.</p>
+<p>The most concrete documented evidence of ownership-driven content control came from the Sinclair Broadcast Group in 2018. Sinclair owned approximately 200 local television stations across the United States — the local news that a significant portion of Americans trust more than national outlets. Deadspin published a video compilation documenting that Sinclair required anchors at every one of its stations to read identical mandatory editorial scripts. The footage showed dozens of local anchors in different cities, on different stations, delivering word-for-word identical content on the same day. The Columbia Journalism Review and The Guardian subsequently documented this as a direct application of centralized ownership to local news content. This is not theoretical structural bias. It is a documented ownership-driven editorial mandate, traceable to a single corporate decision.</p>
+<p class="source-line"><em>SOURCE: Bagdikian, B. (2004). The New Media Monopoly. Beacon Press. | United States v. Google LLC (D.D.C. 2024), findings on search market share. | Pew Research Center, Social Media and News Fact Sheet. | Herman, E. &amp; Chomsky, N. (1988). Manufacturing Consent. Pantheon. | Deadspin (April 2, 2018). Sinclair’s Soldiers in Trump’s War on Media. | Columbia Journalism Review, Sinclair consolidation coverage.</em></p>
+<h2 id="the-facebook-papers-when-the-companys-own-research-proves-it">The Facebook Papers: When the Company’s Own Research Proves It</h2>
+<p>Frances Haugen, a former Facebook data scientist, disclosed internal company documents to the Securities and Exchange Commission and to Congress in 2021. The documents — subsequently published as the Facebook Papers — revealed that Meta’s internal research showed the company’s algorithm was actively amplifying content that produced outrage, division, and tribalism because it generated higher engagement than accurate or constructive content. The company knew this. Its own researchers documented it. The company chose not to change the algorithm because the engagement served advertising revenue.</p>
+<p>This is not an inference about what social media does. It is the company’s documented internal admission of what it knew and chose to continue. The platform that two billion people use to understand the world was deliberately designed — with full internal knowledge of the consequences — to prioritize tribal outrage over accurate information because outrage is more profitable.</p>
+<p><strong>We are not stupid. We are managed. The system does not require us to be ignorant by nature — it requires only that the incentives for managing our attention be more powerful than the incentives for informing it.</strong></p>
+<p class="source-line"><em>SOURCE: Haugen, F. Congressional testimony (October 5, 2021). | The Facebook Papers. Wall Street Journal, The Atlantic, and consortium of news organizations (October 2021).</em></p>
+<h2 id="the-overton-window-how-the-range-of-acceptable-thought-is-managed">The Overton Window: How the Range of Acceptable Thought Is Managed</h2>
+<p>The Overton Window describes the range of ideas that can be discussed in mainstream political discourse without the speaker being dismissed as extreme. The insight is simple and structurally important: the window’s position at any given moment does not primarily reflect the merits of the ideas inside and outside it. It reflects the resources available to the institutional actors with interests in its position.</p>
+<p>Medicare drug price negotiation — allowing the largest pharmaceutical purchaser in the country to negotiate prices the way every other large purchaser in every other industry does — was outside the Overton Window for twenty years. It entered the window when political cost of its absence exceeded the lobbying capacity to keep it out. The policy did not become more rational. The power balance shifted. The window moved.</p>
+<p>Once a population understands that the range of acceptable political discussion is itself a managed artifact rather than a natural feature of reality, the window loses a significant portion of its power. This is why the institutions with the most to lose from an informed citizenry invest in maintaining the window’s position. It is also why the first act of structural reform is always naming what is happening — which is what this document is.</p>
+<p class="source-line"><em>SOURCE: Overton, J. The Overton Window. Mackinac Center for Public Policy. | Herman &amp; Chomsky (1988), Chapter 1.</em></p>
+<h2 id="what-this-means-and-what-to-do">What This Means and What to Do</h2>
+<p>The three mechanisms documented above — tribal division, consolidated media ownership with algorithm-driven amplification, and managed discourse windows — are not independent failures. They are reinforcing components of the same system. A population divided by tribe cannot build the solidarity that threatens concentrated power. A population receiving algorithmically filtered information cannot accurately assess its condition. A population operating within a managed discourse window cannot conceive of solutions that fall outside it.</p>
+<p>Understanding the architecture is the first requirement of dismantling it. The second is refusing to participate in its mechanisms: choosing information sources with documented independence, seeking out people across tribal lines who share structural interests rather than tribal identities, and applying the same evidentiary standard to institutional claims that you apply to any other claim.</p>
+<p>The third is the hardest: recognizing that the solidarity available on September 12th is always available, and that the only thing preventing it on September 10th is the system’s successful management of our attention. The system is not all-powerful. It requires our participation. Every person who withdraws that participation — who refuses to perform the tribal role assigned to them — weakens it by exactly that much.</p>
+<p>The river does not ask permission. It simply flows.</p>
+
+</article>
+<nav class="docnav"><span></span><a href="what-they-did-in-your-name.html" style="text-align:right;margin-left:auto"><span class="lbl">Next file &rarr;</span>What They Did in Your Name</a></nav>
+<button class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr; Top</button>
+<footer class="site"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><p>Structural Humanism &middot; Kai Jashon Price &middot; structuralhumanism.com</p>
+<p>Documented &middot; Structural &middot; Verifiable &middot; Nonviolent</p>
+<p class="verify">Every claim across these files is intended to be verifiable through declassified government records, peer-reviewed scholarship, mainstream investigative journalism, or on-record admissions. Nothing here requires you to trust the author. It requires you to look things up.</p>
+</footer>
+<script>
+(function(){var p=document.getElementById('prog'),t=document.getElementById('totop');
+function u(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+p.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';
+t.classList.toggle('show',h.scrollTop>900);}
+addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body></html>

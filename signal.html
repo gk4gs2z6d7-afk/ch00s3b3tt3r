@@ -181,11 +181,6 @@ a{color:inherit;text-decoration:none}
   border-radius:1px;
 }
 .story-time{font-family:var(--mono);font-size:var(--xs);color:var(--text3)}
-.verified-badge{
-  font-family:var(--mono);font-size:var(--xs);color:var(--green);
-  border:1px solid var(--green);padding:0.1rem 0.4rem;border-radius:1px;
-  opacity:0.8;
-}
 .story-headline{
   font-size:var(--lg);font-weight:500;line-height:1.35;
   color:var(--text);margin-bottom:0.5rem;
@@ -392,6 +387,8 @@ a{color:inherit;text-decoration:none}
 .beat-china{color:#e74c3c;border-color:rgba(231,76,60,0.35);background:rgba(231,76,60,0.06)}
 .beat-russia{color:#c0392b;border-color:rgba(192,57,43,0.35);background:rgba(192,57,43,0.06)}
 .beat-corruption{color:#e74c3c;border-color:rgba(231,76,60,0.35);background:rgba(231,76,60,0.06)}
+.beat-lawpolicy{color:#58a6ff;border-color:rgba(88,166,255,0.35);background:rgba(88,166,255,0.06)}
+.beat-history{color:#d29922;border-color:rgba(210,153,34,0.35);background:rgba(210,153,34,0.06)}
 </style>
 </head>
 <body>
@@ -427,10 +424,11 @@ a{color:inherit;text-decoration:none}
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <div class="sidebar-label">Briefing</div>
-  <button class="nav-btn active" data-beat="briefing"><span class="beat-icon">📋</span>Daily Briefing</button>
+  <button class="nav-btn" data-beat="briefing"><span class="beat-icon">📋</span>Daily Briefing</button>
   <button class="nav-btn" data-beat="powerMoves"><span class="beat-icon">⚡</span>Power Moves</button>
   <div class="sidebar-divider"></div>
   <div class="sidebar-label">Beats</div>
+  <button class="nav-btn active" data-beat="lawpolicy"><span class="beat-icon">⚖</span>U.S. Law &amp; Policy</button>
   <button class="nav-btn" data-beat="politics"><span class="beat-icon">🏛</span>Politics</button>
   <button class="nav-btn" data-beat="war"><span class="beat-icon">⚔</span>War & Conflict</button>
   <button class="nav-btn" data-beat="trade"><span class="beat-icon">🌐</span>Trade</button>
@@ -441,7 +439,8 @@ a{color:inherit;text-decoration:none}
   <button class="nav-btn" data-beat="china"><span class="beat-icon">🇨🇳</span>China</button>
   <button class="nav-btn" data-beat="russia"><span class="beat-icon">🇷🇺</span>Russia</button>
   <button class="nav-btn" data-beat="religion"><span class="beat-icon">✝</span>Religion</button>
-  <button class="nav-btn" data-beat="science"><span class="beat-icon">🔬</span>Science & Tech</button>
+  <button class="nav-btn" data-beat="science"><span class="beat-icon">🔬</span>Science &amp; Tech</button>
+  <button class="nav-btn" data-beat="history"><span class="beat-icon">📜</span>History</button>
 </aside>
 
 <!-- MAIN -->
@@ -533,6 +532,8 @@ const BEATS = {
   russia:     {label:'Russia',            icon:'🇷🇺',query:'Russia Ukraine war Putin',    beatClass:'beat-russia'},
   religion:   {label:'Religion',          icon:'✝', query:'religion faith global policy church',beatClass:'beat-religion'},
   science:    {label:'Science & Tech',    icon:'🔬', query:'science discovery technology AI space energy',beatClass:'beat-science'},
+  lawpolicy:  {label:'U.S. Law & Policy', icon:'⚖', query:'US Congress Supreme Court federal court regulation executive order legislation bill DOJ',beatClass:'beat-lawpolicy'},
+  history:    {label:'History',           icon:'📜', query:'history declassified government document archive documentary',beatClass:'beat-history'},
 };
 
 // Power figures
@@ -555,7 +556,7 @@ function persistSaved(){
 }
 
 let state = {
-  beat: 'briefing',
+  beat: 'lawpolicy',
   articles: [],
   loading: false,
   saved: loadSaved(),
@@ -890,6 +891,7 @@ document.querySelectorAll('.nav-btn').forEach(btn=>{
 // Mobile beats bar
 const mobileBeats = document.getElementById('mobileBeats');
 const mobileBeatList = [
+  {beat:'lawpolicy',label:'⚖ Law & Policy'},
   {beat:'briefing',label:'📋 Brief'},
   {beat:'powerMoves',label:'⚡ Power'},
   {beat:'politics',label:'🏛 Politics'},
@@ -901,9 +903,10 @@ const mobileBeatList = [
   {beat:'china',label:'🇨🇳 China'},
   {beat:'russia',label:'🇷🇺 Russia'},
   {beat:'science',label:'🔬 Science'},
+  {beat:'history',label:'📜 History'},
 ];
 mobileBeats.innerHTML = mobileBeatList.map(b=>
-  `<button class="beat-chip${b.beat==='briefing'?' active':''}" data-beat="${b.beat}">${b.label}</button>`
+  `<button class="beat-chip${b.beat==='lawpolicy'?' active':''}" data-beat="${b.beat}">${b.label}</button>`
 ).join('');
 mobileBeats.querySelectorAll('.beat-chip').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -922,7 +925,7 @@ updateDate();
 
 // ── INIT ──────────────────────────────────────────────────────────
 updateSavedCount();
-renderBriefing();
+loadBeat('lawpolicy');
 })();
 </script>
 </body>
