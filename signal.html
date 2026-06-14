@@ -575,28 +575,66 @@ function buildRSS(q){
   return 'https://news.google.com/rss/search?q='+encodeURIComponent(q)+'&hl=en-US&gl=US&ceid=US:en';
 }
 
-async function fetchArticles(query){
-  const url = RSS2JSON+'?rss_url='+encodeURIComponent(buildRSS(query))+'&count=15';
+function parseRSSXml(xmlStr){
   try{
-    const res = await fetch(url);
-    const data = await res.json();
-    if(data.status!=='ok') throw new Error('Feed error');
-    return (data.items||[]).map(a=>{
-      const source = a.author || extractSource(a.title);
-      let title = a.title||'Untitled';
-      if(title.endsWith(' - '+source)) title = title.slice(0, -(' - '+source).length);
+    const doc = new DOMParser().parseFromString(xmlStr,'text/xml');
+    if(doc.querySelector('parsererror')) return null;
+    return Array.from(doc.querySelectorAll('item')).slice(0,15).map(item=>{
+      const title  = item.querySelector('title')?.textContent||'Untitled';
+      const link   = item.querySelector('link')?.textContent?.trim()||
+                     item.querySelector('guid')?.textContent?.trim()||'#';
+      const time   = item.querySelector('pubDate')?.textContent||'';
+      const desc   = item.querySelector('description')?.textContent||'';
+      const source = item.querySelector('source')?.textContent?.trim()||extractSource(title);
+      const clean  = source&&title.endsWith(' - '+source)?title.slice(0,-(' - '+source).length):title;
       return {
-        id: btoa(unescape(encodeURIComponent(a.link||String(Math.random())))).slice(0,12),
-        title,
-        summary: (a.description||'').replace(/<[^>]+>/g,'').slice(0,220),
-        link: a.link||'#',
-        source,
-        time: a.pubDate,
+        id: btoa(unescape(encodeURIComponent(link))).slice(0,12),
+        title:clean, summary:desc.replace(/<[^>]+>/g,'').slice(0,220),
+        link, source, time,
       };
     });
-  }catch(e){
-    return null; // fail honestly — never fabricate articles
-  }
+  }catch(e){ return null; }
+}
+
+async function fetchArticles(query){
+  const rssUrl = buildRSS(query);
+
+  // Strategy 1: allorigins.win — free CORS proxy, no API key
+  try{
+    const ctrl = new AbortController();
+    const t = setTimeout(()=>ctrl.abort(),9000);
+    const res = await fetch('https://api.allorigins.win/get?url='+encodeURIComponent(rssUrl),{signal:ctrl.signal});
+    clearTimeout(t);
+    const data = await res.json();
+    if(data.contents){
+      const parsed = parseRSSXml(data.contents);
+      if(parsed&&parsed.length) return parsed;
+    }
+  }catch(e){}
+
+  // Strategy 2: rss2json fallback
+  try{
+    const ctrl = new AbortController();
+    const t = setTimeout(()=>ctrl.abort(),9000);
+    const res = await fetch(RSS2JSON+'?rss_url='+encodeURIComponent(rssUrl)+'&count=15',{signal:ctrl.signal});
+    clearTimeout(t);
+    const data = await res.json();
+    if(data.status==='ok'){
+      return (data.items||[]).map(a=>{
+        const source = a.author||extractSource(a.title);
+        let title = a.title||'Untitled';
+        if(source&&title.endsWith(' - '+source)) title=title.slice(0,-(' - '+source).length);
+        return {
+          id: btoa(unescape(encodeURIComponent(a.link||String(Math.random())))).slice(0,12),
+          title,
+          summary:(a.description||'').replace(/<[^>]+>/g,'').slice(0,220),
+          link:a.link||'#', source, time:a.pubDate,
+        };
+      });
+    }
+  }catch(e){}
+
+  return null; // honest failure — never fabricate articles
 }
 
 function extractSource(title){
