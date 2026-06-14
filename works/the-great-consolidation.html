@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Great Consolidation — Structural Humanism</title>
+<meta name="description" content="Modern censorship rarely commands. It selects, repeats, and narrows.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0a08;--bg2:#131009;--panel:#16130d;--panel2:#1d1810;
+  --ink:#e9e2d0;--ink-dim:#a89e86;--ink-faint:#6f6750;
+  --gold:#caa04a;--gold-b:#e0b85e;--oxblood:#7c2c25;--oxblood-b:#a8423a;--olive:#5d6240;
+  --line:#2c2618;--line2:#3a3320;
+  --mono:'Courier Prime','Courier New',monospace;
+  --serif:'Playfair Display',Georgia,serif;
+  --body:'Spectral',Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{min-height:100dvh;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(1rem,.95rem + .25vw,1.125rem);line-height:1.7;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+a{color:var(--gold-b)}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.12}
+p,li{text-wrap:pretty}
+::selection{background:rgba(202,160,74,.25)}
+:focus-visible{outline:1px solid var(--gold);outline-offset:2px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 20px;background:linear-gradient(180deg,rgba(8,7,5,.97),rgba(8,7,5,.88));
+  border-bottom:1px solid var(--line2);backdrop-filter:blur(8px)}
+.nav-brand{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none;color:var(--ink)}
+.nav-seal{width:34px;height:34px;color:var(--gold);flex:none}
+.nav-title{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.1}
+.nav-sub{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--ink-faint);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.nav-btn{background:none;border:1px solid transparent;color:var(--ink-dim);text-decoration:none;
+  font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:8px 12px;border-radius:2px;transition:.18s;white-space:nowrap;display:inline-block}
+.nav-btn:hover{color:var(--ink);background:var(--panel)}
+.nav-btn.active{color:var(--gold-b);border-color:var(--line2);background:var(--panel)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.eyebrow::before{content:"";width:42px;height:1px;background:var(--gold);flex:none}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;
+  padding:15px 26px;cursor:pointer;border:none;border-radius:2px;display:inline-flex;align-items:center;gap:10px;
+  transition:.2s;text-decoration:none}
+.btn-gold{background:var(--gold);color:#1a1407}
+.btn-gold:hover{background:var(--gold-b);transform:translateY(-2px);box-shadow:0 10px 28px rgba(202,160,74,.18)}
+.btn-ghost{background:rgba(20,17,11,.6);color:var(--ink-dim);border:1px solid var(--line2)}
+.btn-ghost:hover{color:var(--ink);border-color:var(--gold)}
+.btn-sm{padding:10px 16px;font-size:10px}
+.stamp{display:inline-block;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:3px;
+  color:var(--oxblood-b);border:2.5px solid var(--oxblood-b);padding:5px 12px;text-transform:uppercase;
+  transform:rotate(-3deg);opacity:.9;border-radius:3px}
+footer.site{background:#070605;border-top:1px solid var(--line2);padding:46px 20px;text-align:center;margin-top:80px}
+footer.site .nav-seal{margin:0 auto 18px;opacity:.7;width:46px;height:46px}
+footer.site p{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--ink-faint);margin:4px 0;text-transform:uppercase}
+footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font-size:11px;letter-spacing:.5px;text-transform:none;line-height:1.7}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:200;width:0;transition:width .1s linear}
+.dossier{max-width:760px;margin:0 auto;padding:64px 20px 0}
+.dossier-meta{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:26px}
+.dossier-meta .fid{color:var(--gold)}
+.dossier h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.4rem,1.4rem + 4.5vw,4.4rem);margin:0 0 16px;color:var(--ink)}
+.dossier .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1rem + 1vw,1.5rem);color:var(--gold-b);line-height:1.4;margin-bottom:26px}
+.dossier .byline{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-dim);margin-bottom:30px}
+.doc-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:20px 0 26px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin-bottom:48px}
+.doc-actions .stamp{margin-left:auto}
+article.reader{max-width:760px;margin:0 auto;padding:0 20px 90px}
+article.reader h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,1.2rem + 1.6vw,2.1rem);margin:60px 0 22px;color:var(--ink)}
+article.reader h2::before{content:"";display:block;width:42px;height:1px;background:var(--gold);margin-bottom:18px}
+article.reader h3{font-family:var(--serif);font-weight:700;font-size:1.3em;margin:44px 0 16px}
+article.reader h4,article.reader h5{font-family:var(--mono);font-size:.85em;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin:36px 0 14px}
+article.reader p{margin:0 0 1.35em}
+article.reader p strong{color:var(--ink)}
+article.reader p:has(> strong:only-child){border-left:2px solid var(--gold);padding:6px 0 6px 20px;font-family:var(--serif);font-size:1.08em;line-height:1.55;color:var(--gold-b)}
+article.reader blockquote{border-left:2px solid var(--oxblood-b);padding:8px 0 8px 22px;margin:0 0 1.5em;color:var(--ink-dim);font-style:italic}
+article.reader ul,article.reader ol{margin:0 0 1.4em;padding-left:1.4em}
+article.reader li{margin-bottom:.45em}
+article.reader hr{border:none;border-top:1px solid var(--line2);margin:46px auto;width:120px}
+article.reader table{width:100%;border-collapse:collapse;margin:0 0 1.6em;font-size:.92em}
+article.reader th,article.reader td{border:1px solid var(--line2);padding:8px 10px;text-align:left;vertical-align:top}
+article.reader th{font-family:var(--mono);font-size:.8em;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:var(--panel)}
+p.source-line{font-family:var(--mono)!important;font-size:.74em!important;letter-spacing:.4px;line-height:1.7!important;color:var(--ink-faint)!important;background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--gold);border-radius:2px;padding:12px 16px!important;margin:0 0 2.4em!important}
+p.source-line em{font-style:normal}
+.docnav{max-width:760px;margin:0 auto;padding:0 20px 60px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.docnav a{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;border:1px solid var(--line2);padding:14px 18px;border-radius:2px;max-width:46%;transition:.18s}
+.docnav a:hover{color:var(--gold-b);border-color:var(--gold)}
+.docnav .lbl{display:block;color:var(--ink-faint);font-size:9px;margin-bottom:6px}
+.totop{position:fixed;right:18px;bottom:18px;z-index:90;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--ink-dim);border:1px solid var(--line2);background:rgba(11,10,8,.85);padding:10px 12px;border-radius:2px;opacity:0;pointer-events:none;transition:.25s}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{color:var(--gold-b);border-color:var(--gold)}
+@media print{
+  body::before,.nav,.doc-actions .btn,.docnav,.totop,.progress,footer.site{display:none!important}
+  body{background:#fff;color:#111;font-size:11.5pt}
+  .dossier h1{color:#111}.dossier .sub{color:#333}
+  article.reader p:has(> strong:only-child){color:#333;border-color:#999}
+  p.source-line{background:#f4f4f4;color:#444!important;border-color:#bbb}
+  a{color:#111;text-decoration:none}
+}
+</style></head><body>
+<div class="progress" id="prog"></div>
+<nav class="nav"><a class="nav-brand" href="../index.html"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><div><div class="nav-title">Structural Humanism</div><div class="nav-sub">Independent Investigative Project</div></div></a><div class="nav-links"><a class="nav-btn" href="../index.html">Home</a><a class="nav-btn active" href="../index.html#files">Case Files</a><a class="nav-btn" href="../signal.html">Signal</a><a class="nav-btn" href="../index.html#act">Act</a><a class="nav-btn" href="../index.html#book">The Book</a><a class="nav-btn" href="../index.html#contact">Contact</a></div></nav>
+<header class="dossier">
+  <div class="dossier-meta"><span class="fid">File SH-006</span><span>The Concentration Dossier — Vol. I</span><span>Media &amp; Division</span><span>2026</span><span>5,945 words &middot; ~26 min read</span></div>
+  <h1>The Great Consolidation</h1>
+  <div class="sub">How a Few Hands Came to Hold Every Lever, and Why the Word Monopoly No Longer Describes It</div>
+  <div class="byline">Kai Jashon Price &middot; Structural Humanism</div>
+  <div class="doc-actions">
+    <a class="btn btn-gold btn-sm" href="../files/the-great-consolidation.docx" download>&#8595; Word (.docx)</a>
+    <button class="btn btn-ghost btn-sm" onclick="window.print()">Print / PDF</button>
+    <span class="stamp">Public Record &middot; Distribute Freely</span>
+  </div>
+</header>
+<article class="reader">
+<p><strong>I. The Question Antitrust Stopped Asking</strong></p>
+<p>In May 1911, the Supreme Court ordered the breakup of Standard Oil. The company had used preferential railroad rebates, predatory pricing, and secret holding-company structures to control roughly 90 percent of American oil refining. The Court ruled that combinations of this kind violated the Sherman Antitrust Act of 1890. Over the next sixty years, that doctrine — that excessive economic concentration was itself a public harm, separable from any specific abuse — was the load-bearing principle of American competition law.</p>
+<p>That principle was abandoned, deliberately, by a particular school of legal thought beginning in the late 1970s. Robert Bork’s 1978 book The Antitrust Paradox argued that antitrust enforcement should be concerned only with short-run consumer prices and not with market structure, political power, or the distribution of economic control. The Reagan administration adopted the doctrine in 1981. Both parties have largely accepted it since.</p>
+<p>The intervening forty-five years produced the economy we now have. This essay documents what was built in that period. It is not an argument that the word “monopoly” applies in the Standard Oil sense to most American industries. The accurate description is narrower and, on the evidence, more difficult to defend: a small set of producers in each major sector, the same three asset managers sitting above all of them as the largest shareholders, and an antitrust apparatus that was deliberately rewritten so this arrangement would not trigger enforcement. The vocabulary economists use is concentrated oligopoly with common institutional ownership. The vocabulary the public uses is monopoly. The first is technically accurate. The second captures something the first leaves out — that the arrangement now functions, in many sectors, the way the trusts of 1911 functioned, without legally being trusts.</p>
+<p>Five domains are examined here: the rise of common institutional ownership through the Big Three asset managers; the collapse of independent firms in airlines, banking, and food; the seed and pesticide cartelization of global agriculture; the Big Tobacco capture of American processed food in the 1980s; and the consolidation of broadcast media. Each section presents the evidence, then the strongest case the defenders of the status quo make, then why that defense does not save the framing. The pattern that emerges is the same one documented elsewhere in this body of work: concentrated power, operating under permissive rules, producing outcomes the public was never consulted on and rarely sees aggregated.</p>
+<p><strong><em>The Numbers, Stated Plainly</em></strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+<p>
+<strong>88%</strong>
+</p>
+<p>
+of S&amp;P 500 companies have BlackRock, Vanguard, or State Street as their largest shareholder
+</p>
+</td>
+<td>
+<p>
+<strong>$30T</strong>
+</p>
+<p>
+in assets managed by the Big Three — more than every sovereign wealth fund on earth combined
+</p>
+</td>
+</tr>
+<tr class="even">
+<td>
+<p>
+<strong>10%</strong>
+</p>
+<p>
+after-tax corporate profit share of value added since 2002, up from 7% (1970–2002)
+</p>
+</td>
+<td>
+<p>
+<strong>20¢</strong>
+</p>
+<p>
+reinvested per dollar of profit today, down from 30¢ — the cash signature of rent extraction
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>These four numbers do most of the work. They are drawn from the National Bureau of Economic Research, the San Francisco Federal Reserve, S&amp;P Global Market Intelligence, and academic research published in peer-reviewed economics journals. The first establishes that the formal voting power across nearly the entirety of large publicly traded American business is held in three corporate-governance departments. The second establishes the scale of those three firms. The third and fourth establish what concentration’s cash trail looks like: rising profits as a share of national output, falling investment as a share of those profits. That combination is the empirical signature of market power. Firms in genuinely competitive markets cannot sustain it; they would lose share to entrants who reinvest. The fact that it has been sustained for more than two decades is the answer to the question of whether American markets remain competitive.</p>
+<p><strong>II. The Big Three: Who Owns the Owners</strong></p>
+<p>The most consequential consolidation of the last twenty years did not happen in any operating industry. It happened in asset management. Three firms — BlackRock, Vanguard, and State Street — now collectively hold ownership stakes in nearly every publicly traded American corporation of meaningful size.</p>
+<p>The numbers, drawn from the work of Jan Fichtner, Eelke Heemskerk, and Javier Garcia-Bernardo at the University of Amsterdam’s CORPNET project, and from BlackRockVanguardWatch’s tracking of SEC filings, are these: BlackRock manages roughly $10.5 trillion in assets; Vanguard manages roughly $9.3 trillion; State Street manages roughly $4.3 trillion. Together they constitute the largest shareholder in approximately 88 percent of S&amp;P 500 companies. Vanguard alone is the single largest institutional shareholder in 422 of the 505 firms in the index — that is, 84 percent of the largest publicly traded companies in the United States have Vanguard as their largest single institutional owner. BlackRock or Vanguard ranks among the top three institutional investors in 100 percent of S&amp;P 500 firms.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>
+<strong>Firm</strong>
+</th>
+<th>
+<strong>Assets Managed (2025)</strong>
+</th>
+<th>
+<strong>Position in S&amp;P 500</strong>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>
+<strong>BlackRock</strong>
+</td>
+<td>
+<strong>$10.5 trillion</strong>
+</td>
+<td>
+Top-3 institutional investor in 100% of S&amp;P 500
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>Vanguard</strong>
+</td>
+<td>
+<strong>$9.3 trillion</strong>
+</td>
+<td>
+Largest single shareholder in 422 of 505 firms (84%)
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>State Street</strong>
+</td>
+<td>
+<strong>$4.3 trillion</strong>
+</td>
+<td>
+Among top voters in nearly every major U.S. public company
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>Big Three combined</strong>
+</td>
+<td>
+<strong>$24+ trillion</strong>
+</td>
+<td>
+Largest shareholder of 88% of S&amp;P 500; ~25% of all shareholder votes
+</td>
+</tr>
+</tbody>
+</table>
+<p>The mechanism that matters is not technical economic ownership — the funds these firms manage are ultimately held on behalf of pension funds, sovereign wealth funds, university endowments, and individual retail 401(k) holders. The mechanism that matters is voting power. When a corporate board votes on executive compensation, on a merger, on a strategic direction, on a CEO succession, the shares held in BlackRock, Vanguard, and State Street index funds are voted by those firms’ corporate governance departments, not by the underlying beneficiaries. Those departments employ a few hundred people in total. They cast roughly one-quarter of all votes at shareholder meetings of S&amp;P 500 firms.</p>
+<p>This produces a structural problem that competition law as currently written does not reach. Vanguard is simultaneously the largest shareholder in Ford and General Motors. It is the largest shareholder in Coke and Pepsi. It is among the largest shareholders in all four of the major airlines — American, Delta, United, and Southwest — each of which counts BlackRock, Vanguard, State Street, and PRIMECAP among its top institutional holders. An owner with significant stakes in every competitor in an industry has reduced incentive to push any one of them toward aggressive price competition: lower fares at Delta hurt the value of the Vanguard United stake.</p>
+<p>This is not a theoretical concern. Peer-reviewed work by José Azar, Martin Schmalz, and Isabel Tecu, published in the Journal of Finance in 2018, found that airline ticket prices on routes where the major carriers shared common institutional owners were approximately 3 to 7 percent higher than they would have been under separate ownership. Subsequent research by Azar, Sahil Raina, and Schmalz extended the finding to banking, where common ownership was associated with higher fees on deposit accounts. The Open Markets Institute has tracked the same pattern across multiple sectors and characterized it explicitly: “This interlocking, common ownership structure of airlines is akin to the giant investment banking trusts that gained control of the railroads and other key industries in the late nineteenth century. Even nominally independent airlines have strong incentives to avoid competing for market share.”</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+<p>
+<strong>COUNTERARGUMENT</strong>
+</p>
+<p>
+<em><strong>The asset managers are custodians, not owners — the real economic interest is dispersed across millions of pension holders and retail investors.</strong></em>
+</p>
+<p>
+This is the central defense the Big Three themselves make. Vanguard is structured mutually — its fund-holders technically own Vanguard. BlackRock and State Street manage money on behalf of beneficiaries who, in aggregate, are not a small group of elites but tens of millions of ordinary Americans saving for retirement. Critics who frame the Big Three as “owners of corporate America” are mislabeling the economic interest. The funds simply track indexes; the asset managers cannot pick winners; the voting is fiduciary, conducted on behalf of beneficiaries.
+</p>
+<p>
+<strong>WHY THIS DOES NOT SAVE THE FRAMING</strong>
+</p>
+<p>
+The defense conflates two distinct things: economic ownership and voting power. Economic ownership of these portfolios is, indeed, dispersed across millions of beneficiaries. Voting power is concentrated in three corporate-governance departments employing a few hundred people in total, who cast approximately one-quarter of all votes at shareholder meetings of the largest American companies. The beneficiaries do not vote their shares. The asset managers do — on executive compensation, on mergers, on strategic direction, on every consequential corporate decision. It is voting power, not economic interest, that determines corporate behavior. And that is concentrated to a degree unprecedented in the history of American capital markets. The dispersed-ownership defense is technically accurate and substantively misleading. It is exactly the kind of defense that survives the question “who owns it?” while failing the question “who controls it?”
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>III. Sector by Sector: What Concentration Looks Like in 2026</strong></p>
+<p>The Big Three asset managers sit at the top of an operating economy that has itself become dramatically more concentrated since the early 1980s. The Autor-Dorn-Katz-Patterson-Van Reenen paper in the 2020 Quarterly Journal of Economics — using Census Bureau data covering the full U.S. economy — documented that concentration has risen across most sectors over roughly the past forty years. The Federal Reserve Bank of San Francisco has tracked the retail figure specifically: the top 20 retail firms went from under 30 percent of sales in the early 1980s to over 50 percent by 2012. The pattern is broad. Specific sectors are extreme.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 65%" />
+<col style="width: 8%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td colspan="3">
+<p>
+<strong>Share controlled by the leading firms in each industry</strong>
+</p>
+<p>
+U.S. data, latest available reporting period
+</p>
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>U.S. AIRLINES (top 4)</strong>
+</td>
+<td>
+<table>
+<colgroup>
+<col style="width: 76%" />
+<col style="width: 23%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<strong>76%</strong>
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>U.S. CORN SEED (top 2)</strong>
+</td>
+<td>
+<table>
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 28%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<strong>72%</strong>
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>GLOBAL PESTICIDES (top 4)</strong>
+</td>
+<td>
+<table>
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<strong>70%</strong>
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>U.S. SOYBEAN SEED (top 2)</strong>
+</td>
+<td>
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<strong>66%</strong>
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>U.S. BEER (top 4)</strong>
+</td>
+<td>
+<table>
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 28%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<strong>71%</strong>
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>GLOBAL COMMERCIAL SEEDS (top 4)</strong>
+</td>
+<td>
+<table>
+<colgroup>
+<col style="width: 56%" />
+<col style="width: 43%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<strong>56%</strong>
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>U.S. RETAIL (top 20)</strong>
+</td>
+<td>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<strong>50%</strong>
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>U.S. BANKING (top 25 of 4,462)</strong>
+</td>
+<td>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<strong>50%</strong>
+</td>
+</tr>
+<tr class="even">
+<td colspan="3">
+<em>Sources: OAG Aviation Market Insights, May 2026 (airlines); USDA Economic Research Service, 2018-20 (seeds); ETC Group / PANAP 2023 (global ag); Brewers Association (beer); S&amp;P Global Market Intelligence Q4 2025 (banks); SF Fed / Autor et al., 2020 (retail).</em>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Airlines</em></strong></p>
+<p>The four largest U.S. carriers — American, Delta, United, and Southwest — controlled 76 percent of U.S. domestic capacity as of May 2026, according to OAG. This arrangement is the direct product of three megamergers permitted under the post-Bork antitrust framework: Delta-Northwest in 2008, United-Continental in 2010, and American-US Airways in 2013. In each case, the Justice Department’s Antitrust Division either approved the merger outright or extracted minor concessions on slot allocations at specific airports.</p>
+<p>The 1956 antitrust environment can be used as a benchmark. The “Big Four” carriers of that era — American, United, Trans World, and Eastern — also held roughly 80 percent of premium passenger miles. The difference is that those four firms did not share their largest institutional shareholders. The four major carriers today do. BlackRock, Vanguard, State Street, and PRIMECAP rank among the largest holders of all four. This is the empirical situation that produced the Azar-Schmalz-Tecu finding on airfares.</p>
+<p><strong><em>Banking</em></strong></p>
+<p>As of the fourth quarter of 2025, S&amp;P Global Market Intelligence reports the following: JPMorgan Chase holds $4.4 trillion in assets, Bank of America $2.6 trillion, Wells Fargo $1.7 trillion, and Citigroup $1.7 trillion. Together: more than $11.5 trillion, which is more than half of the combined assets of the top 25 U.S. banks. The FDIC reported 4,462 commercial banks in the United States as of March 2025, down from 4,715 in December 2022 and roughly 14,400 in 1985. The trend has one direction. Each loss of a community bank is a transfer of relationship banking, small business lending discretion, and local credit allocation upward to a centralized institution where loan decisions are made algorithmically and at scale.</p>
+<p>The Gramm-Leach-Bliley Act of 1999, which repealed the relevant portions of the Glass-Steagall Act of 1933, permitted the combination of commercial banking, investment banking, and insurance that produced Citigroup in its modern form and made the Bank of America-Merrill Lynch and JPMorgan-Bear Stearns combinations possible during the 2008 financial crisis. The post-crisis Dodd-Frank Act of 2010 imposed capital requirements but did not unwind the structural consolidation. The 2018 partial rollback of Dodd-Frank under the Economic Growth, Regulatory Relief, and Consumer Protection Act reduced the asset threshold at which enhanced regulatory scrutiny applies, allowing regional banks to grow without triggering the additional oversight that had applied to firms over $50 billion.</p>
+<p><strong><em>Agriculture and Seeds</em></strong></p>
+<p>The cleanest concentration story in any sector is agriculture. The mechanism is documented by the USDA’s Economic Research Service directly: “The concentration can be traced to the expansion of intellectual property rights to private companies for seed improvements in the 1970s and 1980s, creating an incentive to research and develop new biotechnology seed traits and seed varieties. Mergers occurred between companies that produced and sold pesticides, seed treatments, crop seeds, and seed traits.” Congress changed the IP rules; consolidation followed.</p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td colspan="2">
+<strong>How the Big Six Became the Big Four</strong>
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>1996</strong>
+</td>
+<td>
+<strong>Roundup Ready soybeans launch.</strong> Patent-protected seed plus matching proprietary herbicide creates the modern lock-in business model in commercial agriculture. Top four firms hold roughly 21 percent of global seed market.
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>2015</strong>
+</td>
+<td>
+<strong>Six firms lead</strong> the global seed and ag-chemical markets: Monsanto, DuPont, Syngenta, Dow Chemical, Bayer, and BASF.
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>2017</strong>
+</td>
+<td>
+<strong>ChemChina acquires Syngenta</strong> for $43 billion. The state-owned Chinese chemical conglomerate absorbs the Swiss agrochemical leader. China is later acquired by Sinochem in 2021.
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>2018</strong>
+</td>
+<td>
+<strong>Bayer acquires Monsanto</strong> for $63 billion. Dow Chemical and DuPont merge, then spin out the combined agricultural division as Corteva Agriscience. The Big Six is now the Big Four.
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>2023</strong>
+</td>
+<td>
+<strong>The Big Four control 56 percent of global commercial seeds and 61 percent of global pesticides.</strong> In the United States: Bayer and Corteva alone account for 72 percent of corn acres planted and 66 percent of soybean acres. Bayer holds the patents on 22 of the 33 GM herbicide-tolerant crops approved in Canada.
+</td>
+</tr>
+</tbody>
+</table>
+<p>Two firms now provide more than half of all corn, soybean, and cotton seed planted in the United States. The same firms typically also sell the herbicides matched to those seed traits, which means a farmer choosing a Roundup Ready variety is locked into the herbicide as well. The Heinrich Böll Foundation’s Pesticide Atlas documents the global picture: in 1994 the top four pesticide firms controlled approximately 29 percent of the global market. In 2018 they controlled approximately 70 percent. Seeds rose from 21 percent to 57 percent over the same period.</p>
+<p><strong>IV. When Big Tobacco Industrialized American Food</strong></p>
+<p>One specific consolidation episode deserves its own treatment because the documentary trail is unusually clean, the policy implications run directly into present-day public health, and the case demonstrates how methodology developed for one product category was transferred wholesale to another.</p>
+<p>Beginning in November 1985, Philip Morris — then the largest cigarette manufacturer in the United States — acquired General Foods Corporation for $5.6 billion, the largest non-oil acquisition in U.S. history at the time. The deal brought Maxwell House coffee, Jell-O, Kool-Aid, Tang, Post Cereals, Shake ’n Bake, Oscar Mayer meats, and dozens of other shelf-stable brands under the same corporate umbrella as Marlboro and Virginia Slims. In December 1988, Philip Morris acquired Kraft Foods for $12.9 billion. In 1990 the two were combined as Kraft General Foods, then the largest food company in America. In 2000, Philip Morris added Nabisco for $18.9 billion, becoming the largest consumer products company in the United States, surpassing Procter &amp; Gamble.</p>
+<p>In June 1985, R.J. Reynolds — the second-largest cigarette manufacturer — merged with Nabisco Brands in a $4.9 billion cash transaction to form RJR Nabisco. The combined entity controlled Oreo, Ritz, Chips Ahoy, Planters, and Camel cigarettes within a single corporate structure. By 1990, tobacco-owned firms controlled the dominant share of America’s shelf-stable processed food category.</p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td colspan="2">
+<strong>The Tobacco-Food Pipeline</strong>
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>1985</strong>
+</td>
+<td>
+<strong>Philip Morris buys General Foods</strong> for $5.8 billion. Largest non-oil acquisition in U.S. history at that point. Maxwell House, Jell-O, Kool-Aid, Post Cereals, Oscar Mayer.
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>1985</strong>
+</td>
+<td>
+<strong>R.J. Reynolds + Nabisco merger</strong> creates RJR Nabisco. Oreo, Ritz, Planters, Chips Ahoy now sit alongside Camel and Winston in one company.
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>1988</strong>
+</td>
+<td>
+<strong>Philip Morris buys Kraft</strong> for $12.9 billion. Merged with General Foods to form Kraft General Foods, then the largest food company in America.
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>2000</strong>
+</td>
+<td>
+<strong>Philip Morris buys Nabisco</strong> for $18.9 billion. Tobacco-owned firms now control the dominant share of America’s shelf-stable processed food category.
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>2023</strong>
+</td>
+<td>
+<strong>Peer-reviewed study (Fazzino et al., Addiction journal):</strong> tobacco-owned foods from 1988 to 2001 were 29 percent more likely to be fat-and-sodium hyperpalatable and 80 percent more likely to be carbohydrate-and-sodium hyperpalatable than non-tobacco-owned foods, controlling for food category. Methodology directly transferred from cigarette formulation research.
+</td>
+</tr>
+</tbody>
+</table>
+<p>The Fazzino study, published in the September 2023 issue of the journal Addiction, used internal tobacco industry documents released under the 1998 Master Settlement Agreement to identify which food brands had been owned by Philip Morris and R.J. Reynolds at which times. Cross-referenced with USDA Food and Nutrient Database for Dietary Studies data, the analysis found that during the period of tobacco ownership, the foods produced under those brands were substantially more likely to be formulated in the fat-sugar-salt combinations that trigger compulsive eating responses than competing foods produced by non-tobacco-owned firms. The earlier work of Laura Schmidt and colleagues at the University of California San Francisco, using the same archival source, established that R.J. Reynolds directly applied cigarette-marketing techniques to the launch of Hawaiian Punch and other sugary drink products targeting children, and that Philip Morris transferred ethnic-marketing strategies — originally developed to push menthol cigarettes into Black communities — onto its Kool-Aid and Tang businesses.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+<p>
+<strong>COUNTERARGUMENT</strong>
+</p>
+<p>
+<em><strong>Tobacco companies were not uniquely guilty — food scientists at Coke, Pepsi, General Mills, and Kellogg’s were heading in the same direction. Correlation is not causation; maybe tobacco firms bought companies that were already going to produce hyperpalatable food.</strong></em>
+</p>
+<p>
+The defense argues that the entire packaged-food industry was moving toward more salt, more sugar, and more refined carbohydrates throughout the 1980s and 1990s, and that tobacco-owned firms simply participated in a broader industry trend. Coca-Cola, PepsiCo, General Mills, and Kellogg’s were never tobacco-owned and produced plenty of products that meet the hyperpalatability threshold. Identifying tobacco ownership as the causal factor when the trend was industry-wide is statistical overreach.
+</p>
+<p>
+<strong>WHY THIS DOES NOT SAVE THE FRAMING</strong>
+</p>
+<p>
+The Fazzino study and the earlier Schmidt work rely on internal tobacco industry documents released through the Master Settlement Agreement — not on outcome correlations alone. Schmidt’s team established that R.J. Reynolds was directly involved in developing and heavily marketing sugary drinks to children, and that Philip Morris directly transferred its tobacco-marketing strategies targeting racial and ethnic minority communities to sell food products. That is documented intent and transferred methodology, not coincidence. The honest concession to make is that tobacco companies accelerated and refined a trend that was already underway. They did not invent processed food. They industrialized addictive formulation at scale, using research infrastructure originally built for cigarettes. The post-2003 divestiture — Altria spinning off Kraft, RJR selling Nabisco — did not undo the formulations. The 2023 study found that tobacco-owned-era brands remained more hyperpalatable than competitors as of 2018, fifteen years after divestiture.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>V. Media: The Meme, the Reality, and the Migration</strong></p>
+<p>The popular claim — that six corporations control 90 percent of American media — circulates widely on social media and in political commentary. Its origin is a 2011 infographic produced by a blog called Frugal Dad, picked up by Business Insider in 2012, and repeated in countless variants since. The 90 percent figure has no rigorous methodological basis. Fact-checkers from across the political spectrum have noted that the precise number was never sourced to a study; the underlying claim that American mass media is concentrated in a small number of firms is, however, accurate, and the cleaner numbers are these.</p>
+<p>The Federal Communications Commission’s deregulation of cross-ownership rules under the Telecommunications Act of 1996, signed by President Clinton, removed the national radio-ownership cap entirely and substantially relaxed television-ownership limits. Clear Channel Communications — now iHeartMedia — went from operating roughly 40 radio stations before the Act to operating over 1,200 by the early 2000s. Sinclair Broadcast Group, which had operated a handful of local television stations, expanded to 191 stations reaching nearly 40 percent of the U.S. population. The 1985 Reagan-era abolition of the Fairness Doctrine, paired with the 1996 deregulation, produced an environment in which a small number of national operators could buy local stations across the country and run identical programming through them.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>
+<strong>Sector</strong>
+</th>
+<th>
+<strong>Concentration</strong>
+</th>
+<th>
+<strong>Source</strong>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>
+U.S. pay-TV networks (top 6)
+</td>
+<td>
+<strong>77% (143 of 184 networks)</strong>
+</td>
+<td>
+Free Press study (2019)
+</td>
+</tr>
+<tr class="even">
+<td>
+Local TV via Sinclair reach
+</td>
+<td>
+<strong>~40% of U.S. population</strong>
+</td>
+<td>
+FCC filings, 2017
+</td>
+</tr>
+<tr class="odd">
+<td>
+U.S. counties without a daily newspaper
+</td>
+<td>
+<strong>2,000+ counties</strong>
+</td>
+<td>
+UNC News Deserts Report, 2018
+</td>
+</tr>
+<tr class="even">
+<td>
+Recorded music (top 3 labels)
+</td>
+<td>
+<strong>~70% global market</strong>
+</td>
+<td>
+IFPI / RIAA
+</td>
+</tr>
+<tr class="odd">
+<td>
+Theatrical film (major studios)
+</td>
+<td>
+<strong>~85% of domestic box office</strong>
+</td>
+<td>
+Motion Picture Association
+</td>
+</tr>
+</tbody>
+</table>
+<p>The honest framing on media concentration is structurally different from the meme. Linear television and theatrical film are intensely concentrated in five surviving conglomerates: Disney, Comcast (NBCUniversal), Paramount, Warner Bros. Discovery, and Sony. Recorded music is concentrated in three labels — Universal, Sony Music, and Warner Music — which collectively control roughly 70 percent of the global market. Local broadcast news is concentrated in a handful of station-group owners. Newspapers have collapsed: more than 2,000 U.S. counties have no daily paper. That is the consolidation half of the picture.</p>
+<p>The other half is migration. News and information overall is, in 2026, less concentrated than it was in 2011 because of YouTube, X, Substack, podcasts, TikTok, and the broader collapse of legacy media’s gatekeeping function. But the platforms through which that more-diverse information now flows are themselves concentrated in a smaller handful of firms — Alphabet, Meta, ByteDance, X Corp, Amazon — each of which makes algorithmic decisions about what content gets reach. The chokepoint did not disappear. It migrated upstream, from the conglomerates that owned the broadcast spectrum to the platforms that own the distribution infrastructure. The result is that the practical question — who decides what reaches the public — has not been democratized in the way the early-internet rhetoric promised. It has been re-concentrated under a different set of operators, governed by different rules, and substantially less subject to public-interest regulation than the broadcasters they displaced.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+<p>
+<strong>COUNTERARGUMENT</strong>
+</p>
+<p>
+<em><strong>Concentration in media is not what it was in 1985 — YouTube, Substack, podcasts, and X have given any individual the ability to reach millions without needing a network’s permission. The democratization is real.</strong></em>
+</p>
+<p>
+The case against the consolidation narrative is that the digital environment fundamentally changed what concentration means. A single Substack writer or podcaster can now reach an audience larger than most local newspapers ever had. The barrier to entry has collapsed. Algorithms surface independent content alongside corporate content. By any meaningful metric of public access to diverse information, the situation today is more open than it has been in any prior period in American history.
+</p>
+<p>
+<strong>WHY THIS DOES NOT SAVE THE FRAMING</strong>
+</p>
+<p>
+Two things are true at once. Distribution costs have collapsed, and the floor of who can publish has been radically lowered. That is the genuine democratization, and it should be acknowledged. But the algorithmic gating that determines what reaches scale is now controlled by a smaller group of firms than the broadcast oligopoly ever was: Alphabet (Google, YouTube), Meta (Facebook, Instagram, WhatsApp, Threads), ByteDance (TikTok), X Corp, Amazon. Five firms determine which content is seen by hundreds of millions of users. The decision-making is opaque, the appeals process is essentially nonexistent for ordinary users, and the algorithmic logic is calibrated for engagement metrics that favor specific content types. The honest framing is that distribution has been democratized while curation has been re-concentrated — under operators less accountable to public-interest regulation than the broadcasters they replaced.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>VI. How It Was Built: The Policy Choices Behind Concentration</strong></p>
+<p>None of this was an act of nature. Each consolidation episode documented in this essay was permitted, in some cases actively encouraged, by specific legislative and doctrinal choices. Identifying those choices matters because reversing concentration requires reversing the policies that produced it, and that requires knowing what those policies are.</p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td colspan="2">
+<strong>The Policy Architecture of Consolidation</strong>
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>1978</strong>
+</td>
+<td>
+<strong>Robert Bork publishes The Antitrust Paradox,</strong> arguing that antitrust enforcement should focus solely on short-run consumer prices and not on market structure or political power. The doctrine is adopted as bipartisan consensus over the following decade.
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>1980</strong>
+</td>
+<td>
+<strong>Staggers Rail Act and the Airline Deregulation Act</strong> (1978) begin a decade of merger-friendly policy across transportation sectors.
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>1985</strong>
+</td>
+<td>
+<strong>Reagan FCC abolishes the Fairness Doctrine,</strong> removing the requirement that broadcasters present multiple sides of controversial public issues. Conditions for partisan broadcast consolidation are established.
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>1996</strong>
+</td>
+<td>
+<strong>Telecommunications Act eliminates national radio-ownership caps</strong> and dramatically relaxes television-ownership limits. Clear Channel grows from 40 stations to over 1,200; Sinclair acquires 191 local TV stations.
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>1999</strong>
+</td>
+<td>
+<strong>Gramm-Leach-Bliley Act repeals key portions of Glass-Steagall,</strong> allowing commercial banks, investment banks, and insurance firms to combine. Enables the creation of modern Citigroup and sets the stage for the 2008 financial crisis.
+</td>
+</tr>
+<tr class="odd">
+<td>
+<strong>2010s</strong>
+</td>
+<td>
+<strong>Index-fund boom.</strong> Post-2008 retail flight from active management funnels trillions into BlackRock, Vanguard, and State Street, creating common-ownership concentration at scale.
+</td>
+</tr>
+<tr class="even">
+<td>
+<strong>2020s</strong>
+</td>
+<td>
+<strong>FTC under Lina Khan attempts to revive structural antitrust</strong> (challenging Microsoft-Activision, Meta-Within). Mixed results. Khan replaced in 2025; current enforcement priorities revert toward the post-Bork framework.
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>VII. The Strongest Case Against This Framing</strong></p>
+<p>The most rigorous economic defense of the post-1978 concentration trajectory was articulated by David Autor, David Dorn, Lawrence Katz, Christina Patterson, and John Van Reenen in their 2020 Quarterly Journal of Economics paper “The Fall of the Labor Share and the Rise of Superstar Firms.” The argument: rising industry concentration since the 1980s reflects the dominance of more productive firms — “superstars” — that have legitimately won market share through superior products, superior logistics, and the genuine economies of scale and network effects characteristic of digital platforms. On this view, concentration is the symptom of an economy that increasingly rewards efficiency at the firm level, and antitrust intervention against superstar firms would destroy real consumer welfare in pursuit of structural objectives that are no longer relevant to twenty-first-century industrial organization.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+<p>
+<strong>COUNTERARGUMENT</strong>
+</p>
+<p>
+<em><strong>Rising concentration reflects the dominance of more efficient “superstar firms,” not market power — and antitrust intervention against them would destroy real consumer welfare. (Autor et al., QJE 2020)</strong></em>
+</p>
+<p>
+The empirical case has three pillars. First, the industries that have become more concentrated since the 1980s have also been the most productive on standard total-factor productivity measures. Second, tech platforms exhibit genuine network effects: Google search becomes more valuable to user one billion because of users one through 999,999,999. This is platform mathematics, not conspiracy. Third, consumer prices in concentrated retail sectors — Walmart, Costco, Amazon — have generally fallen in real terms over the relevant period, suggesting that whatever market power these firms have accumulated, they have not used it to raise prices in the traditional sense.
+</p>
+<p>
+<strong>WHY THIS DOES NOT SAVE THE FRAMING</strong>
+</p>
+<p>
+The network-effects point should be conceded where it is real. Google’s search algorithm is more useful because of the volume of queries it processes; Meta’s social graph has genuine increasing returns to scale; Visa and Mastercard’s two-sided network is mathematically harder to enter the larger it gets. Anyone arguing that every concentrated industry is a conspiracy will lose credibility on the cases that are most indefensible. But the efficiency story cannot explain the cash trail. The National Bureau of Economic Research has documented that after-tax corporate profits as a share of value added rose from an average of 7 percent during 1970–2002 to 10 percent during 2002 onward, while corporate reinvestment fell from approximately 30 cents per profit dollar to 20 cents. Genuinely efficient firms in competitive markets reinvest profits aggressively to defend share against entrants. The simultaneous rise in profit share and decline in reinvestment is the empirical signature of market power being exercised rather than efficiency being realized. The Autor framework explains some of the concentration story. It does not explain the share of national income flowing to capital rather than being reinvested. And the killer fact for the efficiency defense is institutional: the number of antitrust cases filed by the Department of Justice under the Sherman Act has fallen precipitously since the 1970s, not because firms became more virtuous or because the law changed, but because the Bork doctrine narrowed enforcement deliberately. Concentration did not happen to the United States. It was permitted.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>VIII. The Argument, Distilled</strong></p>
+<p>The most defensible version of the consolidation case has three layers and requires careful vocabulary. Each layer rests on different evidence and addresses different mechanisms. Conflating them, or using the wrong word for the wrong layer, allows opponents to disprove one specific claim and dismiss the broader pattern. Used precisely, the three layers together describe a structure of economic control that current American competition law does not address.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>
+<p>
+<strong>1.</strong>
+</p>
+<p>
+HORIZONTAL CONCENTRATION. Over thirty years of weakened antitrust permitted the number of operating firms in airlines, banking, telecom, food, media, defense, agricultural chemicals, eyewear, and beer to collapse through serial mergers. The number of independent operators in each sector is now a small fraction of what it was in 1980.
+</p>
+</td>
+<td>
+<p>
+<strong>2.</strong>
+</p>
+<p>
+VERTICAL INTEGRATION. Within those mega-firms, Amazon is simultaneously seller, marketplace operator, and logistics provider. Live Nation is simultaneously venue owner, concert promoter, and ticket vendor. Conflicts of interest that competition law was designed to surface as conflicts between firms are now internal to single firms.
+</p>
+</td>
+</tr>
+<tr class="even">
+<td>
+<p>
+<strong>3.</strong>
+</p>
+<p>
+COMMON INSTITUTIONAL OWNERSHIP. The same three asset managers are the largest shareholders of supposedly competing firms across nearly every concentrated sector — dampening competitive pressure at the ownership level in a way current antitrust law does not reach.
+</p>
+</td>
+<td>
+<p>
+<strong>→</strong>
+</p>
+<p>
+TOGETHER. These three layers describe an economy in which the trust-like outcomes the Sherman Act was written to prevent are produced by mechanisms the Sherman Act, as currently interpreted, does not regulate. The arrangement is technically not monopoly. It functions, for the consumer and the worker, the way monopoly functions.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Call the arrangement what economists call it: concentrated oligopoly with common institutional ownership. The phrase is uglier than “monopoly” but it is accurate, and it forces the conversation onto the empirical literature where the data is favorable. The word “monopoly” is technically wrong in most sectors, and a sharp opponent will use that technical inaccuracy to dismiss the substantive reality. The accurate term keeps the evidence on the table.</p>
+<p>The democratic remedy is not a return to the populist trust-busting rhetoric of 1911, though the mechanisms by which Standard Oil concentrated power and the mechanisms by which BlackRock-Vanguard-State Street common ownership concentrates power produce comparable outcomes. The remedy is the targeted updating of competition law to address the specific mechanisms that the post-1978 doctrine has refused to see.</p>
+<p><strong><em>Reforms That Address the Mechanisms Documented Here</em></strong></p>
+<p><strong>Restore structural antitrust analysis.</strong> The Bork “consumer welfare” standard, narrowly focused on short-run prices, should be replaced or supplemented by a structural-power standard that considers market concentration itself as a competitive harm regardless of current pricing. The 2023 FTC-DOJ merger guidelines moved in this direction; they should be codified by statute so they survive administration changes.</p>
+<p><strong>Address common ownership directly.</strong> Eric Posner and Glen Weyl have proposed limiting institutional investors to holding shares in only one firm per concentrated industry, or requiring them to vote their shares proportionally to underlying beneficiaries rather than through centralized governance departments. Either reform would address the specific airline-airfare and bank-fee findings documented in the peer-reviewed common-ownership literature.</p>
+<p><strong>Reverse Gramm-Leach-Bliley.</strong> The separation of commercial banking, investment banking, and insurance was maintained from 1933 to 1999 without observed harm to the financial system. Its repeal contributed directly to the 2008 crisis. Restoring the separation would force the breakup of the largest universal banks and substantially reduce the systemic risk concentration documented in the post-2008 stress-testing record.</p>
+<p><strong>Address platform gatekeeping by structural separation.</strong> Amazon as marketplace and Amazon as seller of products on that marketplace should not be the same firm. Apple’s App Store and Apple’s first-party applications should not be governed by the same firm. The European Union’s Digital Markets Act began this approach; the United States has not yet enacted a comparable structural framework.</p>
+<p><strong>Strengthen FTC and DOJ enforcement budgets and shorten merger-review timelines.</strong> Enforcement weakness has been driven partly by doctrine and partly by sustained underfunding of the agencies relative to the volume and complexity of mergers proposed. Restoring the Antitrust Division’s staffing to its 1980 levels, adjusted for the size and complexity of the modern economy, would be a low-controversy step.</p>
+<p>None of these reforms are radical. Each was understood as necessary at moments when the public was paying attention — in the original Progressive-era trust-busting period, during the New Deal, after the 2008 financial crisis. Each has been allowed to fade once public attention moved on. The deepest lesson of the consolidation record is not that any specific firm is uniquely guilty. It is that the public has been trained to absorb each merger, each acquisition, each consolidation episode as an isolated business-news event, to mourn the loss of competition in the abstract, and to forget. Forgetting is the load-bearing pillar of the entire structure. Documentary memory — named firms, named regulators, named decisions, named dates — is what makes the structure harder to sustain.</p>
+<p><strong>IX. Sources and Verification Note</strong></p>
+<p>The Big Three asset-manager figures are drawn from Jan Fichtner, Eelke Heemskerk, and Javier Garcia-Bernardo, “Hidden Power of the Big Three? Passive Index Funds, Re-concentration of Corporate Ownership, and New Financial Risk,” Business and Politics 19, no. 2 (2017), updated with 2025 BlackRockVanguardWatch data and 2024-2026 SEC filings as compiled by the Costello College of Business and IR Impact. The post-1978 antitrust doctrine is documented in Robert Bork, The Antitrust Paradox (1978), and its empirical consequences in David Autor, David Dorn, Lawrence Katz, Christina Patterson, and John Van Reenen, “The Fall of the Labor Share and the Rise of Superstar Firms,” Quarterly Journal of Economics 135, no. 2 (May 2020). The profit-share and reinvestment figures are from the National Bureau of Economic Research’s 2019 “Economics and Politics of Market Concentration” reporter. Retail concentration figures are from the Federal Reserve Bank of San Francisco Economic Letter 2019-26.</p>
+<p>The airline concentration figures are from OAG Aviation Market Insights as of May 2026. The banking figures are from S&amp;P Global Market Intelligence Q4 2025 and the FDIC’s March 2025 statistics. The agricultural seed and pesticide concentration figures are from the USDA Economic Research Service (2018-2020 data, latest available) and the ETC Group / Pesticide Action Network Asia Pacific 2023 reporting on global ag concentration, corroborated by the Heinrich Böll Stiftung’s Pesticide Atlas. The peer-reviewed common-ownership literature is led by José Azar, Martin Schmalz, and Isabel Tecu, “Anticompetitive Effects of Common Ownership,” Journal of Finance 73, no. 4 (August 2018), with the banking extension in Azar, Raina, and Schmalz, “Ultimate Ownership and Bank Competition,” Financial Management 51, no. 1 (2022).</p>
+<p>The tobacco-food acquisition history is documented in Wikipedia’s General Foods entry (corroborated against SEC filings and contemporaneous Wall Street Journal reporting), and the hyperpalatability findings are from Tera Fazzino et al., “U.S. Tobacco Companies Selectively Disseminated Hyper-Palatable Foods into the U.S. Food System,” Addiction 119, no. 1 (September 2023), with the antecedent UCSF work by Laura Schmidt and colleagues drawing on the tobacco industry documents released through the 1998 Master Settlement Agreement. The media consolidation figures are from Free Press, FCC filings, the UNC News Deserts Report (2018), IFPI/RIAA, and the Motion Picture Association. The “6 corporations / 90 percent” meme is sourced to a 2011 Frugal Dad infographic and is treated in this essay as imprecise but capturing a real underlying concentration.</p>
+<p>Where any sourcing involves political contestation, the essay notes the contestation directly rather than picking a side.</p>
+<p><strong>END OF DOSSIER · THE GREAT CONSOLIDATION · VOL. I</strong></p>
+
+</article>
+<nav class="docnav"><a href="blowback-and-immunity.html"><span class="lbl">&larr; Previous file</span>Blowback and Immunity</a><a href="the-machine-and-its-masters.html" style="text-align:right;margin-left:auto"><span class="lbl">Next file &rarr;</span>The Machine and Its Masters</a></nav>
+<button class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr; Top</button>
+<footer class="site"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><p>Structural Humanism &middot; Kai Jashon Price &middot; structuralhumanism.com</p>
+<p>Documented &middot; Structural &middot; Verifiable &middot; Nonviolent</p>
+<p class="verify">Every claim across these files is intended to be verifiable through declassified government records, peer-reviewed scholarship, mainstream investigative journalism, or on-record admissions. Nothing here requires you to trust the author. It requires you to look things up.</p>
+</footer>
+<script>
+(function(){var p=document.getElementById('prog'),t=document.getElementById('totop');
+function u(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+p.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';
+t.classList.toggle('show',h.scrollTop>900);}
+addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body></html>

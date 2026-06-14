@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Captive Market — Structural Humanism</title>
+<meta name="description" content="Public need is converted into captive demand, and the resulting illness is described as private failure.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a08;--bg2:#131009;--panel:#16130d;--panel2:#1d1810;--ink:#e9e2d0;--ink-dim:#a89e86;--ink-faint:#6f6750;--gold:#caa04a;--gold-b:#e0b85e;--oxblood:#7c2c25;--oxblood-b:#a8423a;--line:#2c2618;--line2:#3a3320;--mono:'Courier Prime','Courier New',monospace;--serif:'Playfair Display',Georgia,serif;--body:'Spectral',Georgia,serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{min-height:100dvh;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(1rem,.95rem + .25vw,1.125rem);line-height:1.7;overflow-x:hidden}
+img,svg{display:block;max-width:100%}button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}a{color:var(--gold-b)}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.12}p,li{text-wrap:pretty}::selection{background:rgba(202,160,74,.25)}:focus-visible{outline:1px solid var(--gold);outline-offset:2px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:linear-gradient(180deg,rgba(8,7,5,.97),rgba(8,7,5,.88));border-bottom:1px solid var(--line2);backdrop-filter:blur(8px)}
+.nav-brand{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none;color:var(--ink)}
+.nav-seal{width:34px;height:34px;color:var(--gold);flex:none}
+.nav-title{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.1}
+.nav-sub{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--ink-faint);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.nav-btn{background:none;border:1px solid transparent;color:var(--ink-dim);text-decoration:none;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 12px;border-radius:2px;transition:.18s;white-space:nowrap;display:inline-block}
+.nav-btn:hover{color:var(--ink);background:var(--panel)}.nav-btn.active{color:var(--gold-b);border-color:var(--line2);background:var(--panel)}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:15px 26px;cursor:pointer;border:none;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:.2s;text-decoration:none}
+.btn-gold{background:var(--gold);color:#1a1407}.btn-gold:hover{background:var(--gold-b);transform:translateY(-2px);box-shadow:0 10px 28px rgba(202,160,74,.18)}
+.btn-ghost{background:rgba(20,17,11,.6);color:var(--ink-dim);border:1px solid var(--line2)}.btn-ghost:hover{color:var(--ink);border-color:var(--gold)}
+.btn-sm{padding:10px 16px;font-size:10px}
+.stamp{display:inline-block;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:3px;color:var(--oxblood-b);border:2.5px solid var(--oxblood-b);padding:5px 12px;text-transform:uppercase;transform:rotate(-3deg);opacity:.9;border-radius:3px}
+footer.site{background:#070605;border-top:1px solid var(--line2);padding:46px 20px;text-align:center;margin-top:80px}
+footer.site .nav-seal{margin:0 auto 18px;opacity:.7;width:46px;height:46px}
+footer.site p{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--ink-faint);margin:4px 0;text-transform:uppercase}
+footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font-size:11px;letter-spacing:.5px;text-transform:none;line-height:1.7}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:200;width:0;transition:width .1s linear}
+.dossier{max-width:760px;margin:0 auto;padding:64px 20px 0}
+.dossier-meta{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:26px}
+.dossier-meta .fid{color:var(--gold)}
+.dossier h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.4rem,1.4rem + 4.5vw,4.4rem);margin:0 0 16px;color:var(--ink)}
+.dossier .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1rem + 1vw,1.5rem);color:var(--gold-b);line-height:1.4;margin-bottom:26px}
+.dossier .byline{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-dim);margin-bottom:30px}
+.doc-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:20px 0 26px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin-bottom:48px}
+.doc-actions .stamp{margin-left:auto}
+article.reader{max-width:760px;margin:0 auto;padding:0 20px 90px}
+article.reader h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,1.2rem + 1.6vw,2.1rem);margin:60px 0 22px;color:var(--ink)}
+article.reader h2::before{content:"";display:block;width:42px;height:1px;background:var(--gold);margin-bottom:18px}
+article.reader h3{font-family:var(--serif);font-weight:700;font-size:1.3em;margin:44px 0 16px}
+article.reader p{margin:0 0 1.35em}
+article.reader p strong{color:var(--ink)}
+article.reader p:has(> strong:only-child){border-left:2px solid var(--gold);padding:6px 0 6px 20px;font-family:var(--serif);font-size:1.08em;line-height:1.55;color:var(--gold-b)}
+article.reader blockquote{border-left:2px solid var(--oxblood-b);padding:8px 0 8px 22px;margin:0 0 1.5em;color:var(--ink-dim);font-style:italic}
+article.reader ul,article.reader ol{margin:0 0 1.4em;padding-left:1.4em}
+article.reader li{margin-bottom:.45em}
+article.reader hr{border:none;border-top:1px solid var(--line2);margin:46px auto;width:120px}
+.abstract-box{background:var(--panel);border:1px solid var(--line2);border-left:2px solid var(--gold);border-radius:2px;padding:22px 26px;margin:0 0 2em}
+.abstract-box .abstract-label{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.abstract-box p{font-size:.93em;color:var(--ink-dim);line-height:1.7;margin:0 0 .8em}
+.abstract-box p:last-child{margin:0}
+.abstract-box .kw{font-family:var(--mono);font-size:.78em;color:var(--ink-faint);margin-top:12px}
+.docnav{max-width:760px;margin:0 auto;padding:0 20px 60px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.docnav a{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;border:1px solid var(--line2);padding:14px 18px;border-radius:2px;max-width:46%;transition:.18s}
+.docnav a:hover{color:var(--gold-b);border-color:var(--gold)}.docnav .lbl{display:block;color:var(--ink-faint);font-size:9px;margin-bottom:6px}
+.totop{position:fixed;right:18px;bottom:18px;z-index:90;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--ink-dim);border:1px solid var(--line2);background:rgba(11,10,8,.85);padding:10px 12px;border-radius:2px;opacity:0;pointer-events:none;transition:.25s}
+.totop.show{opacity:1;pointer-events:auto}.totop:hover{color:var(--gold-b);border-color:var(--gold)}
+@media print{body::before,.nav,.doc-actions .btn,.docnav,.totop,.progress,footer.site{display:none!important}body{background:#fff;color:#111;font-size:11.5pt}.dossier h1{color:#111}.dossier .sub{color:#333}.abstract-box{background:#f4f4f4;border-color:#ccc}}
+</style></head><body>
+<div class="progress" id="prog"></div>
+<nav class="nav"><a class="nav-brand" href="../index.html"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><div><div class="nav-title">Structural Humanism</div><div class="nav-sub">Independent Investigative Project</div></div></a><div class="nav-links"><a class="nav-btn" href="../index.html">Home</a><a class="nav-btn active" href="../index.html#files">Case Files</a><a class="nav-btn" href="../signal.html">Signal</a><a class="nav-btn" href="../index.html#act">Act</a><a class="nav-btn" href="../index.html#book">The Book</a><a class="nav-btn" href="../index.html#contact">Contact</a></div></nav>
+<header class="dossier">
+  <div class="dossier-meta"><span class="fid">File SH-008</span><span>Scholarly Paper &mdash; Public Health Policy</span><span>Health &amp; Capture</span><span>2025</span><span>2,345 words &middot; ~10 min read</span></div>
+  <h1>The Captive Market</h1>
+  <div class="sub">How Regulatory Capture in Food and Medicine Turns Public Need into Private Profit</div>
+  <div class="byline">Kai Jashon Price &middot; Journal of Public Health Policy and Corporate Accountability &middot; 2025</div>
+  <div class="doc-actions">
+    <a class="btn btn-gold btn-sm" href="../files/the-captive-market.md" download>&#8595; Markdown</a>
+    <button class="btn btn-ghost btn-sm" onclick="window.print()">Print / PDF</button>
+    <span class="stamp">Public Record &middot; Distribute Freely</span>
+  </div>
+</header>
+<article class="reader">
+<div class="abstract-box">
+  <div class="abstract-label">Abstract</div>
+  <p>This paper examines the mechanisms by which the American food and pharmaceutical industries have shaped the regulatory environment at the expense of public health. It traces the human cost of the FDA&rsquo;s prolonged delay in removing trans fatty acids from the food supply; explains how federal subsidy policy accelerated the spread of high fructose corn syrup across the American diet; documents the gap between American additive standards and those of peer nations operating under more precautionary food-safety regimes; analyzes the pharmaceutical patent and pricing system, including the long-standing prohibition on Medicare drug-price negotiation; and considers the role of concentrated control over scientific publishing in narrowing access to the research record. Across these cases, the paper identifies the same recurring institutional pattern: concentrated private interests shaping the rules meant to regulate them, externalizing harm while internalizing profit.</p>
+  <p class="kw"><strong>Keywords:</strong> regulatory capture, trans fats, high fructose corn syrup, food additives, drug pricing, FDA, Medicare negotiation, public health, academic publishing</p>
+</div>
+
+<h2 id="i-the-entry-point">I. The Entry Point: The Bill That Makes No Sense</h2>
+<p>Most Americans encounter this system first as a bill that seems detached from reality. A routine procedure produces a charge far above any plausible underlying cost. A medicine sold abroad for a fraction of the domestic price appears at a pharmacy counter as a life-altering financial decision. An MRI that costs hundreds in another advanced economy is billed in the United States at thousands. Many people pay, go into debt, delay treatment, or simply go without. What presents itself as the ordinary function of modern medicine is in fact the product of legislative and regulatory decisions made within a system heavily shaped by the industries that profit from it.</p>
+<p>The same pattern appears in food. Americans are routinely told that consumer choice is the essence of freedom, even when the available choices are products shaped by permissive rules that peer nations have rejected. A marketplace that offers consumers multiple ways to ingest avoidable harm is not meaningfully free; it is a system that has privatized risk while preserving the appearance of consent. In plain terms, this is often presented as the freedom to choose which poison to consume. That is not a serious model of public liberty.</p>
+<p>The argument of this paper is therefore narrower and more precise than a general indictment of commerce. The issue is not markets as such. It is a recurring institutional pattern: concentrated private interests acquiring enough influence to shape the rules intended to govern their own products. When that happens, preventable harm becomes predictable rather than accidental.</p>
+
+<h2 id="ii-trans-fats">II. Trans Fats: A Preventable Death Toll</h2>
+<p>Trans fatty acids, produced through the industrial partial hydrogenation of vegetable oils, entered the American food supply as a cheaper and more shelf-stable alternative to natural fats. By the mid-twentieth century, researchers were already identifying associations between dietary fat composition and cardiovascular disease. By the 1990s, the evidence specific to trans fats had become strong enough that serious regulatory action was warranted. Yet meaningful action lagged for years.</p>
+<p>The FDA required trans fat labeling only in 2006 and determined in 2015 that partially hydrogenated oils were no longer Generally Recognized As Safe, with compliance required by 2018. That timeline left a gap of roughly two decades or more between strong scientific concern and decisive regulatory intervention. Harvard researchers estimated that trans fat consumption was associated with approximately 50,000 premature deaths per year in the United States at peak consumption levels. Even allowing for reasonable debate over thresholds of certainty and year-to-year exposure, the scale of preventable harm is unmistakable.</p>
+<p>The delay was not simply a story of neutral scientific caution. As Naomi Oreskes and Erik Conway showed in their work on industry disinformation, food and chemical companies borrowed from the tobacco playbook: fund doubt, prolong uncertainty, and resist political consensus long after the underlying risk is clear enough to justify precaution. In this case, regulatory hesitation did not protect scientific rigor. It protected a profitable ingredient long after its dangers were well established.</p>
+
+<h2 id="iii-high-fructose-corn-syrup">III. High Fructose Corn Syrup: Policy in a Bottle</h2>
+<p>High fructose corn syrup became ubiquitous in the American diet during the 1970s and 1980s, not because consumers demanded it, but because policy made it economically attractive. Federal corn subsidies reduced the cost of corn inputs, while sugar tariffs raised the price of the main alternative. The sweetener&rsquo;s spread across beverages, condiments, and processed foods was therefore not merely a market outcome. It was a policy-shaped dietary transformation.</p>
+<p>Its metabolic profile also matters. Fructose is processed differently from glucose and, at high levels of intake, has been linked in the scientific literature to hepatic lipogenesis, insulin resistance, and broader metabolic dysfunction. The period of HFCS expansion overlaps closely with the period of sharp growth in American obesity rates. That overlap does not, by itself, prove monocausal explanation; obesity is multifactorial. But the convergence of policy incentives, product reformulation, and metabolic research makes clear that this ingredient&rsquo;s dominance was neither nutritionally neutral nor democratically inevitable.</p>
+<p>Industry&rsquo;s response again followed a familiar pattern. Public relations emphasized personal responsibility while minimizing the role of product design and policy architecture. The Corn Refiners Association even sought to rebrand HFCS as &ldquo;corn sugar,&rdquo; a move the FDA declined to endorse. The underlying lesson is not merely that one sweetener is bad. It is that public diet can be reshaped at national scale by subsidy systems that privilege commodity disposal over long-term health.</p>
+
+<h2 id="iv-the-regulation-gap">IV. The Regulation Gap: What Peer Nations Refuse</h2>
+<p>The gap between American and European food standards is not an abstract matter of style; it reflects two different governing philosophies. The European Union operates more explicitly under a precautionary principle, requiring stronger demonstrations of safety before substances remain widely used. The American system has historically been more permissive, allowing ingredients and processing agents to remain in circulation unless and until harm is proven to a politically actionable degree.</p>
+<p>That difference shows up in concrete product formulations. Potassium bromate, used in some American bread products, has been banned in the European Union, Canada, Brazil, and China because of carcinogenicity concerns. Azodicarbonamide, used in some bread and fast-food buns, is banned in the European Union and Australia. Brominated vegetable oil has been barred in the European Union and Japan. Recombinant bovine growth hormone is prohibited in the European Union, Canada, Australia, and Japan. Ractopamine has been banned in roughly 160 countries, including the European Union and China. These are not marginal differences in culinary culture. They are regulatory judgments about what level of avoidable risk a public should be asked to bear.</p>
+<p>The same issue extends to bleaching and coloring agents. American flour treatment and food-color practices have often tolerated ingredients or synthetic dyes that trigger stricter scrutiny, reformulation, warning requirements, or outright bans elsewhere. European regulators have been more willing to ask whether cosmetic appearance or shelf-life advantage justifies population-level exposure, especially in children. The American answer has too often been that the product may remain unless harm is proved beyond the point at which precaution would have been useful.</p>
+<p>This matters because regulatory permissiveness gets mislabeled as consumer liberty. When a system offers a brightly colored cereal, chemically whitened bread, or heavily reformulated processed food under weaker safety assumptions than those accepted by comparable nations, the issue is not abundance. The issue is whether citizens are being asked to navigate risks that their institutions should have reduced before the product reached the shelf.</p>
+
+<h2 id="v-beyond-halal-and-kosher">V. Beyond Halal and Kosher: Voluntary Standards and Public Failure</h2>
+<p>Earlier versions of this argument noted that Halal and Kosher certification can, in some respects, provide consumers with stricter screening than secular American regulation. That observation remains useful, but it should not carry more explanatory weight than it can support. The larger point is broader: when citizens must rely on private, religious, or foreign market standards to avoid ingredients and practices their own regulators permit, the regulatory system itself deserves scrutiny.</p>
+<p>The sharper comparison is not between one tradition and another, but between governance models. European and other peer-nation standards have often required reformulation where the United States allowed continued use. In effect, many multinational firms already know how to produce cleaner versions of their products because they do so for other markets. The persistence of lower domestic standards therefore does not reflect technical impossibility. It reflects political choice.</p>
+
+<h2 id="vi-pharmaceutical-pricing">VI. Pharmaceutical Pricing: The Monopoly Congress Protected</h2>
+<p>The American pharmaceutical pricing system is exceptional among wealthy democracies. For years, the United States maintained a legal structure in which the government, despite being the largest purchaser of prescription drugs, was barred from negotiating prices in the way peer governments routinely do. That arrangement did not arise from neutral market logic. It was written into law within a political environment shaped by extensive pharmaceutical lobbying and campaign finance.</p>
+<p>The results are visible in cross-national comparison. The same medication can be sold at radically different prices across countries, not because the molecule is inherently more expensive in the United States, but because other systems negotiate, regulate, or benchmark prices more aggressively. A RAND study found that U.S. prescription drug prices averaged more than twice those of 32 comparison nations, with brand-name drugs even more distorted. The underlying mechanisms include patent monopolies, evergreening strategies, pay-for-delay arrangements, and the insulation of pricing from ordinary bargaining pressure.</p>
+<p>The moral problem is sharpened by public investment. American taxpayers fund much of the underlying biomedical research through the National Institutes of Health and related channels. Private firms often license that publicly supported science, convert it into patent-protected products, and then sell those products back to the public at prices far above those paid in countries that did not finance the same research base. That arrangement is best understood not as a clean market reward for innovation, but as a public-private transfer system structured to privatize gains while socializing cost.</p>
+
+<h2 id="vii-scientific-publishing">VII. Scientific Publishing and the Price of Knowledge</h2>
+<p>The final part of the pattern concerns not only what products are sold, but what research is visible and accessible. Robert Maxwell&rsquo;s Pergamon Press helped build one of the commercial foundations of modern academic publishing, and later concentration among major publishers preserved extraordinary profit margins in the dissemination of scientific work. Researchers produce studies, peer reviewers evaluate them, and publicly funded institutions then buy access back at premium prices through subscription systems dominated by a handful of firms.</p>
+<p>That structure matters for public health because access to the full scientific record is not evenly distributed. Large pharmaceutical companies, major universities, and well-funded institutions can obtain the relevant literature. Independent journalists, smaller regulators, less wealthy institutions, and ordinary members of the public often cannot. The result is not outright censorship. It is an access architecture that advantages the actors already best positioned to shape interpretation, marketing, and policy.</p>
+<p>This point should be stated carefully. Concentration in scientific publishing does not by itself prove manipulation of any specific result. The claim is narrower and still significant: when access to research is costly and institutionally gated, the people most affected by medical and regulatory decisions are often the least able to evaluate the evidence on which those decisions rest.</p>
+
+<h2 id="viii-conclusion">VIII. Conclusion: The Captive Market</h2>
+<p>The cases in this paper are different in substance but similar in structure. Trans fats remained in circulation long after serious warning signs were evident. High fructose corn syrup spread through a policy environment that rewarded cheap reformulation over nutritional prudence. American food standards remained more permissive than those of peer nations on multiple additives and processing agents. Drug pricing was protected from the bargaining pressures that constrain it elsewhere. Access to the scientific literature was filtered through an expensive publishing architecture. In each instance, concentrated private interests exerted unusual influence over the rules meant to contain them.</p>
+<p>The most important analytical point is therefore also the simplest. The problem is not that corporations seek profit; that is the ordinary logic of firms. The problem is that the public institutions meant to discipline profit-seeking have too often been structured, staffed, funded, or pressured in ways that make them answerable to industry first and the public second. A food and medical system built on that logic will reliably call avoidable harm &ldquo;choice,&rdquo; delayed accountability &ldquo;prudence,&rdquo; and monopoly pricing &ldquo;innovation.&rdquo;</p>
+<p>A different arrangement is possible. Multinational companies already reformulate products for stricter jurisdictions. Other advanced democracies already negotiate medicine prices more aggressively. The United States does not lack the technical capacity to do better. It lacks the political willingness to subordinate concentrated private power to public health. Until that changes, the country will remain what this paper argues it has become: a captive market, told that exposure is freedom and that unaffordable care is the price of progress.</p>
+
+<h2 id="references">References</h2>
+<ol>
+<li>FDA. (2015). <em>Final Determination Regarding Partially Hydrogenated Oils.</em> 80 FR 34650. Federal Register.</li>
+<li>Mozaffarian, D. et al. (2006). &ldquo;Trans fatty acids and cardiovascular disease.&rdquo; <em>New England Journal of Medicine</em>, 354(15), 1601&ndash;1613.</li>
+<li>Oreskes, N. &amp; Conway, E.M. (2010). <em>Merchants of Doubt.</em> Bloomsbury Press.</li>
+<li>Pollan, M. (2006). <em>The Omnivore&rsquo;s Dilemma.</em> Penguin Press.</li>
+<li>Lustig, R.H. et al. (2012). &ldquo;The toxic truth about sugar.&rdquo; <em>Nature</em>, 482, 27&ndash;29.</li>
+<li>National Health and Nutrition Examination Survey (NHANES). CDC/NCHS historical obesity data, 1960&ndash;2000.</li>
+<li>FDA. (2012). Letter responding to citizen petition on corn sugar labeling. Docket FDA-2010-P-0491.</li>
+<li>Vogel, D. (2012). <em>The Politics of Precaution.</em> Princeton University Press.</li>
+<li>Benbrook, C. (1996). <em>Pest Management at the Crossroads.</em> Consumers Union; HSUS. (2012). <em>Ractopamine and U.S. Pork.</em></li>
+<li>Angell, M. (2004). <em>The Truth About the Drug Companies.</em> Random House.</li>
+<li>RAND Corporation. (2019). <em>International Prescription Drug Price Comparisons.</em> RR-2956.</li>
+<li>Bower, T. (1988). <em>Maxwell: The Outsider.</em> Aurum Press.</li>
+<li>Buranyi, S. (2017). &ldquo;Is the staggeringly profitable business of scientific publishing bad for science?&rdquo; <em>The Guardian</em>, June 27, 2017.</li>
+<li>Thomas, G. &amp; Dillon, M. (2002). <em>Robert Maxwell: Israel&rsquo;s Superspy.</em> Carroll &amp; Graf; <em>Inslaw Inc. v. United States.</em></li>
+<li>Lariviere, V. et al. (2015). &ldquo;The Oligopoly of Academic Publishers in the Digital Era.&rdquo; <em>PLOS ONE</em>, 10(6).</li>
+</ol>
+</article>
+<nav class="docnav">
+  <a href="the-machine-and-its-masters.html"><span class="lbl">&larr; Previous file</span>The Machine and Its Masters</a>
+  <a href="the-food-pyramid.html" style="text-align:right;margin-left:auto"><span class="lbl">Next file &rarr;</span>&ldquo;Food Pyramid&rdquo;</a>
+</nav>
+<button class="totop" id="totop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr; Top</button>
+<footer class="site"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><p>Structural Humanism &middot; Kai Jashon Price &middot; structuralhumanism.com</p>
+<p>Documented &middot; Structural &middot; Verifiable &middot; Nonviolent</p>
+<p class="verify">Every claim across these files is intended to be verifiable through declassified government records, peer-reviewed scholarship, mainstream investigative journalism, or on-record admissions. Nothing here requires you to trust the author. It requires you to look things up.</p>
+</footer>
+<script>(function(){var p=document.getElementById('prog'),t=document.getElementById('totop');function u(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;p.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';t.classList.toggle('show',h.scrollTop>900);}addEventListener('scroll',u,{passive:true});u();})();</script>
+</body></html>

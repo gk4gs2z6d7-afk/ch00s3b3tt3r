@@ -61,7 +61,6 @@ footer.site .nav-seal{margin:0 auto 18px;opacity:.7;width:46px;height:46px}
 footer.site p{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--ink-faint);margin:4px 0;text-transform:uppercase}
 footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font-size:11px;letter-spacing:.5px;text-transform:none;line-height:1.7}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-
 /* HERO */
 .hero{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden;
   background:radial-gradient(110% 80% at 75% 15%,rgba(124,44,37,.16),transparent 55%),
@@ -83,51 +82,33 @@ footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font
 .mission-cell .n{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:2px}
 .mission-cell h4{font-family:var(--serif);font-size:1.35rem;margin:14px 0 10px}
 .mission-cell p{font-size:.92rem;line-height:1.65;color:var(--ink-dim)}
-/* QUOTE */
-.quote{padding:90px 0;text-align:center}
-.quote blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,1rem + 2.5vw,2.5rem);
-  line-height:1.35;max-width:880px;margin:0 auto;font-weight:500}
-.quote .src{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--gold);margin-top:24px;text-transform:uppercase}
-/* SECTIONS */
+/* TOC BAR */
+.toc-bar{position:sticky;top:63px;z-index:99;background:rgba(11,10,8,.96);border-bottom:1px solid var(--line2);backdrop-filter:blur(10px);overflow-x:auto;scrollbar-width:none}
+.toc-bar::-webkit-scrollbar{display:none}
+.toc-inner{display:flex;min-width:max-content;padding:0 12px}
+.toc-lnk{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);text-decoration:none;padding:10px 11px;white-space:nowrap;border-right:1px solid var(--line);transition:.15s;flex-shrink:0}
+.toc-lnk:hover{color:var(--gold-b);background:rgba(202,160,74,.05)}
+.toc-lnk.toc-book{color:var(--gold-b);font-weight:700}
+.toc-lnk.toc-util{color:var(--ink-faint);border-left:1px solid var(--line2);margin-left:auto}
+/* WORKS SECTIONS */
 .sect{padding:80px 0}
 .sect-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:34px}
 .sect-head h2{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,1.4rem + 3vw,3.2rem)}
 .sect-head .count{font-family:var(--mono);font-size:12px;color:var(--ink-faint);letter-spacing:2px;text-transform:uppercase}
-/* INDEX CONTROLS */
-.controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:18px}
-.search{position:relative;flex:1;min-width:240px}
-.search input{width:100%;background:var(--panel);border:1px solid var(--line2);color:var(--ink);
-  font-family:var(--mono);font-size:13px;padding:14px 14px 14px 42px;border-radius:2px}
-.search input:focus{outline:none;border-color:var(--gold)}
-.search input::placeholder{color:var(--ink-faint)}
-.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--ink-faint)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
-.chip{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
-  background:var(--panel);border:1px solid var(--line2);color:var(--ink-dim);padding:11px 14px;border-radius:2px;transition:.15s}
-.chip:hover{color:var(--ink);border-color:var(--ink-faint)}
-.chip.on{background:var(--gold);color:#1a1407;border-color:var(--gold)}
-/* CARDS */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
-.card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line2);
-  border-radius:3px;padding:24px;position:relative;transition:.2s;display:flex;flex-direction:column}
-.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);opacity:0;transition:.2s}
-.card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 16px 40px rgba(0,0,0,.45)}
-.card:hover::before{opacity:1}
-.cf-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px}
-.cf-id{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--gold)}
-.cf-cat{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;color:var(--ink-faint);text-transform:uppercase;text-align:right}
-.card h3{font-family:var(--serif);font-weight:700;font-size:1.45rem;margin:0 0 8px}
-.card h3 a{color:var(--ink);text-decoration:none}
-.card h3 a:hover{color:var(--gold-b)}
-.card .thesis{font-style:italic;font-size:.95rem;color:var(--gold-b);line-height:1.45;margin:0 0 10px}
-.card .meta{font-family:var(--mono);font-size:10px;letter-spacing:1px;color:var(--ink-faint);text-transform:uppercase;margin-bottom:16px}
-.card .acts{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
-.card .acts a{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
-  text-decoration:none;padding:10px 14px;border-radius:2px;border:1px solid var(--line2);color:var(--ink-dim);transition:.18s}
-.card .acts a.read{background:var(--gold);color:#1a1407;border-color:var(--gold);font-weight:700}
-.card .acts a.read:hover{background:var(--gold-b)}
-.card .acts a:hover{color:var(--ink);border-color:var(--gold)}
-.empty{text-align:center;padding:80px 20px;color:var(--ink-faint);font-family:var(--mono);letter-spacing:2px}
+.works-all{padding:10px 0 40px}
+.ws{border-bottom:1px solid var(--line);padding:44px 0}
+.ws:first-child{border-top:1px solid var(--line)}
+.ws-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-bottom:12px;font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint)}
+.ws-top .fid{color:var(--gold)}
+.ws h2{font-family:var(--serif);font-weight:800;font-size:clamp(1.7rem,1.2rem + 2.5vw,2.9rem);margin:0 0 8px;color:var(--ink);line-height:1.05}
+.ws-sub{font-family:var(--serif);font-style:italic;font-size:clamp(.95rem,1rem + .3vw,1.18rem);color:var(--gold-b);margin-bottom:8px;line-height:1.4}
+.ws-series{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px}
+.ws-thesis{color:var(--ink-dim);line-height:1.65;margin-bottom:22px;max-width:720px;border-left:2px solid var(--line2);padding:5px 0 5px 18px;font-style:italic}
+.ws-acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ws-read{background:var(--gold);color:#1a1407;font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:10px 16px;border-radius:2px;text-decoration:none;transition:.18s;display:inline-flex;align-items:center;gap:8px}
+.ws-read:hover{background:var(--gold-b)}
+.ws-dl{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-dim);text-decoration:none;border:1px solid var(--line2);padding:10px 14px;border-radius:2px;transition:.18s;display:inline-flex;align-items:center;gap:6px}
+.ws-dl:hover{color:var(--ink);border-color:var(--gold)}
 /* BOOK */
 .book{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .book-card{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:36px;align-items:center;
@@ -185,14 +166,14 @@ footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font
 .contact-box .mail{font-family:var(--mono);font-size:clamp(.95rem,.8rem + .9vw,1.2rem);letter-spacing:1px;color:var(--gold-b);text-decoration:none;word-break:break-all}
 .contact-box p{color:var(--ink-dim);margin-bottom:18px;line-height:1.7}
 </style></head><body>
-<nav class="nav"><a class="nav-brand" href="index.html"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><div><div class="nav-title">Structural Humanism</div><div class="nav-sub">Independent Investigative Project</div></div></a><div class="nav-links"><a class="nav-btn active" href="index.html">Home</a><a class="nav-btn" href="index.html#files">Case Files</a><a class="nav-btn" href="signal.html">Signal</a><a class="nav-btn" href="index.html#act">Act</a><a class="nav-btn" href="index.html#book">The Book</a><a class="nav-btn" href="index.html#contact">Contact</a></div></nav>
+<nav class="nav"><a class="nav-brand" href="index.html"><svg class="nav-seal" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg><div><div class="nav-title">Structural Humanism</div><div class="nav-sub">Independent Investigative Project</div></div></a><div class="nav-links"><a class="nav-btn active" href="index.html">Home</a><a class="nav-btn" href="#files">Case Files</a><a class="nav-btn" href="signal.html">Signal</a><a class="nav-btn" href="#act">Act</a><a class="nav-btn" href="#book">The Book</a><a class="nav-btn" href="#contact">Contact</a></div></nav>
 
 <section class="hero" id="home">
-  <div class="hero-ledger">FILE SH-001 &middot; DIVIDED AND CONQUERED<br>FILE SH-002 &middot; THE DEBT MACHINE<br>FILE SH-003 &middot; WHAT THEY DID IN YOUR NAME<br>FILE SH-004 &middot; THE BODY KEPT SICK<br>FILE SH-005 &middot; BLOWBACK AND IMMUNITY<br>FILE SH-006 &middot; THE GREAT CONSOLIDATION<br>FILE SH-007 &middot; THE MACHINE AND ITS MASTERS<br>FILE SH-008 &middot; THE CAPTIVE MARKET<br>FILE SH-009 &middot; “FOOD PYRAMID”<br>FILE SH-010 &middot; THE DISCIPLINE OF JUSTICE<br>FILE SH-011 &middot; THE FIELD MANUAL FOR SEEING<br>FILE SH-012 &middot; THE RELENTLESS CURRENT<br>FILE SH-013 &middot; WE THE PEOPLE<br>FILE SH-REF &middot; PROJECT SPOTLIGHT<br>FILE BOOK &middot; CHOOSE BETTER</div>
+  <div class="hero-ledger">FILE SH-001 &middot; DIVIDED AND CONQUERED<br>FILE SH-003 &middot; WHAT THEY DID IN YOUR NAME<br>FILE SH-004 &middot; THE BODY KEPT SICK<br>FILE SH-005 &middot; BLOWBACK AND IMMUNITY<br>FILE SH-006 &middot; THE GREAT CONSOLIDATION<br>FILE SH-007 &middot; THE MACHINE AND ITS MASTERS<br>FILE SH-008 &middot; THE CAPTIVE MARKET<br>FILE SH-009 &middot; &ldquo;FOOD PYRAMID&rdquo;<br>FILE SH-010 &middot; THE DISCIPLINE OF JUSTICE<br>FILE SH-011 &middot; THE FIELD MANUAL FOR SEEING<br>FILE SH-012 &middot; THE RELENTLESS CURRENT<br>FILE SH-013 &middot; WE THE PEOPLE<br>FILE SH-REF &middot; PROJECT SPOTLIGHT<br>FILE BOOK &middot; CHOOSE BETTER</div>
   <div class="hero-inner">
     <div class="eyebrow">Public Case &mdash; Open Record &mdash; Active Docket</div>
     <h1>A Public Case<br>Against the<em>Systems.</em></h1>
-    <p class="lede">That keep people confused, divided, indebted, and afraid. Fifteen documents &mdash; 157,169 words of sourced argument &mdash; every one readable here and downloadable to keep, host, or print. Nothing requires you to trust the author. It requires you to look things up.</p>
+    <p class="lede">That keep people confused, divided, indebted, and afraid. Thirteen documents &mdash; every one readable here and downloadable to keep, host, or print. Nothing requires you to trust the author. It requires you to look things up.</p>
     <div class="cta-row">
       <a class="btn btn-gold" href="#files">Open the Case Files &rarr;</a>
       <a class="btn btn-ghost" href="signal.html">Enter the Newsroom</a>
@@ -219,17 +200,180 @@ footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font
     <div class="eyebrow">Evidence Board &mdash; Open Record</div>
     <div class="sect-head">
       <h2>The Case Files</h2>
-      <div class="count"><span id="shown">0</span> of <span id="total">0</span> files shown</div>
+      <div class="count">13 files &middot; Jump to any below</div>
     </div>
-    <div class="controls">
-      <div class="search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
-        <input id="q" type="search" placeholder="Search files, theses, series&hellip;" aria-label="Search case files">
+  </div>
+  <nav class="toc-bar" aria-label="Jump to case file">
+    <div class="toc-inner">
+      <a class="toc-lnk toc-book" href="#book">&#9733; The Book</a>
+      <a class="toc-lnk" href="#sh-001">SH-001 &middot; Divided</a>
+      <a class="toc-lnk" href="#sh-003">SH-003 &middot; What They Did</a>
+      <a class="toc-lnk" href="#sh-004">SH-004 &middot; Body Kept Sick</a>
+      <a class="toc-lnk" href="#sh-005">SH-005 &middot; Blowback</a>
+      <a class="toc-lnk" href="#sh-006">SH-006 &middot; Consolidation</a>
+      <a class="toc-lnk" href="#sh-007">SH-007 &middot; Machine</a>
+      <a class="toc-lnk" href="#sh-008">SH-008 &middot; Captive Market</a>
+      <a class="toc-lnk" href="#sh-009">SH-009 &middot; Food Pyramid</a>
+      <a class="toc-lnk" href="#sh-010">SH-010 &middot; Discipline</a>
+      <a class="toc-lnk" href="#sh-011">SH-011 &middot; Field Manual</a>
+      <a class="toc-lnk" href="#sh-012">SH-012 &middot; Relentless Current</a>
+      <a class="toc-lnk" href="#sh-013">SH-013 &middot; We the People</a>
+      <a class="toc-lnk" href="#sh-ref">SH-REF &middot; Project Spotlight</a>
+    </div>
+  </nav>
+  <div class="wrap">
+    <div class="works-all">
+
+      <div class="ws" id="sh-001">
+        <div class="ws-top"><span class="fid">FILE SH-001</span><span>Media &amp; Division</span><span>2025</span><span>1,729 words &middot; ~8 min</span></div>
+        <h2>Divided and Conquered</h2>
+        <div class="ws-sub">How the Oldest Weapon in History Is Still Being Used Against You</div>
+        <div class="ws-series">Structural Humanism Series &mdash; Document I</div>
+        <div class="ws-thesis">Division is engineered, not natural.</div>
+        <div class="ws-acts">
+          <a class="ws-read" href="works/divided-and-conquered.html">Read Online &rarr;</a>
+          <a class="ws-dl" href="files/divided-and-conquered.docx" download>&#8595; DOCX</a>
+        </div>
       </div>
+
+      <div class="ws" id="sh-003">
+        <div class="ws-top"><span class="fid">FILE SH-003</span><span>Foreign Policy</span><span>2025</span><span>2,040 words &middot; ~9 min</span></div>
+        <h2>What They Did in Your Name</h2>
+        <div class="ws-sub">The Documented Record of Foreign Policy, Manufactured Enemies, and Suppressed Accountability</div>
+        <div class="ws-series">Structural Humanism Series &mdash; Document III</div>
+        <div class="ws-thesis">States help produce the threats they later claim only to confront.</div>
+        <div class="ws-acts">
+          <a class="ws-dl" href="files/what-they-did-in-your-name.docx" download>&#8595; Download (.docx)</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-004">
+        <div class="ws-top"><span class="fid">FILE SH-004</span><span>Health &amp; Capture</span><span>2025</span><span>1,458 words &middot; ~6 min</span></div>
+        <h2>The Body Kept Sick</h2>
+        <div class="ws-sub">How Regulatory Capture Converted Human Health Into a Revenue Stream</div>
+        <div class="ws-series">Structural Humanism Series &mdash; Document IV</div>
+        <div class="ws-thesis">Illness has been rendered economically valuable to the institutions tasked with reducing it.</div>
+        <div class="ws-acts">
+          <a class="ws-dl" href="files/the-body-kept-sick.docx" download>&#8595; Download (.docx)</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-005">
+        <div class="ws-top"><span class="fid">FILE SH-005</span><span>Foreign Policy</span><span>2025</span><span>5,072 words &middot; ~22 min</span></div>
+        <h2>Blowback and Immunity</h2>
+        <div class="ws-sub">How Covert Power Manufactures Its Own Enemies and Escapes the Bill</div>
+        <div class="ws-series">Foreign Policy &mdash; Standalone Investigation</div>
+        <div class="ws-thesis">Concentrated power, operating through secrecy, produces the conditions it later asks the public to fear.</div>
+        <div class="ws-acts">
+          <a class="ws-read" href="works/blowback-and-immunity.html">Read Online &rarr;</a>
+          <a class="ws-dl" href="files/blowback-and-immunity.docx" download>&#8595; DOCX</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-006">
+        <div class="ws-top"><span class="fid">FILE SH-006</span><span>Media &amp; Division</span><span>2026</span><span>5,945 words &middot; ~26 min</span></div>
+        <h2>The Great Consolidation</h2>
+        <div class="ws-sub">How a Few Hands Came to Hold Every Lever, and Why the Word Monopoly No Longer Describes It</div>
+        <div class="ws-series">The Concentration Dossier &mdash; Vol. I</div>
+        <div class="ws-thesis">Modern censorship rarely commands. It selects, repeats, and narrows.</div>
+        <div class="ws-acts">
+          <a class="ws-read" href="works/the-great-consolidation.html">Read Online &rarr;</a>
+          <a class="ws-dl" href="files/the-great-consolidation.docx" download>&#8595; DOCX</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-007">
+        <div class="ws-top"><span class="fid">FILE SH-007</span><span>AI &amp; Governance</span><span>2026</span><span>5,887 words &middot; ~26 min</span></div>
+        <h2>The Machine and Its Masters</h2>
+        <div class="ws-sub">AI, Surveillance, and the Character of the Men Who Control Both</div>
+        <div class="ws-series">Structural Humanism Series &mdash; Document VII</div>
+        <div class="ws-thesis">Who will govern intelligence, and in whose interest?</div>
+        <div class="ws-acts">
+          <a class="ws-dl" href="files/the-machine-and-its-masters.docx" download>&#8595; Download (.docx)</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-008">
+        <div class="ws-top"><span class="fid">FILE SH-008</span><span>Health &amp; Capture</span><span>2025</span><span>2,345 words &middot; ~10 min</span></div>
+        <h2>The Captive Market</h2>
+        <div class="ws-sub">How Regulatory Capture in Food and Medicine Turns Public Need into Private Profit</div>
+        <div class="ws-series">Scholarly Paper &mdash; Public Health Policy</div>
+        <div class="ws-thesis">Public need is converted into captive demand, and the resulting illness is described as private failure.</div>
+        <div class="ws-acts">
+          <a class="ws-read" href="works/the-captive-market.html">Read Online &rarr;</a>
+          <a class="ws-dl" href="files/the-captive-market.md" download>&#8595; Markdown</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-009">
+        <div class="ws-top"><span class="fid">FILE SH-009</span><span>Health &amp; Capture</span><span>2025</span><span>9,941 words &middot; ~43 min</span></div>
+        <h2>&ldquo;Food Pyramid&rdquo;</h2>
+        <div class="ws-sub">The Complete Evidence-Based Guide to Optimal Nutrition</div>
+        <div class="ws-series">Public Health &mdash; Field Guide</div>
+        <div class="ws-thesis">Nutritional confusion was manufactured by food politics, not science.</div>
+        <div class="ws-acts">
+          <a class="ws-dl" href="files/the-food-pyramid.docx" download>&#8595; Download (.docx)</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-010">
+        <div class="ws-top"><span class="fid">FILE SH-010</span><span>Civic Strategy</span><span>2025</span><span>2,444 words &middot; ~11 min</span></div>
+        <h2>The Discipline of Justice</h2>
+        <div class="ws-sub">Why Accountability Must Be Stronger Than Rage</div>
+        <div class="ws-series">Scholarly Paper &mdash; Democratic Ethics</div>
+        <div class="ws-thesis">Rage must become disciplined legal accountability, not revenge.</div>
+        <div class="ws-acts">
+          <a class="ws-read" href="works/the-discipline-of-justice.html">Read Online &rarr;</a>
+          <a class="ws-dl" href="files/the-discipline-of-justice.md" download>&#8595; Markdown</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-011">
+        <div class="ws-top"><span class="fid">FILE SH-011</span><span>Civic Strategy</span><span>2025</span><span>8,882 words &middot; ~39 min</span></div>
+        <h2>The Field Manual for Seeing</h2>
+        <div class="ws-sub">Forty-Nine Meditations on Structural Humanism</div>
+        <div class="ws-series">Meditations &mdash; Practice</div>
+        <div class="ws-thesis">Clarity is a discipline. Seeing structure is a practice, not a mood.</div>
+        <div class="ws-acts">
+          <a class="ws-dl" href="files/the-field-manual-for-seeing.docx" download>&#8595; Download (.docx)</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-012">
+        <div class="ws-top"><span class="fid">FILE SH-012</span><span>Civic Strategy</span><span>2025</span><span>8,286 words &middot; ~36 min</span></div>
+        <h2>The Relentless Current</h2>
+        <div class="ws-sub">A Citizens&rsquo; Constitutional Action Framework for the Repair of Democratic Self-Government</div>
+        <div class="ws-series">Action Framework</div>
+        <div class="ws-thesis">Non-violent. Constitutional. Immediate. Sustained.</div>
+        <div class="ws-acts">
+          <a class="ws-read" href="works/the-relentless-current.html">Read Online &rarr;</a>
+          <a class="ws-dl" href="files/the-relentless-current.docx" download>&#8595; DOCX</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-013">
+        <div class="ws-top"><span class="fid">FILE SH-013</span><span>Civic Strategy</span><span>2025</span><span>3,401 words &middot; ~15 min</span></div>
+        <h2>We the People</h2>
+        <div class="ws-sub">A Call to Action for Every American Who Still Believes That Democracy Is Worth Fighting For</div>
+        <div class="ws-series">Public Address</div>
+        <div class="ws-thesis">This document is addressed to you. Not to politicians. Not to institutions. To you.</div>
+        <div class="ws-acts">
+          <a class="ws-dl" href="files/we-the-people.docx" download>&#8595; Download (.docx)</a>
+        </div>
+      </div>
+
+      <div class="ws" id="sh-ref">
+        <div class="ws-top"><span class="fid">FILE SH-REF</span><span>Reference Archive</span><span>2025</span><span>17,162 words &middot; ~75 min</span></div>
+        <h2>Project Spotlight</h2>
+        <div class="ws-sub">100 Documented Government Operations and Experiments &middot; 1700 to Present</div>
+        <div class="ws-series">Reference Archive &mdash; Not an Argument</div>
+        <div class="ws-thesis">One hundred documented operations in the history of unaccountable power.</div>
+        <div class="ws-acts">
+          <a class="ws-dl" href="files/project-spotlight.docx" download>&#8595; Download (.docx)</a>
+        </div>
+      </div>
+
     </div>
-    <div class="filters"><button class="chip on" data-cat="All">All</button><button class="chip" data-cat="AI & Governance">AI & Governance</button><button class="chip" data-cat="Civic Strategy">Civic Strategy</button><button class="chip" data-cat="Finance & Power">Finance & Power</button><button class="chip" data-cat="Foreign Policy">Foreign Policy</button><button class="chip" data-cat="Health & Capture">Health & Capture</button><button class="chip" data-cat="Media & Division">Media & Division</button><button class="chip" data-cat="Reference Archive">Reference Archive</button></div>
-    <div class="grid" id="grid"></div>
-    <div class="empty" id="empty" style="display:none">// NO MATCHING RECORDS // ADJUST SEARCH OR FILTER //</div>
   </div>
 </section>
 
@@ -240,11 +384,10 @@ footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font
       <div class="book-cover"><div><svg style="width:54px;height:54px;color:var(--gold)" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.75"/><path d="M40 22 C30 30 22 30 22 30 C22 44 30 54 40 58 C50 54 58 44 58 30 C58 30 50 30 40 22 Z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="0.75"/><line x1="28" y1="34" x2="52" y2="34" stroke="currentColor" stroke-width="0.75"/><line x1="26" y1="42" x2="54" y2="42" stroke="currentColor" stroke-width="0.75"/></svg></div><div class="t">Choose<br>Better</div><div class="a">Kai Jashon Price</div></div>
       <div>
         <h3>Choose Better: A Structural Humanism Manifesto</h3>
-        <div class="thesis">People are not foolish. They are managed — and the world as it stands was made, so it can be rebuilt.</div>
-        <p>The central nonfiction project &mdash; 80,704 words gathering the whole framework into one public case across division, debt, media, faith, foreign policy, healthcare, and civic responsibility. Read the full manuscript in your browser, or download it to keep.</p>
+        <div class="thesis">People are not foolish. They are managed &mdash; and the world as it stands was made, so it can be rebuilt.</div>
+        <p>The central nonfiction project &mdash; 80,704 words gathering the whole framework into one public case across division, debt, media, faith, foreign policy, healthcare, and civic responsibility. Read the full manuscript or download it to keep.</p>
         <div class="cta-row">
-          <a class="btn btn-gold btn-sm" href="works/choose-better.html">Read the Manuscript</a>
-          <a class="btn btn-ghost btn-sm" href="files/choose-better.md" download>&#8595; Markdown</a>
+          <a class="btn btn-gold btn-sm" href="works/choose-better.html">About the Manuscript</a>
           <a class="btn btn-ghost btn-sm" href="files/choose-better.docx" download>&#8595; Word (.docx)</a>
         </div>
       </div>
@@ -260,11 +403,11 @@ footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font
       <div class="signal-body">
         <div>
           <h3>Read the news the way the case files read the record.</h3>
-          <p>A live briefing desk built on the project&rsquo;s own standard: every story carries an ownership disclosure for its outlet, the feed fails honestly rather than showing fabricated content, and anything worth pursuing can be flagged with a note for future structuralhumanism.com work.</p>
+          <p>A live briefing desk built on the project&rsquo;s own standard: every story carries an ownership disclosure for its outlet, the feed fails honestly rather than showing fabricated content, and anything worth pursuing can be flagged with a note for future work.</p>
           <a class="btn btn-gold" href="signal.html">Open SIGNAL &rarr;</a>
         </div>
         <div class="signal-feats">
-          <div><b>12 beats</b> &mdash; politics, war, trade, economy, corruption, China, Russia, religion, science</div>
+          <div><b>14 beats</b> &mdash; U.S. law &amp; policy, politics, war, trade, economy, corruption, China, Russia, science, history &amp; more</div>
           <div><b>Ownership disclosed</b> &mdash; every outlet tagged CORP / NONPROFIT / INDIE with its parent</div>
           <div><b>Story flags</b> &mdash; save leads with notes; they persist in your browser</div>
           <div><b>Honest failure</b> &mdash; if the feed is down, it says so. Nothing is invented.</div>
@@ -335,58 +478,21 @@ footer.site .verify{color:var(--ink-dim);max-width:560px;margin:14px auto 0;font
 
 <script>
 (function(){
-const WORKS = [{"id": "SH-001", "slug": "divided-and-conquered", "title": "Divided and Conquered", "sub": "How the Oldest Weapon in History Is Still Being Used Against You", "series": "Structural Humanism Series \u2014 Document I", "cat": "Media & Division", "year": "2025", "thesis": "Division is engineered, not natural.", "words": 1729, "mins": 8, "docx": false}, {"id": "SH-002", "slug": "the-debt-machine", "title": "The Debt Machine", "sub": "How Financial Architecture Was Built to Keep You Compliant", "series": "Structural Humanism Series \u2014 Document II", "cat": "Finance & Power", "year": "2025", "thesis": "Financial architecture is built for extraction and compliance.", "words": 1873, "mins": 8, "docx": false}, {"id": "SH-003", "slug": "what-they-did-in-your-name", "title": "What They Did in Your Name", "sub": "The Documented Record of Foreign Policy, Manufactured Enemies, and Suppressed Accountability", "series": "Structural Humanism Series \u2014 Document III", "cat": "Foreign Policy", "year": "2025", "thesis": "States help produce the threats they later claim only to confront.", "words": 2040, "mins": 9, "docx": false}, {"id": "SH-004", "slug": "the-body-kept-sick", "title": "The Body Kept Sick", "sub": "How Regulatory Capture Converted Human Health Into a Revenue Stream", "series": "Structural Humanism Series \u2014 Document IV", "cat": "Health & Capture", "year": "2025", "thesis": "Illness has been rendered economically valuable to the institutions tasked with reducing it.", "words": 1458, "mins": 6, "docx": false}, {"id": "SH-005", "slug": "blowback-and-immunity", "title": "Blowback and Immunity", "sub": "How Covert Power Manufactures Its Own Enemies and Escapes the Bill", "series": "Foreign Policy \u2014 Standalone Investigation", "cat": "Foreign Policy", "year": "2025", "thesis": "Concentrated power, operating through secrecy, produces the conditions it later asks the public to fear.", "words": 5072, "mins": 22, "docx": true}, {"id": "SH-006", "slug": "the-great-consolidation", "title": "The Great Consolidation", "sub": "How a Few Hands Came to Hold Every Lever, and Why the Word Monopoly No Longer Describes It", "series": "The Concentration Dossier \u2014 Vol. I", "cat": "Media & Division", "year": "2026", "thesis": "Modern censorship rarely commands. It selects, repeats, and narrows.", "words": 5945, "mins": 26, "docx": true}, {"id": "SH-007", "slug": "the-machine-and-its-masters", "title": "The Machine and Its Masters", "sub": "AI, Surveillance, and the Character of the Men Who Control Both", "series": "Structural Humanism Series \u2014 Document VII", "cat": "AI & Governance", "year": "2026", "thesis": "Who will govern intelligence, and in whose interest?", "words": 5887, "mins": 26, "docx": true}, {"id": "SH-008", "slug": "the-captive-market", "title": "The Captive Market", "sub": "How Regulatory Capture in Food and Medicine Turns Public Need into Private Profit", "series": "Scholarly Paper \u2014 Public Health Policy", "cat": "Health & Capture", "year": "2025", "thesis": "Public need is converted into captive demand, and the resulting illness is described as private failure.", "words": 2345, "mins": 10, "docx": false}, {"id": "SH-009", "slug": "the-food-pyramid", "title": "\u201cFood Pyramid\u201d", "sub": "The Complete Evidence-Based Guide to Optimal Nutrition", "series": "Public Health \u2014 Field Guide", "cat": "Health & Capture", "year": "2025", "thesis": "Nutritional confusion was manufactured by food politics, not science.", "words": 9941, "mins": 43, "docx": true}, {"id": "SH-010", "slug": "the-discipline-of-justice", "title": "The Discipline of Justice", "sub": "Why Accountability Must Be Stronger Than Rage", "series": "Scholarly Paper \u2014 Democratic Ethics", "cat": "Civic Strategy", "year": "2025", "thesis": "Rage must become disciplined legal accountability, not revenge.", "words": 2444, "mins": 11, "docx": false}, {"id": "SH-011", "slug": "the-field-manual-for-seeing", "title": "The Field Manual for Seeing", "sub": "Forty-Nine Meditations on Structural Humanism", "series": "Meditations \u2014 Practice", "cat": "Civic Strategy", "year": "2025", "thesis": "Clarity is a discipline. Seeing structure is a practice, not a mood.", "words": 8882, "mins": 39, "docx": true}, {"id": "SH-012", "slug": "the-relentless-current", "title": "The Relentless Current", "sub": "A Citizens\u2019 Constitutional Action Framework for the Repair of Democratic Self-Government", "series": "Action Framework", "cat": "Civic Strategy", "year": "2025", "thesis": "Non-violent. Constitutional. Immediate. Sustained.", "words": 8286, "mins": 36, "docx": true}, {"id": "SH-013", "slug": "we-the-people", "title": "We the People", "sub": "A Call to Action for Every American Who Still Believes That Democracy Is Worth Fighting For", "series": "Public Address", "cat": "Civic Strategy", "year": "2025", "thesis": "This document is addressed to you. Not to politicians. Not to institutions. To you.", "words": 3401, "mins": 15, "docx": true}, {"id": "SH-REF", "slug": "project-spotlight", "title": "Project Spotlight", "sub": "100 Documented Government Operations and Experiments \u00b7 1700 to Present", "series": "Reference Archive \u2014 Not an Argument", "cat": "Reference Archive", "year": "2025", "thesis": "One hundred documented operations in the history of unaccountable power.", "words": 17162, "mins": 75, "docx": true}];
-const grid=document.getElementById('grid'),empty=document.getElementById('empty'),
-      q=document.getElementById('q'),shown=document.getElementById('shown'),total=document.getElementById('total');
-total.textContent=WORKS.length;
-let cat='All';
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-function card(w){
-  const dl = '<a href="files/'+w.slug+'.md" download>&#8595; MD</a>' + (w.docx?'<a href="files/'+w.slug+'.docx" download>&#8595; DOCX</a>':'');
-  return '<article class="card">'+
-   '<div class="cf-top"><span class="cf-id">FILE '+w.id+'</span><span class="cf-cat">'+esc(w.cat)+'</span></div>'+
-   '<h3><a href="works/'+w.slug+'.html">'+esc(w.title)+'</a></h3>'+
-   '<p class="thesis">'+esc(w.thesis)+'</p>'+
-   '<div class="meta">'+esc(w.series)+' &middot; '+w.year+' &middot; '+w.words.toLocaleString()+' words &middot; ~'+w.mins+' min</div>'+
-   '<div class="acts"><a class="read" href="works/'+w.slug+'.html">Read</a>'+dl+'</div>'+
-  '</article>';
-}
-function render(){
-  const t=q.value.trim().toLowerCase();
-  const res=WORKS.filter(function(w){
-    if(cat!=='All'&&w.cat!==cat)return false;
-    if(!t)return true;
-    return (w.id+' '+w.title+' '+w.sub+' '+w.thesis+' '+w.series+' '+w.cat).toLowerCase().includes(t);
-  });
-  shown.textContent=res.length;
-  grid.innerHTML=res.map(card).join('');
-  empty.style.display=res.length?'none':'block';
-}
-q.addEventListener('input',render);
-document.querySelectorAll('.chip').forEach(function(b){
-  b.addEventListener('click',function(){
-    cat=b.dataset.cat;
-    document.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b)});
-    render();
-  });
-});
-render();
-
 // FOIA generator
-const out=document.getElementById('f-out'),copyBtn=document.getElementById('f-copy');
+var out=document.getElementById('f-out'),copyBtn=document.getElementById('f-copy');
 document.getElementById('f-build').addEventListener('click',function(){
-  const today=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
-  const agency=document.getElementById('f-agency').value.trim()||'[Agency FOIA Office]';
-  const officer=document.getElementById('f-officer').value.trim()||'FOIA Officer';
-  const records=document.getElementById('f-records').value.trim()||'[Describe the records with specificity — dates, names, titles, file numbers.]';
-  const interest=document.getElementById('f-interest').value.trim()||'The requested records concern documented government conduct of substantial public concern. Disclosure will contribute significantly to public understanding of the operations and activities of the government and is not sought for commercial purposes.';
+  var today=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var agency=document.getElementById('f-agency').value.trim()||'[Agency FOIA Office]';
+  var officer=document.getElementById('f-officer').value.trim()||'FOIA Officer';
+  var records=document.getElementById('f-records').value.trim()||'[Describe the records with specificity — dates, names, titles, file numbers.]';
+  var interest=document.getElementById('f-interest').value.trim()||'The requested records concern documented government conduct of substantial public concern. Disclosure will contribute significantly to public understanding of the operations and activities of the government and is not sought for commercial purposes.';
   out.textContent=today+'\n\n'+officer+'\n'+agency+'\n\nRE: Freedom of Information Act Request\n\nDear FOIA Officer:\n\nPursuant to the Freedom of Information Act, 5 U.S.C. § 552, I hereby request copies of the following records:\n\n'+records+'\n\nI request that all responsive records be provided in electronic format if available.\n\nSEARCH METHODOLOGY. I request that the agency conduct a reasonable search of all systems of records likely to contain responsive material, including electronic mail, text and messaging systems, and any records management systems in use during the relevant period.\n\nFEE WAIVER REQUEST. I request a waiver of all fees pursuant to 5 U.S.C. § 552(a)(4)(A)(iii). '+interest+'\n\nNEWS MEDIA STATUS. If the fee waiver is denied, I assert news media status under 5 U.S.C. § 552(a)(4)(A)(ii)(II) as a person gathering information of potential interest to a segment of the public and using editorial skills to turn raw materials into distinct works for distribution to an audience.\n\nSEGREGABILITY. Should any records be deemed exempt, I request release of all reasonably segregable non-exempt portions pursuant to 5 U.S.C. § 552(b).\n\nSTATUTORY RESPONSE TIME. I note that 5 U.S.C. § 552(a)(6)(A)(i) requires a determination within twenty business days.\n\nI look forward to your response within the statutory timeframe.\n\nSincerely,\n[Your Name]\nIndependent Journalist';
   out.style.display='block';copyBtn.style.display='inline-flex';copyBtn.textContent='Copy to Clipboard';
 });
 copyBtn.addEventListener('click',function(){
   navigator.clipboard.writeText(out.textContent).then(function(){copyBtn.textContent='Copied ✓'})
   .catch(function(){
-    const ta=document.createElement('textarea');ta.value=out.textContent;document.body.appendChild(ta);
+    var ta=document.createElement('textarea');ta.value=out.textContent;document.body.appendChild(ta);
     ta.select();document.execCommand('copy');document.body.removeChild(ta);copyBtn.textContent='Copied ✓';
   });
 });
