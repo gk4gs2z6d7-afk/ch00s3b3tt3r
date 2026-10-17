@@ -2,7 +2,7 @@
 
 ## Why Accountability Must Be Stronger Than Rage
 
-KP | Journal of Democratic Ethics and Civic Responsibility | 2025
+KP | Structural Humanism · Working Paper | 2025
 
 > **ABSTRACT**
 >

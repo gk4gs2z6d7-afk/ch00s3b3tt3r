@@ -2,7 +2,7 @@
 
 ## How Regulatory Capture in Food and Medicine Turns Public Need into Private Profit
 
-KP | Journal of Public Health Policy and Corporate Accountability | 2025
+KP | Structural Humanism · Working Paper | 2025
 
 > **ABSTRACT**
 >
