@@ -4,6 +4,16 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>SIGNAL — Newsroom · Structural Humanism</title>
+<link rel="canonical" href="https://structuralhumanism.com/signal.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='14' fill='%230b0a08'/%3E%3Ccircle cx='40' cy='40' r='30' fill='none' stroke='%23caa04a' stroke-width='3'/%3E%3Cpath d='M40 22C30 30 22 30 22 30c0 14 8 24 18 28 10-4 18-14 18-28 0 0-8 0-18-8Z' fill='none' stroke='%23caa04a' stroke-width='3'/%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Structural Humanism">
+<meta property="og:title" content="SIGNAL — Newsroom · Structural Humanism">
+<meta property="og:description" content="A public case against the systems that keep people confused, divided, indebted, and afraid.">
+<meta property="og:url" content="https://structuralhumanism.com/signal.html">
+<meta property="og:image" content="https://structuralhumanism.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script defer src="/_vercel/insights/script.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -399,6 +409,7 @@ a{color:inherit;text-decoration:none}
 <div class="sitebar">
   <a class="home" href="index.html">&larr; Structural Humanism</a>
   <div class="links">
+    <a href="record.html">The Record</a>
     <a href="index.html#files">Case Files</a>
     <a href="index.html#act">Act</a>
     <a href="index.html#book">The Book</a>
@@ -445,6 +456,21 @@ a{color:inherit;text-decoration:none}
   <button class="nav-btn" data-beat="russia"><span class="beat-icon">🇷🇺</span>Russia</button>
   <button class="nav-btn" data-beat="religion"><span class="beat-icon">✝</span>Religion</button>
   <button class="nav-btn" data-beat="science"><span class="beat-icon">🔬</span>Science &amp; Tech</button>
+  <button class="nav-btn" data-beat="geopolitics"><span class="beat-icon">🌍</span>Geopolitics</button>
+  <button class="nav-btn" data-beat="ukraine"><span class="beat-icon">🇺🇦</span>Ukraine</button>
+  <button class="nav-btn" data-beat="taiwan"><span class="beat-icon">🇹🇼</span>Taiwan</button>
+  <button class="nav-btn" data-beat="korea"><span class="beat-icon">🚀</span>North Korea</button>
+  <button class="nav-btn" data-beat="mideast"><span class="beat-icon">🕊</span>Israel &amp; Mideast</button>
+  <button class="nav-btn" data-beat="africa"><span class="beat-icon">🌍</span>Africa</button>
+  <button class="nav-btn" data-beat="terrorism"><span class="beat-icon">⚠</span>Terrorism</button>
+  <button class="nav-btn" data-beat="unrest"><span class="beat-icon">🔥</span>Unrest &amp; Revolt</button>
+  <button class="nav-btn" data-beat="oilgold"><span class="beat-icon">🛢</span>Oil &amp; Gold</button>
+  <button class="nav-btn" data-beat="middleclass"><span class="beat-icon">🏠</span>Cost of Living</button>
+  <button class="nav-btn" data-beat="trump"><span class="beat-icon">📣</span>Trump Statements</button>
+  <button class="nav-btn" data-beat="influence"><span class="beat-icon">💵</span>Foreign Influence</button>
+  <button class="nav-btn" data-beat="health"><span class="beat-icon">💊</span>Health &amp; Pharma</button>
+  <button class="nav-btn" data-beat="recalls"><span class="beat-icon">☣</span>Recalls</button>
+  <button class="nav-btn" data-beat="rights"><span class="beat-icon">🗽</span>Rights &amp; Freedoms</button>
   <button class="nav-btn" data-beat="history"><span class="beat-icon">📜</span>History</button>
 </aside>
 
@@ -538,6 +564,21 @@ const BEATS = {
   religion:   {label:'Religion',          icon:'✝', query:'religion faith global policy church',beatClass:'beat-religion'},
   science:    {label:'Science & Tech',    icon:'🔬', query:'science discovery technology AI space energy',beatClass:'beat-science'},
   lawpolicy:  {label:'U.S. Law & Policy', icon:'⚖', query:'US Congress Supreme Court federal court regulation executive order legislation bill DOJ',beatClass:'beat-lawpolicy'},
+  geopolitics:{label:'Geopolitics',       icon:'🌍', query:'geopolitics diplomacy sanctions summit alliance when:3d',beatClass:''},
+  ukraine:    {label:'Ukraine',           icon:'🇺🇦',query:'Ukraine war Kyiv Zelensky front line peace talks when:3d',beatClass:'beat-russia'},
+  taiwan:     {label:'Taiwan',            icon:'🇹🇼',query:'Taiwan strait China military Taipei politics when:7d',beatClass:'beat-china'},
+  korea:      {label:'North Korea',       icon:'🚀', query:'North Korea Kim Jong Un missile Pyongyang when:14d',beatClass:'beat-war'},
+  mideast:    {label:'Israel & Mideast',  icon:'🕊', query:'Israel OR Netanyahu OR Gaza OR Iran OR Lebanon when:2d',beatClass:'beat-war'},
+  africa:     {label:'Africa',            icon:'🌍', query:'Africa politics election coup Sahel Congo Sudan Nigeria when:7d',beatClass:''},
+  terrorism:  {label:'Terrorism',         icon:'⚠', query:'terrorism attack extremist plot counterterrorism when:7d',beatClass:'beat-war'},
+  oilgold:    {label:'Oil & Gold',        icon:'🛢', query:'oil prices OPEC crude OR gold price bullion central banks when:3d',beatClass:'beat-economy'},
+  trump:      {label:'Trump Statements',  icon:'📣', query:'Trump "Truth Social" OR "Trump said" OR "Trump posted" when:2d',beatClass:'beat-politics'},
+  influence:  {label:'Foreign Influence', icon:'💵', query:'AIPAC OR "foreign lobbying" OR FARA OR "foreign agent" OR "super PAC" spending when:14d',beatClass:'beat-corruption'},
+  health:     {label:'Health & Pharma',   icon:'💊', query:'healthcare OR pharmaceutical OR "drug prices" OR FDA approval OR insurer when:3d',beatClass:''},
+  recalls:    {label:'Recalls',           icon:'☣', src:'recalls', query:'recall FDA CPSC contamination',beatClass:'beat-corruption'},
+  rights:     {label:'Rights & Freedoms', icon:'🗽', query:'"human rights" OR "civil liberties" OR surveillance OR "free speech" OR "press freedom" when:3d',beatClass:'beat-lawpolicy'},
+  middleclass:{label:'Cost of Living',    icon:'🏠', query:'"cost of living" OR rent OR "home prices" OR wages OR layoffs OR "middle class" when:3d',beatClass:'beat-economy'},
+  unrest:     {label:'Unrest & Revolt',   icon:'🔥', query:'protests OR uprising OR coup OR revolution OR "mass demonstration" when:3d',beatClass:'beat-war'},
   history:    {label:'History',           icon:'📜', query:'history declassified government document archive documentary',beatClass:'beat-history'},
 };
 
@@ -596,7 +637,23 @@ function parseRSSXml(xmlStr){
   }catch(e){ return null; }
 }
 
-async function fetchArticles(query){
+async function fetchArticles(query, src){
+  // Strategy 0: this site's own feed endpoint (cached, no third party)
+  try{
+    const ctrl = new AbortController();
+    const t = setTimeout(()=>ctrl.abort(),12000);
+    const res = await fetch('/api/feed?'+(src?'src='+encodeURIComponent(src):'q='+encodeURIComponent(query)),{signal:ctrl.signal});
+    clearTimeout(t);
+    if(res.ok){
+      const data = await res.json();
+      if(data.items&&data.items.length){
+        return data.items.map(a=>({
+          id: btoa(unescape(encodeURIComponent(a.link||a.title))).slice(-14),
+          title:a.title, summary:a.summary||'', link:a.link, source:a.source||extractSource(a.title), time:a.time,
+        }));
+      }
+    }
+  }catch(e){}
   const rssUrl = buildRSS(query);
 
   // Strategy 1: allorigins.win — free CORS proxy, no API key
@@ -706,7 +763,7 @@ function renderArticleCard(a, beat){
 function renderFeedError(beat){
   return `
   <div style="border:1px solid var(--red);background:rgba(192,57,43,0.08);padding:1rem 1.25rem;font-family:var(--mono);font-size:var(--sm);color:var(--text2)">
-    ⚠ LIVE FEED UNAVAILABLE — the RSS bridge (rss2json) did not respond or hit its rate limit.<br>
+    ⚠ LIVE FEED UNAVAILABLE — the news source did not respond.<br>
     Nothing is shown rather than showing fabricated content.
     <div style="margin-top:0.75rem"><button class="refresh-btn" data-retry="${beat}">↻ RETRY</button></div>
   </div>`;
@@ -806,7 +863,7 @@ async function loadBeat(beat){
 
   document.getElementById('refreshBtn')?.addEventListener('click',()=>loadBeat(beat));
 
-  const articles = await fetchArticles(cfg.query);
+  const articles = await fetchArticles(cfg.query, cfg.src);
   const feed = document.getElementById('articleFeed');
   if(!feed) return;
   if(!articles){ feed.innerHTML = renderFeedError(beat); attachRetry(); return; }
@@ -946,6 +1003,21 @@ const mobileBeatList = [
   {beat:'china',label:'🇨🇳 China'},
   {beat:'russia',label:'🇷🇺 Russia'},
   {beat:'science',label:'🔬 Science'},
+  {beat:'geopolitics',label:'🌍 Geopolitics'},
+  {beat:'ukraine',label:'🇺🇦 Ukraine'},
+  {beat:'taiwan',label:'🇹🇼 Taiwan'},
+  {beat:'korea',label:'🚀 North Korea'},
+  {beat:'mideast',label:'🕊 Israel & Mideast'},
+  {beat:'africa',label:'🌍 Africa'},
+  {beat:'terrorism',label:'⚠ Terrorism'},
+  {beat:'unrest',label:'🔥 Unrest & Revolt'},
+  {beat:'oilgold',label:'🛢 Oil & Gold'},
+  {beat:'middleclass',label:'🏠 Cost of Living'},
+  {beat:'trump',label:'📣 Trump Statements'},
+  {beat:'influence',label:'💵 Foreign Influence'},
+  {beat:'health',label:'💊 Health & Pharma'},
+  {beat:'recalls',label:'☣ Recalls'},
+  {beat:'rights',label:'🗽 Rights & Freedoms'},
   {beat:'history',label:'📜 History'},
 ];
 mobileBeats.innerHTML = mobileBeatList.map(b=>
