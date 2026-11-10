@@ -6,9 +6,15 @@ const SOURCES = {
   recalls: [
     'https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/recalls/rss.xml',
     'https://www.cpsc.gov/Newsroom/CPSC-RSS-Feed/Recalls-RSS'
-  ]
+  ],
+  // Third-party archive of the president's Truth Social posts
+  trump: ['https://trumpstruth.org/feed']
 };
-const FALLBACK_Q = { recalls: 'recall (FDA OR CPSC OR USDA) contamination OR hazard OR lead OR undeclared when:14d' };
+const LABELS = { recalls: ['FDA', 'CPSC'], trump: ['Truth Social (archive)'] };
+const FALLBACK_Q = {
+  recalls: 'recall (FDA OR CPSC OR USDA) contamination OR hazard OR lead OR undeclared when:14d',
+  trump: 'Trump "Truth Social" OR "Trump said" OR "Trump posted" when:2d'
+};
 
 function decode(s) {
   return String(s || '')
@@ -56,7 +62,7 @@ module.exports = async (req, res) => {
     if (src && SOURCES[src]) {
       const results = await Promise.allSettled(SOURCES[src].map(get));
       results.forEach((r, i) => {
-        if (r.status === 'fulfilled') items = items.concat(parse(r.value, i === 0 ? 'FDA' : 'CPSC'));
+        if (r.status === 'fulfilled') items = items.concat(parse(r.value, LABELS[src][i]));
         else errors.push(String(r.reason && r.reason.message || r.reason));
       });
       if (!items.length) items = parse(await get(gnews(FALLBACK_Q[src])));
