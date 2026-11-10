@@ -32,7 +32,7 @@ function parse(xml, fallbackSource) {
       link: tag(it, 'link') || tag(it, 'guid') || '#',
       time: tag(it, 'pubDate'),
       source,
-      summary: tag(it, 'description').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 240)
+      summary: decode(tag(it, 'description').replace(/<[^>]+>/g, ' ')).replace(/&nbsp;|\u00a0/g, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 240)
     });
   }
   return out;
